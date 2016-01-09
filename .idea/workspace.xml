@@ -66,8 +66,8 @@
       <file leaf-file-name="atm.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/atm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3979239">
-              <caret line="272" column="4" selection-start-line="272" selection-start-column="4" selection-end-line="272" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.46712804">
+              <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -650,12 +650,12 @@
       <workItem from="1451020961714" duration="6372000" />
       <workItem from="1451941589228" duration="5510000" />
       <workItem from="1452196073110" duration="126000" />
-      <workItem from="1452312304352" duration="5195000" />
+      <workItem from="1452312304352" duration="6104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17203000" />
+    <option name="totallyTimeSpent" value="18112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="24" width="1879" height="1056" extended-state="6" />
@@ -841,8 +841,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/atm.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3979239">
-          <caret line="272" column="4" selection-start-line="272" selection-start-column="4" selection-end-line="272" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.46712804">
+          <caret line="267" column="0" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
           <folding />
         </state>
       </provider>
