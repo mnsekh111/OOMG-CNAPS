@@ -302,11 +302,6 @@
 
         function initialize() {
 
-            $(function () {
-                $("#variables").buttonset();
-                $("#time-list").buttonset();
-            });
-
             $('#variables > input').on("click",
                     function () {
                         variable = this.id;
@@ -323,6 +318,7 @@
                     changeMonth: true,
                     changeYear: true,
                     onSelect: function (dateText, inst) {
+                        //alert("This function is called");
                         loadMoreDates(dateText);
                     }
                 });
@@ -487,16 +483,7 @@
                         <br>
                         <br>
                         <div style="display:inline;text-align:center">Dates :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                        <select style="display: inline" class="form-control">
-                            <option>12/31/2015 00:00</option>
-                            <option>12/31/2015 03:00</option>
-                            <option>12/31/2015 06:00</option>
-                            <option>12/31/2015 09:00</option>
-                            <option>12/31/2015 12:00</option>
-                            <option>12/31/2015 15:00</option>
-                            <option>12/31/2015 18:00</option>
-                            <option>12/31/2015 21:00</option>
-                            <option>12/31/2015 24:00</option>
+                        <select style="display: inline" class="form-control" id="select_date">
                         </select>
 
                         <br>
@@ -518,6 +505,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="sidebar-content">
+                        <div style="display:inline;text-align:center">Starting Date :&nbsp;&nbsp;&nbsp;&nbsp;</div>
                         <input style="display: inline; "type="text" id="datepicker">
                         <br>
                         <br>
@@ -556,13 +544,13 @@
                                                     src="http://omgsrv1.meas.ncsu.edu:8080/ocean-circulation-useast2/image/ncsu_logo.gif"
                                                     class="img-thumbnail img-responsive" alt="Placeholder image"/></div>
                 <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
-                                                    src="images/secoora.jpg" class="img-thumbnail img-responsive"
+                                                    src="mns-images/secoora.jpg" class="img-thumbnail img-responsive"
                                                     alt="Placeholder image"/></div>
                 <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
                                                     src="http://omgsrv1.meas.ncsu.edu:8080/ocean-circulation-useast2/image/noaa-logo.jpg"
                                                     class="img-thumbnail img-responsive" alt="Placeholder image"/></div>
                 <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
-                                                    src="images/renci.jpg" class="img-thumbnail img-responsive"
+                                                    src="mns-images/renci.jpg" class="img-thumbnail img-responsive"
                                                     alt="Placeholder image"/></div>
             </div>
         </div>

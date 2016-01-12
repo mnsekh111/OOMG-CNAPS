@@ -61,11 +61,12 @@ public class TimeInquiry extends HttpServlet {
 					str_date+=String.valueOf(j)+"00";	
 					String str_date_format=dates.get(i).subSequence(4,6)+"/"+dates.get(i).substring(6,8)+"/"+dates.get(i).substring(0,4)
 					+" "+str_date.substring(9,11)+":"+str_date.substring(11);
-					out.print(
-							"<input type=\"radio\" id=\""+str_date+
-							"\" name=\"radio\" /><label for=\""+str_date+
-							"\">"+str_date_format+"</label>"
-					);
+					out.print(str_date_format);
+//					out.print(
+//							"<input type=\"radio\" id=\""+str_date+
+//							"\" name=\"radio\" /><label for=\""+str_date+
+//							"\">"+str_date_format+"</label>"
+//					);
 				}
 			}
 
