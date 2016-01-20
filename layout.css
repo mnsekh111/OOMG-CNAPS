@@ -1,0 +1,305 @@
+  html { height: 100% }
+  body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color: #3A5ECA;
+	text-align: center;
+	}
+
+ #page {
+	background-color: #191970;
+  	color: white;
+  	width:1140px;
+  	margin:0px auto;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+}
+
+#title  {
+	text-align:center;
+	font-weight:bolder;
+	color:aqua;
+	font-size:30px;
+	padding-top:15px;
+	padding-bottom:15px;
+    }
+
+h1{
+	color:aqua;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+}
+p, text 
+{
+	text-align:justify;
+	font-size:14px;
+	color:white;
+}
+
+  #logo{
+	width: 1140px;
+	height: 120px;
+    align:center;
+}
+  
+  #banner{
+	margin-left: 10%;
+	text-align: center;
+	vertical-align: middle;
+/*	background-image:url(image/banner_new.png);
+	background-repeat:no-repeat;
+*/	height: 120px;
+  }
+  
+  .logo_text{
+  	position:absolute; left: 255px; top:-6px;
+  }
+
+  #box{
+  	position:relative;
+  	width: 100%;
+	
+  }
+
+  #links{
+    position:relative;
+	width: 1140px;
+	height: 32px;
+  }
+  a:link, a:visited {
+	color: #FF0;
+	text-decoration: none;
+}
+
+/* main menu
+ ----------------------------------------*/
+  #menu	{
+      float: left;
+  	  width: 1140px;
+   	  font-size: 15px;
+  	  background: #2f8be8;	  
+  	  padding: 0px;
+  	  margin: 0px;	
+	  list-style: none;
+  }
+  
+  #menu > li {
+      float: left;
+  }
+  
+  #menu li {
+      width: 185px;
+  }
+  #menu  li  a {
+      display: block;
+      height: 2em;
+      line-height: 2em;
+    }
+  #menu > li > a {
+	  color:#fff;
+	  font-weight:bold;
+  }
+  
+  #menu >li:hover > a{
+  	  background: aqua;
+  	  color: #000;
+  }
+ 
+  /* submenu
+  ---------------------*/
+  #menu ul{
+  	 list-style: none;
+   	  position: absolute;
+  	  display:none;
+  	  z-index:999;
+  	  background: aqua;
+  }
+  #menu ul li a{
+	  color: #000;
+	  text-align:center;
+
+  }
+  #menu ul li:hover a {
+  	  background: #CCFFFF;
+  }
+  #menu ul li:hover ul{
+  	  display: block;
+  }
+ #menu li:hover ul.noJS{
+  	  display:block;
+  }
+
+#map{
+  margin:auto;
+  width:800px;
+    }
+  
+#map_canvas {
+	bottom: 0;
+	width: 800px;
+	height: 600px;
+	margin: auto;
+	position:relative;
+		}
+#map ul {
+	list-style-type:none;
+	text-align:left;
+	padding-left:20px;
+}
+
+#depth{
+	position:absolute;
+	left: 70px;
+	margin-top:0;
+	right:0;
+	top:120px;
+	width:70px;
+	height:600px;
+}
+
+#depth label {
+	width:70px;
+}
+
+#variables{
+	position:relative;
+	 left:0px;
+	 padding-top:15px;
+	 width:800px;
+	 font-size:14px;
+	 }
+ #variables label {
+   	font-size:12px;
+ }
+ 
+#date{
+	 margin:auto;
+	 width: 800px;
+	 text-align:left;	 
+ } 
+#date label  {
+	width: 70px;
+	font-size: 11px;
+}
+#time{
+	position:absolute;
+	left: 70px;
+	margin-top:0;
+	right:0;
+	top:110px;
+	width:80px;
+	height:600px;
+	font-size:14px;
+	text-align:left;
+} 
+#time label {
+    font-size:11px;	
+}
+
+#time-list {
+	position: absolute;
+	left: 1005px;
+	margin-top: 0;
+	right: 0;
+	top: 102px;
+	width: 90px;
+	height: 600px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+#time-list label {
+	width: auto;
+}
+#hf-time-list {
+    width: 640px;
+	height: 100px;
+	overflow:auto;	
+	position: absolute;
+	left: 10px;
+}
+
+
+#buoytime  {
+	position: absolute;
+	left: 1005px;
+	margin-top: 0;
+	right: 0;
+	top: 102px;
+	width: 90px;
+	height: 600px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+#buoy label {
+	width: 156px;
+	height:30px;
+	font-sixe:11px;
+	vertical-align: top;
+}
+.datemenu {
+	text-align:left;
+}
+	
+#latlng-control {
+        background: #0000cc;
+        border: 1px solid #676767;
+        font-family: arial, helvetica, sans-serif;
+        font-size: 0.7em;
+        padding: 2px 4px;
+        position: absolute;
+       }
+       
+#archive_0 {
+     
+	 margin-top: 15px;
+}
+ 
+#archive_1 {
+ 	
+ 	margin: 0px;
+ 	padding-bottom:20px;
+ 	position:relative;
+	top:15px;
+}
+ 
+#archive_2 {
+    margin-top: 15px;
+}
+ 
+#archive_3 {
+    margin-left: 15px;
+ }
+
+#animationbutton {
+	text-align:left;
+	font-size:12px;
+	padding-bottom:15px;
+	}
+
+#description {
+	position:relative;
+	text-align:left;
+	margin:auto;
+	line-height:140%;
+	}
+#caption {
+	font-size:11 px;
+	text-align:justify;
+	color:	#99FFFF;
+	margin-left:50px;
+	margin-right:50px;
+}
+
+#footer    {
+    width:100%;
+    margin:auto;
+   text-align:center;
+   padding-top: 30px;
+ }
+#download {
+	color:black;
+	font-size:12px;
+}
