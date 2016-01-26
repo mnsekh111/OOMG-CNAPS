@@ -215,6 +215,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			 %>  
 		                </div> <!-- end div id "time-list"-->
                     </form>
+		  <!--  <div id="archive_0" >
+		  	        <a  onClick="showDatepicker();">Archive</a>	
+		        </div> -->
 		 
                 <dir id="archive_1" >
 		            Choose a date to populate the Date list: 
