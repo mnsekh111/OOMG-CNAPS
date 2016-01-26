@@ -418,7 +418,7 @@
 </head>
 <body>
 
-<div class="jumbotron" style="background-color:#0A38B5;color:white;margin-bottom: 2px">
+<div class="jumbotron" style="background: -webkit-linear-gradient(left,#0A38B5, #33ccff);color:white;margin-bottom: 2px">
 
     <div class="container">
         <h1>CNAPS</h1>
@@ -537,9 +537,9 @@
         </div>
     </div>
 </div>
-<footer id="footer" class="jumbotron" style="background-color:rgba(0, 0, 0, 0.73);color:white">
+<footer id="footer" class="jumbotron" style="background-color:rgba(0, 0, 0, 0.73);color:white;margin-bottom: 2px">
     <div class="container-fluid">
-        <p style="font-size: 15px"><span class="text-danger">DISCLAIMER:</span>> This nowcast/forecast system is a
+        <p style="font-size: 15px"><span style="color: red">DISCLAIMER:</span> This nowcast/forecast system is a
             research product developed and maintained by the <a href="http://www.go.ncsu.edu/oomg">Ocean Observing and
                 Modeling Group</a> at North Carolina State University. No warranty is made, expressed, or implied
             regarding the accuracy or validity of model results, nor regarding the suitability of the model output for
@@ -568,7 +568,7 @@
             </div>
         </div>
     </div>
-    <hr>
+    <hr/>
     <div class="container">
         <p style="font-size:15px; text-align:center">Questions or comments? Contact the <a
                 href="http://www.go.ncsu.edu/oomg">Ocean Observing and Modeling Group</a> (OOMG) at
