@@ -411,13 +411,14 @@
             background: #ECECEC;
             padding: 10px;
         }
+
     </style>
 
 
 </head>
 <body>
 
-<div class="jumbotron" style="background-color:#0A38B5;color:white">
+<div class="jumbotron" style="background-color:#0A38B5;color:white;margin-bottom: 2px">
 
     <div class="container">
         <h1>CNAPS</h1>
@@ -477,17 +478,17 @@
             <!--Nested rows within a column-->
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="sidebar-content">
-                        <div style="display:inline;text-align:center">Variable:&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                        <select style="display: inline" class="form-control">
+                    <div class="sidebar-content text-center">
+                        <span class="label label-primary">Variable</span>
+                        <select class="form-control" style="align-self: center">
                             <option>Temperature</option>
                             <option>Salinity</option>
                             <option>Current</option>
                         </select>
                         <br>
                         <br>
-                        <div style="display:inline;text-align:center">Dates :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                        <select style="display: inline" class="form-control">
+                        <span class="label label-primary">Dates</span>
+                        <select class="form-control">
                             <option>12/31/2015 00:00</option>
                             <option>12/31/2015 03:00</option>
                             <option>12/31/2015 06:00</option>
@@ -501,8 +502,8 @@
 
                         <br>
                         <br>
-                        <div style="display:inline;text-align:center">Depth :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                        <select style="display: inline" class="form-control">
+                        <span class="label label-primary">Depth</span>
+                        <select class="form-control">
                             <option>0 m</option>
                             <option>5 m</option>
                             <option>10 m</option>
