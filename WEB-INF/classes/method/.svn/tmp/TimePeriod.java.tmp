@@ -1,0 +1,14 @@
+package method;
+
+import java.io.File;
+
+import util.Global;
+
+public class TimePeriod {
+	public String[] getTimePeriod()
+	{
+		File dir=new File(Global.figures_location);
+		String[] chld=dir.list();
+		return chld;
+	}
+}
