@@ -432,7 +432,7 @@
                 </div>
                 <!-- Collection of nav links, forms, and other content for toggling -->
                 <div id="navbarCollapse" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav"">
                         <li class="active"><a href="atm.jsp" title="Marine Weather">Marine Weather</a></li>
                         <li><a href="wave.jsp" title="waves">Ocean Waves</a></li>
                         <li><a href="ocean.jsp" title="Circulation">Ocean Circulation</a></li>
@@ -515,18 +515,23 @@
                                 <td> <button id="btn" class="btn btn-success">Start Animation</button></td>
                                 <td colspan="2"><button id="btn0" class="btn btn-info">Download data</button></td>
                             </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="panel panel-success">
+                                        <div class="panel-heading">Instructions</div>
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><strong>Date and Time:</strong> Click on the date and time from the list to be shown on the map. Dates before the present can be selected to populate the Date and Time list. </li>
+                                                <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li> 
+                                                <li><strong>Animation:</strong> Click on "Start animation" to display the 72 hour forecast from today. Click on "Stop" to terminate the animation. Please allow the animation to run through once before it becomes smooth.</li>
+                                                <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ file).</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                    <div>
-                        <div class="panel panel-primary">
-                            <ul>
-                                <li><strong>Date and Time:</strong> Click on the date and time from the list to be shown on the map. Dates before the present can be selected to populate the Date and Time list. </li>
-                                <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li> 
-                                <li><strong>Animation:</strong> Click on "Start animation" to display the 72 hour forecast from today. Click on "Stop" to terminate the animation. Please allow the animation to run through once before it becomes smooth.</li>
-                                <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ file).</li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
