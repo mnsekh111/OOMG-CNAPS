@@ -468,7 +468,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                     <!--Nested rows within a column-->
-                    <table class="table">
+
+                    <table class="table" style="table-layout: fixed; word-wrap: break-word">
                         <tbody>
                             <tr>
                                 <td>Variable</td>
@@ -513,7 +514,7 @@
                             <tr>
                                 <td><button id="btn2" class="btn btn-danger">Stop Animation</button></td>
                                 <td> <button id="btn" class="btn btn-success">Start Animation</button></td>
-                                <td colspan="2"><button id="btn0" class="btn btn-info">Download data</button></td>
+                                <td><button id="btn0" class="btn btn-info">Download data</button></td>
                             </tr>
                             <tr>
                                 <td colspan="3">
