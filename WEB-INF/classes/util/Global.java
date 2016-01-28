@@ -2,7 +2,7 @@ package util;
 
  public class Global {
 	 static public final int MaxTimeout=120;
-	 static public final String figures_location="/raid0/zyao/Project/USeast/Plot/";
+	 static public final String figures_location="/current/coawst_useast/Plot/";
 	 static public final String dir="/raid0/zyao/MatlabCodes/USeast/autoUSeast/upfunc/";
      
      static public final String val_figures_location="/raid0/xzeng2/operational/plot/";
