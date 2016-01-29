@@ -301,21 +301,21 @@
 
                     function initialize() {
 
-                        $(function () {
-                            $("#variables").buttonset();
-                            $("#time-list").buttonset();
-                        });
-
-                        $('#variables > input').on("click",
-                                function () {
-                                    variable = this.id;
-                                    plotwa();
-                                });
-                        $('#time-list > input').on("click",
-                                function () {
-                                    date = this.id;
-                                    plotwa();
-                                });
+//                        $(function () {
+//                            $("#variables").buttonset();
+//                            $("#time-list").buttonset();
+//                        });
+//
+//                        $('#variables > input').on("click",
+//                                function () {
+//                                    variable = this.id;
+//                                    plotwa();
+//                                });
+//                        $('#time-list > input').on("click",
+//                                function () {
+//                                    date = this.id;
+//                                    plotwa();
+//                                });
 
                         $(function () {
                             $("#datepicker").datepicker({
@@ -326,6 +326,21 @@
                                 }
                             });
                         });
+
+                        $('#time_list').change(function () {
+                            date = this.value;
+                            alert("time list changed " + this.value);
+                            plotwa();
+                        });
+                        
+                          $('#variable_list').change(function () {
+                            variable = this.value;
+                            alert("variable list changed " + this.value);
+                            plotwa();
+                        });
+                        
+                        
+                        
 
                         $(document).ready(function () {
                             $("#showtext").click(function () {
@@ -473,10 +488,10 @@
                         <tbody>
                             <tr>
                                 <td>Variable</td>
-                                <td colspan="2"> <select class="form-control" style="width: 100%">
-                                        <option>Temperature</option>
-                                        <option>Salinity</option>
-                                        <option>Current</option> 
+                                <td colspan="2"> <select class="form-control" style="width: 100%" id="variable_list">
+                                        <option value="w">10 m Wind</option>
+                                        <option value="at">2 m Temperature</option>
+                                        <option value="slp">Sea level Pressure</option> 
                                     </select></td>
                             </tr>
                             <tr>
