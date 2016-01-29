@@ -301,22 +301,6 @@
 
                     function initialize() {
 
-//                        $(function () {
-//                            $("#variables").buttonset();
-//                            $("#time-list").buttonset();
-//                        });
-//
-//                        $('#variables > input').on("click",
-//                                function () {
-//                                    variable = this.id;
-//                                    plotwa();
-//                                });
-//                        $('#time-list > input').on("click",
-//                                function () {
-//                                    date = this.id;
-//                                    plotwa();
-//                                });
-
                         $(function () {
                             $("#datepicker").datepicker({
                                 changeMonth: true,
