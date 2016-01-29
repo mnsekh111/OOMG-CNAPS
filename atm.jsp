@@ -481,16 +481,7 @@
                             </tr>
                             <tr>
                                 <td>Dates</td>
-                                <td colspan="2"><select class="form-control" style="width: 100%">
-                                        <option>12/31/2015 00:00</option>
-                                        <option>12/31/2015 03:00</option>
-                                        <option>12/31/2015 06:00</option>
-                                        <option>12/31/2015 09:00</option>
-                                        <option>12/31/2015 12:00</option>
-                                        <option>12/31/2015 15:00</option>
-                                        <option>12/31/2015 18:00</option>
-                                        <option>12/31/2015 21:00</option>
-                                        <option>12/31/2015 24:00</option>
+                                <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
                                     </select>
                                 </td>
                             </tr>

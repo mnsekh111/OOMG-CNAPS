@@ -47,34 +47,34 @@ public class TimeInquiry extends HttpServlet {
             out.print("no");
         } else {
             int start = dates.indexOf(date);
-            out.print("start index " + start + "\n");
+            //out.print("start index " + start + "\n");
             int end;
             if (start + 7 > dates.size() - 1) {
                 end = dates.size() - 1;
             } else {
                 end = start + 7;
             }
-            
-            
-//            out.print("end index " + end + "\n");
-//            
-//            for (int i = start; i <= end; i++) {
-//                for (int j = 0; j <= 21; j += 3) {
-//                    String str_date = dates.get(i) + "_";
-//                    if (j < 10) {
-//                        str_date += "0";
-//                    }
-//                    str_date += String.valueOf(j) + "00";
-//                    String str_date_format = dates.get(i).subSequence(4, 6) + "/" + dates.get(i).substring(6, 8) + "/" + dates.get(i).substring(0, 4)
-//                            + " " + str_date.substring(9, 11) + ":" + str_date.substring(11);
-//                    out.print(str_date + "new");
-////					out.print(
-//                    //							"<input type=\"radio\" id=\""+str_date+
-//                    //							"\" name=\"radio\" /><label for=\""+str_date+
-//                    //							"\">"+str_date_format+"</label>"
-//                    //					);
-//                }
-//            }
+
+            //out.print("end index " + end + "\n");
+            String output ="";
+            for (int i = start; i <= end; i++) {
+                for (int j = 0; j <= 21; j += 3) {
+                    String str_date = dates.get(i) + "_";
+                    if (j < 10) {
+                        str_date += "0";
+                    }
+                    str_date += String.valueOf(j) + "00";
+                    String str_date_format = dates.get(i).subSequence(4, 6) + "/" + dates.get(i).substring(6, 8) + "/" + dates.get(i).substring(0, 4)
+                            + " " + str_date.substring(9, 11) + ":" + str_date.substring(11);
+
+                    out.print("<option value=\""+ str_date + "\">" + str_date_format + "</option>");
+//					out.print(
+                    //							"<input type=\"radio\" id=\""+str_date+
+                    //							"\" name=\"radio\" /><label for=\""+str_date+
+                    //							"\">"+str_date_format+"</label>"
+                    //					);
+                }
+            }
 
         }
 
