@@ -40,9 +40,7 @@ public class TimeInquiry extends HttpServlet {
         String date = util.TimeFormat.mmddyyy2yyymmdd(request.getParameter("date"));
         new Log().log(date);
         ArrayList<String> dates = new TimePeriod().getTimePeriod();
-//        out.print(date+"\n");
-//        for(int i=dates.size()-1;i>=0;i--)
-//            out.print(dates.get(i)+"\n");
+
         if (dates.contains(date) == false) {
             out.print("no");
         } else {
@@ -68,11 +66,6 @@ public class TimeInquiry extends HttpServlet {
                             + " " + str_date.substring(9, 11) + ":" + str_date.substring(11);
 
                     out.print("<option value=\""+ str_date + "\">" + str_date_format + "</option>");
-//					out.print(
-                    //							"<input type=\"radio\" id=\""+str_date+
-                    //							"\" name=\"radio\" /><label for=\""+str_date+
-                    //							"\">"+str_date_format+"</label>"
-                    //					);
                 }
             }
 

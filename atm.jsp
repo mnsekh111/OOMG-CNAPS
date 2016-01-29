@@ -295,11 +295,18 @@
                     var variable = "slp";
                     var date;
 
+
+
                     $(document).ready(function () {
                         initialize();
+
                     });
 
                     function initialize() {
+
+                        $('#btn_start_anim').prop('disabled', false);
+                        $('#btn_stop_anim').prop('disabled', true);
+                        $('#btn_download').prop('disabled', false);
 
                         $(function () {
                             $("#datepicker").datepicker({
@@ -316,42 +323,35 @@
                             alert("time list changed " + this.value);
                             plotwa();
                         });
-                        
-                          $('#variable_list').change(function () {
+
+                        $('#variable_list').change(function () {
                             variable = this.value;
                             alert("variable list changed " + this.value);
                             plotwa();
                         });
-                        
-                        
-                        
-
-                        $(document).ready(function () {
-                            $("#showtext").click(function () {
-                                $("#description").toggle();
-                            });
-                        });
-
-                        $(function () {
-                            $("#showtext").button({
-                                icons: {
-                                    primary: "ui-icon-plusthick"
-                                },
-                                text: false
-                            });
-                        });
-                        $(function () {
-                            $("#download")
-                                    .button()
-                                    .click(function () {
-                                        document.getElementById('download').href = download();
-                                    });
-                        });
 
 
-                        //$(document).ready(function(){
-                        //	$("#description").hide();
-                        //});
+                        $("#btn_start_anim")
+                                .click(function () {
+                                    $(this).prop("disabled", true);
+                                    $('#btn_stop_anim').prop("disabled", false);
+                                    foo();
+                                });
+
+                        $("#btn_stop_anim")
+                                .click(function () {
+                                    $(this).prop("disabled", true);
+                                    $('#btn_start_anim').prop("disabled", false);
+                                    stopCount();
+                                });
+                        //
+                        //
+                        //
+                        //                        $("#btn-download")
+                        //                                .click(function () {
+                        //                                    document.getElementById('download').href = download();
+                        //                                });
+
 
                         mapInit();
 
@@ -473,9 +473,9 @@
                             <tr>
                                 <td>Variable</td>
                                 <td colspan="2"> <select class="form-control" style="width: 100%" id="variable_list">
+                                        <option value="slp">Sea level Pressure</option> 
                                         <option value="w">10 m Wind</option>
                                         <option value="at">2 m Temperature</option>
-                                        <option value="slp">Sea level Pressure</option> 
                                     </select></td>
                             </tr>
                             <tr>
@@ -484,9 +484,9 @@
                                     </select>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr style="display: none">
                                 <td>Depth</td>
-                                <td colspan="2"><select class="form-control" style="width: 100%">
+                                <td colspan="2"><select class="form-control" style="width: 100%" id="depth_list">
                                         <option>0 m</option>
                                         <option>5 m</option>
                                         <option>10 m</option>
@@ -502,9 +502,9 @@
                                 <td colspan="2"> <input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                             </tr>
                             <tr>
-                                <td><button id="btn2" class="btn btn-danger">Stop Animation</button></td>
-                                <td> <button id="btn" class="btn btn-success">Start Animation</button></td>
-                                <td><button id="btn0" class="btn btn-info">Download data</button></td>
+                                <td><button id="btn_stop_anim" class="btn btn-danger">Stop Animation</button></td>
+                                <td> <button id="btn_start_anim" class="btn btn-success">Start Animation</button></td>
+                                <td><button id="btn_download" class="btn btn-info">Download data</button></td>
                             </tr>
                             <tr>
                                 <td colspan="3">
@@ -561,6 +561,7 @@
             </div>
             <hr/>
             <div class="container">
+
                 <p style="font-size:15px; text-align:center">Questions or comments? Contact the <a
                         href="http://www.go.ncsu.edu/oomg">Ocean Observing and Modeling Group</a> (OOMG) at
                     OceanObservingAndModeling&nbsp;[at]&nbsp;ncsu&nbsp;[dot]&nbsp;edu</p>
