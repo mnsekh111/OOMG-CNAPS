@@ -293,9 +293,7 @@
 
 
                     $(document).ready(function () {
-                        initialize();
-                        $("#datepicker").datepicker().datepicker("setDate",new Date());
-                        
+                        initialize();              
                     });
 
                     function initialize() {
@@ -308,7 +306,9 @@
                             $("#datepicker").datepicker({
                                 changeMonth: true,
                                 changeYear: true,
+                                defaultDate: new Date(),
                                 onSelect: function (dateText, inst) {
+                                    alert(dateText);
                                     loadMoreDates(dateText);
                                 }
                             });
