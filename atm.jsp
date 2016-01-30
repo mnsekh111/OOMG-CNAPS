@@ -294,7 +294,8 @@
 
                     $(document).ready(function () {
                         initialize();
-
+                        $("#datepicker").datepicker().datepicker("setDate",new Date());
+                        
                     });
 
                     function initialize() {
@@ -357,24 +358,22 @@
                         //InitLatlng(map);
 
                         //To display the default figure (current day, 0 meter, uv) on the map
-                        var d = new Date();
-                        var month = d.getMonth() + 1;
-                        //d.setDate(d.getDate()-1)
-                        var day_0 = d.getDate();
-                        //d.setDate(day_0+1);
-                        //var day_0=d.getDate()-1;
-                        if (month < 10)
-                            month = "0" + month.toString();
-                        else
-                            month = month.toString();
-                        if (day_0 < 10)
-                            day_0 = "0" + day_0.toString();
-                        else
-                            day_0 = day_0.toString();
-                        var s = (d.getYear() + 1900).toString() + month + day_0 + "_0000";
+//                        var d = new Date();
+//                        var month = d.getMonth() + 1;
+//                        //d.setDate(d.getDate()-1)
+//                        var day_0 = d.getDate();
+//                        //d.setDate(day_0+1);
+//                        //var day_0=d.getDate()-1;
+//                        if (month < 10)
+//                            month = "0" + month.toString();
+//                        else
+//                            month = month.toString();
+//                        if (day_0 < 10)
+//                            day_0 = "0" + day_0.toString();
+//                        else
+//                            day_0 = day_0.toString();
+//                        var s = (d.getYear() + 1900).toString() + month + day_0 + "_0000";
 
-                        //ie doesn't work using $().click();
-                        $('#' + s).trigger('click');
                     }
 
         </script>
