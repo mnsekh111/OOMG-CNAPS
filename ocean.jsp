@@ -11,9 +11,10 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="./mns-css/bootstrap.css">
         <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
 
 
         <!-- Script region -->
@@ -23,13 +24,8 @@
         </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-        <script src="content/js/jquery.min.js"></script>
-        <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-        <script src="./jquery/development-bundle/ui/jquery.ui.core.js"></script>
-        <script src="./jquery/development-bundle/ui/jquery.ui.datepicker.js"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script
 
         <script type="text/javascript" src="./lib/loadImage.js"></script>
         <script type="text/javascript" src="./lib/animation.js"></script>
@@ -41,7 +37,7 @@
                     var map;
                     var overlaysArray = [];
                     var root = "<%=Global.figures_location%>";
-                    var depth="0";
+                    var depth = "0";
                     var variable = "uv";
                     var date;
 
@@ -79,7 +75,7 @@
                             alert("variable list changed " + this.value);
                             plot;
                         });
-                        
+
                         $('#depth_list').change(function () {
                             depth = this.value;
                             alert("depth list changed " + this.value);
@@ -100,8 +96,8 @@
                                     $('#btn_start_anim').prop("disabled", false);
                                     stopCount();
                                 });
-                                
-                          
+
+
                         //
                         //
                         //
