@@ -56,7 +56,7 @@
             %>
                         availableDates.push(<%=dates.get(i)%>);
             <%
-            }
+                }
             %>
 
                     });
@@ -109,35 +109,13 @@
                             $('.dropdown-toggle').dropdown();
                         });
 
-                        //
-                        //
-                        //
-                        //                        $("#btn-download")
-                        //                                .click(function () {
-                        //                                    document.getElementById('download').href = download();
-                        //                                });
+                        $("#btn-download")
+                                .click(function () {
+                                    document.getElementById('download').href = download();
+                                });
 
 
                         mapInit();
-
-                        //InitLatlng(map);
-
-                        //To display the default figure (current day, 0 meter, uv) on the map
-                        //                        var d = new Date();
-                        //                        var month = d.getMonth() + 1;
-                        //                        //d.setDate(d.getDate()-1)
-                        //                        var day_0 = d.getDate();
-                        //                        //d.setDate(day_0+1);
-                        //                        //var day_0=d.getDate()-1;
-                        //                        if (month < 10)
-                        //                            month = "0" + month.toString();
-                        //                        else
-                        //                            month = month.toString();
-                        //                        if (day_0 < 10)
-                        //                            day_0 = "0" + day_0.toString();
-                        //                        else
-                        //                            day_0 = day_0.toString();
-                        //                        var s = (d.getYear() + 1900).toString() + month + day_0 + "_0000";
 
                     }
 
@@ -289,6 +267,7 @@
         </div>
         <br>
         <br>
+         <a id="download" href="#">Download</a>
         <footer id="footer" class="jumbotron" style="background-color:rgba(0, 0, 0, 0.73);color:white;margin-bottom: 2px">
             <div class="container-fluid">
                 <p style="font-size: 15px"><span style="color: red">DISCLAIMER:</span> This nowcast/forecast system is a
