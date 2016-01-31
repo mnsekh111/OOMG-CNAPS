@@ -46,6 +46,19 @@
                         initialize();
                         loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
                         alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+            <%
+                TimePeriod tp = new TimePeriod();
+                ArrayList<String> tmp = tp.getTimePeriod();
+                //Only last 7 days is needed
+                List<String> dates = tmp.subList(tmp.size() - 7, tmp.size());
+
+                for (int i = 0; i < dates.size(); i++) {
+            %>
+                        availableDates.push(<%=dates.get(i)%>);
+            <%
+            }
+            %>
+
                     });
 
                     function initialize() {
@@ -95,6 +108,7 @@
                         $(document).ready(function () {
                             $('.dropdown-toggle').dropdown();
                         });
+
                         //
                         //
                         //
@@ -109,21 +123,21 @@
                         //InitLatlng(map);
 
                         //To display the default figure (current day, 0 meter, uv) on the map
-//                        var d = new Date();
-//                        var month = d.getMonth() + 1;
-//                        //d.setDate(d.getDate()-1)
-//                        var day_0 = d.getDate();
-//                        //d.setDate(day_0+1);
-//                        //var day_0=d.getDate()-1;
-//                        if (month < 10)
-//                            month = "0" + month.toString();
-//                        else
-//                            month = month.toString();
-//                        if (day_0 < 10)
-//                            day_0 = "0" + day_0.toString();
-//                        else
-//                            day_0 = day_0.toString();
-//                        var s = (d.getYear() + 1900).toString() + month + day_0 + "_0000";
+                        //                        var d = new Date();
+                        //                        var month = d.getMonth() + 1;
+                        //                        //d.setDate(d.getDate()-1)
+                        //                        var day_0 = d.getDate();
+                        //                        //d.setDate(day_0+1);
+                        //                        //var day_0=d.getDate()-1;
+                        //                        if (month < 10)
+                        //                            month = "0" + month.toString();
+                        //                        else
+                        //                            month = month.toString();
+                        //                        if (day_0 < 10)
+                        //                            day_0 = "0" + day_0.toString();
+                        //                        else
+                        //                            day_0 = day_0.toString();
+                        //                        var s = (d.getYear() + 1900).toString() + month + day_0 + "_0000";
 
                     }
 
@@ -134,7 +148,6 @@
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-12288686-5']);
             _gaq.push(['_trackPageview']);
-
             (function () {
                 var ga = document.createElement('script');
                 ga.type = 'text/javascript';
@@ -143,7 +156,6 @@
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(ga, s);
             })();
-
         </script>
 
 
@@ -328,7 +340,7 @@
             <script src="js/bootstrap.js" type="text/javascript"></script>
             <script type="text/javascript"><!--
             EXref = "";
-                top.document.referrer ? EXref = top.document.referrer : EXref = document.referrer;//-->
+                top.document.referrer ? EXref = top.document.referrer : EXref = document.referrer; //-->
 
             </script>
             <script type="text/javascript"><!--
@@ -347,7 +359,7 @@
                 EXd.write("<img " + EXsrc + "=http://e0.extreme-dm.com",
                         "/" + EXvsrv + ".g?login=" + EXlogin + "&amp;",
                         "jv=" + EXjv + "&amp;j=y&amp;srw=" + EXw + "&amp;srb=" + EXb + "&amp;",
-                        "l=" + escape(EXref) + " height=1 width=1>");//-->
+                        "l=" + escape(EXref) + " height=1 width=1>"); //-->
             </script>
             <noscript>
             <div id="neXTReMe"><img height="1" width="1" alt=""
