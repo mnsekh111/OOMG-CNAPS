@@ -102,7 +102,7 @@
                             $('.dropdown-toggle').dropdown();
                         });
 
-                        $("#btn_download").button().
+                        $("#btn_download").
                                 .click(function () {
                                     alert("Download - feature under construction");
                                     document.getElementById('download').href = download();
@@ -161,8 +161,8 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav"">
                         <li><a href="atm.jsp" title="Marine Weather">Marine Weather</a></li>
-                        <li><a href="wave.jsp" title="waves">Ocean Waves</a></li>
-                        <li class="active"><a href="ocean.jsp" title="Circulation">Ocean Circulation</a></li>
+                        <li class="active"><a href="wave.jsp" title="waves">Ocean Waves</a></li>
+                        <li ><a href="ocean.jsp" title="Circulation">Ocean Circulation</a></li>
                         <li class="dropdown"><a href="#" title="Transect" data-toggle="dropdown" class="dropdown-toggle">Virtual
                                 Oceanographer<b class="caret"></b></a>
                             <ul class="dropdown-menu">
