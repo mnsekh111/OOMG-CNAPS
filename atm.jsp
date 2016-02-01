@@ -45,7 +45,7 @@
                     $(document).ready(function () {
                         initialize();
                         loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
-                        alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+//                        alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
             <%
                 TimePeriod tp = new TimePeriod();
                 ArrayList<String> tmp = tp.getTimePeriod();
@@ -72,7 +72,7 @@
                             changeMonth: true,
                             changeYear: true,
                             onSelect: function (dateText, inst) {
-                                alert(dateText);
+                                //alert(dateText);
                                 loadMoreDates(dateText);
                             }
                         }).datepicker("setDate", new Date());
@@ -80,13 +80,13 @@
 
                         $('#time_list').change(function () {
                             date = this.value;
-                            alert("time list changed " + this.value);
+                            //alert("time list changed " + this.value);
                             plotwa();
                         });
 
                         $('#variable_list').change(function () {
                             variable = this.value;
-                            alert("variable list changed " + this.value);
+                            //alert("variable list changed " + this.value);
                             plotwa();
                         });
 
@@ -116,24 +116,19 @@
 
 
                         mapInit();
-
+                        var _gaq = _gaq || [];
+                        _gaq.push(['_setAccount', 'UA-12288686-5']);
+                        _gaq.push(['_trackPageview']);
+                        (function () {
+                            var ga = document.createElement('script');
+                            ga.type = 'text/javascript';
+                            ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(ga, s);
+                        })();
                     }
 
-        </script>
-
-        <script type="text/javascript">
-
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-12288686-5']);
-            _gaq.push(['_trackPageview']);
-            (function () {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
         </script>
 
 
@@ -267,7 +262,7 @@
         </div>
         <br>
         <br>
-         <a id="download" href="#">Download</a>
+        <a id="download" href="#" display = "none">Download</a>
         <footer id="footer" class="jumbotron" style="background-color:rgba(0, 0, 0, 0.73);color:white;margin-bottom: 2px">
             <div class="container-fluid">
                 <p style="font-size: 15px"><span style="color: red">DISCLAIMER:</span> This nowcast/forecast system is a
