@@ -109,7 +109,7 @@
                             $('.dropdown-toggle').dropdown();
                         });
 
-                        $("#btn-download")
+                        $("#btn_download")
                                 .click(function () {
                                     document.getElementById('download').href = download();
                                 });
