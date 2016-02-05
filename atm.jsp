@@ -44,7 +44,6 @@
 
                     $(document).ready(function () {
                         initialize();
-                        loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
 //                        alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
             <%
                 TimePeriod tp = new TimePeriod();
@@ -59,7 +58,11 @@
                 }
             %>
 
+                        loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+
                     });
+
+
 
                     function initialize() {
 
