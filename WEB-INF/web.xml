@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Table</servlet-name>
+    <servlet-class>servlet.Table</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Transection</servlet-name>
+    <servlet-class>servlet.Transection</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>servlet.Test</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetImage</servlet-name>
+    <servlet-class>servlet.GetImage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Trajectory</servlet-name>
+    <servlet-class>servlet.Trajectory</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TimeInquiry</servlet-name>
+    <servlet-class>servlet.TimeInquiry</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TimeInquiry2</servlet-name>
+    <servlet-class>servlet.TimeInquiry2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Vertical</servlet-name>
+    <servlet-class>servlet.Vertical</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetImage2</servlet-name>
+    <servlet-class>servlet.GetImage2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetImage3</servlet-name>
+    <servlet-class>servlet.GetImage3</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ValServlet1</servlet-name>
+    <servlet-class>servlet.ValServlet1</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ValServlet2</servlet-name>
+    <servlet-class>servlet.ValServlet2</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ValServlet22</servlet-name>
+    <servlet-class>servlet.ValServlet22</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ValServlet3</servlet-name>
+    <servlet-class>servlet.ValServlet3</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Ensemble</servlet-name>
+    <servlet-class>servlet.Ensemble</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BuoyServlet</servlet-name>
+    <servlet-class>servlet.BuoyServlet</servlet-class>
+  </servlet>
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>WeatherValServlet</servlet-name>
+    <servlet-class>servlet.WeatherValServlet</servlet-class>
+  </servlet>
+    <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>WaveValServlet</servlet-name>
+    <servlet-class>servlet.WaveValServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetImage4</servlet-name>
+    <servlet-class>servlet.GetImage4</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Table</servlet-name>
+    <url-pattern>/servlet/Table</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Transection</servlet-name>
+    <url-pattern>/servlet/Transection</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/servlet/Test</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetImage</servlet-name>
+    <url-pattern>/servlet/GetImage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Trajectory</servlet-name>
+    <url-pattern>/servlet/Trajectory</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TimeInquiry</servlet-name>
+    <url-pattern>/servlet/TimeInquiry</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TimeInquiry2</servlet-name>
+    <url-pattern>/servlet/TimeInquiry2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Vertical</servlet-name>
+    <url-pattern>/servlet/Vertical</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetImage2</servlet-name>
+    <url-pattern>/servlet/GetImage2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetImage3</servlet-name>
+    <url-pattern>/servlet/GetImage3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValServlet1</servlet-name>
+    <url-pattern>/servlet/ValServlet1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValServlet2</servlet-name>
+    <url-pattern>/servlet/ValServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValServlet22</servlet-name>
+    <url-pattern>/servlet/ValServlet22</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValServlet3</servlet-name>
+    <url-pattern>/servlet/ValServlet3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Ensemble</servlet-name>
+    <url-pattern>/servlet/Ensemble</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BuoyServlet</servlet-name>
+    <url-pattern>/servlet/BuoyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>WeatherValServlet</servlet-name>
+    <url-pattern>/servlet/WeatherValServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>WaveValServlet</servlet-name>
+    <url-pattern>/servlet/WaveValServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetImage4</servlet-name>
+    <url-pattern>/servlet/GetImage4</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>/atm.jsp</welcome-file>
+  </welcome-file-list>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+  </login-config>
+</web-app>

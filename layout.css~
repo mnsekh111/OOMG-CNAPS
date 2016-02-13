@@ -1,0 +1,131 @@
+  html { height: 100% }
+  body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color: #EEE;
+	
+}
+
+	#page {
+	background-color: #1f3950;
+  	color: white;
+  	align: center;
+  	width:1000px;
+  	margin:0px auto;
+  	
+  	
+  .text {
+	color: black;
+	font-weight: bold;
+}
+
+  #logo{
+	width: 1200px;
+	height: 120px;
+	margin-bottom: 2px;
+	margin-left: auto;
+	margin-right: auto; 
+}
+  
+  #banner{
+	margin-left: 10%;
+	text-align: center;
+	vertical-align: middle;
+/*	background-image:url(image/banner_new.png);
+	background-repeat:no-repeat;
+*/	height: 120px;
+  }
+  
+  .logo_text{
+  	position:absolute; left: 255px; top:-6px;
+  }
+
+  #box{
+  	position:relative;
+  }
+
+  #links{
+	margin-left: 20px;
+	height: 70px;
+	width: 130px;
+	margin-top: 20px;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+  }
+  
+  #menu ul {
+	  list-style: none;
+  }
+
+  #menu {
+	  float: left;
+  }
+
+  #menu > li {
+	  float: left;
+  }
+
+  #menu li a {
+	  display:block;
+	  height: 2em;
+	  padding: 0 1.5em;
+	  text-decoration : none;
+  }
+
+  #menu ul{
+	  position: absolute;
+	  display: none;
+	  z-index: 999;
+  }
+
+  #menu ul li a{
+	  width: 80px;
+  }
+ 
+  #menu li:hover ul {
+	  display:block;
+  }
+
+  #map_canvas {
+	width: 800px;
+	height: 600px;
+	margin-left: 20px;
+	margin-right: 20px;
+	position: absolute;
+	left: 156px;
+	top: 4px;
+}
+
+ #depth{
+	position:absolute;
+	left: 1002px;
+}
+
+ #para{
+	 position:absolute;
+	 left:1080px;
+ }
+
+#description {
+	position:absolute;
+	width: 800px;
+	left: 177px;
+	top: 659px;
+}
+#footer {
+	position:absolute;
+	width: 776px;
+	height: 28px;
+	left: 181px;
+	top: 632px;
+}
+#latlng-control {
+        background: #ffc;
+        border: 1px solid #676767;
+        font-family: arial, helvetica, sans-serif;
+        font-size: 0.7em;
+        padding: 2px 4px;
+        position: absolute;
+       }

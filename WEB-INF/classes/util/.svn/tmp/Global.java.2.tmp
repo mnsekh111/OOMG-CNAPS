@@ -1,0 +1,28 @@
+package util;
+
+ public class Global {
+	 static public final int MaxTimeout=120;
+	 static public final String figures_location="/raid0/zxue/SABGOM/Plot/";
+	 static public final String dir="/raid0/zxue/SABGOM/";
+	 
+	 static public final String Log_file_path="/var/lib/tomcat6/logs/mylog.txt";
+	 
+	 static public final String bash_tracking="tracking.bash";
+	 static public final String input_tracking="lon_lat_tracking.txt";
+	 static public final String output_tracking="final_pos_2011_forward.txt";
+	 
+	 static public final String bash_drift="drift.bash";
+	 static public final String input_drift="lon_lat_drift.txt";
+	 static public final String output_drift="drift_position.txt";
+	 
+	 static public final String bash_vertical="vertical.bash";
+	 static public final String input_vertical_1="lon_lat_vertical.txt";
+	 static public final String input_vertical_2="verticaltime.txt";
+	 static public final String output_vertical="vertical.png";
+	 
+	 static public final String bash_section="section.bash";
+	 static public final String input_section_1="vname.txt";
+	 static public final String input_section_2="lon_lat_section.txt";
+	 static public final String input_section_3="sectiontime.txt";
+	 static public final String output_section="get_section.png";
+}
