@@ -41,7 +41,6 @@
                     var date;
 
 
-		   // After the document has finished loading
                     $(document).ready(function () {
                         initialize();
 //                        alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
