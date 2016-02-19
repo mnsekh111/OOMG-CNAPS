@@ -48,22 +48,23 @@
             <%
                 TimePeriod tp = new TimePeriod();
                 ArrayList<String> tmp = tp.getTimePeriod();
-                //Only last 7 days is needed
-                List<String> dates = tmp.subList(tmp.size() - 7, tmp.size());
 
-                for (int i = 0; i < dates.size(); i++) {
+                for (int i = 0; i < tmp.size(); i++) {
             %>
-            availableDates.push(<%=dates.get(i)%>);
+            availableDates.push(<%=tmp.get(i)%>);
 
             <%
                 }
             %>
 
-
             loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
 
         });
 
+        function getYYYYMMYY(date) {
+            return "" + date.getFullYear() + "" + ((date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1))
+                    + "" + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate());
+        }
 
         function initialize() {
 
@@ -71,6 +72,9 @@
             $('#btn_start_anim').prop('disabled', false);
             $('#btn_stop_anim').prop('disabled', true);
             $('#btn_download').prop('disabled', false);
+
+            start_date = getYYYYMMYY(new Date);
+            end_date = getYYYYMMYY(new Date);
 
 
             $("#datepicker").datepicker({
@@ -88,8 +92,10 @@
                 changeMonth: true,
                 changeYear: true,
                 minDate: minDate,
-                maxDate: "+1D",
+                maxDate: "+2D",
                 onSelect: function (dateText, inst) {
+                    var date = new Date(dateText);
+                    end_date = getYYYYMMYY(date);
                 }
             }).datepicker("setDate", new Date);
 
@@ -99,17 +105,20 @@
                 changeYear: true,
                 maxDate: new Date,
                 onSelect: function (dateText, inst) {
-                    alert(new Date(dateText));
                     var endDate = new Date(dateText);
-                    endDate.setDate(endDate.getDate()+2);
+                    endDate.setDate(endDate.getDate() + 2);
                     $("#datepicker-anim-end").datepicker(
                             "change",
-                            { minDate: new Date($('#datepicker-anim-start').val()),
-                              maxDate: endDate}
+                            {
+                                minDate: new Date($('#datepicker-anim-start').val()),
+                                maxDate: endDate
+                            }
                     );
+
+                    var date = new Date(dateText);
+                    start_date = getYYYYMMYY(date);
                 }
             }).datepicker("setDate", new Date());
-
 
 
             $('#time_list').change(function () {
