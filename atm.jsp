@@ -154,7 +154,7 @@
 
             $("#btn_download")
                     .click(function () {
-                        document.getElementById('download').href = download();
+                        window.location = download();
                     });
 
 
@@ -342,7 +342,6 @@
 
 <br>
 <br>
-<a id="download" href="#" display="none">Download</a>
 <footer id="footer" class="jumbotron" style="background-color:rgba(0, 0, 0, 0.73);color:white;margin-bottom:
         2px">
     <div class="container-fluid">
