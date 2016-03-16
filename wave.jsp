@@ -273,7 +273,7 @@
                 <p style="font-size:15px; text-align:center">Questions or comments? Contact the <a
                         href="http://www.go.ncsu.edu/oomg">Ocean Observing and Modeling Group</a> (OOMG) at
                     OceanObservingAndModeling&nbsp;[at]&nbsp;ncsu&nbsp;[dot]&nbsp;edu</p>
-                <p style="font-size:15px; text-align:center">&copy;Copyright 2015 Ocean Observing and Modeling Group, North
+                <p style="font-size:15px; text-align:center">&copy;Copyright 2016 Ocean Observing and Modeling Group, North
                     Carolina State University</p>
             </div>
 
