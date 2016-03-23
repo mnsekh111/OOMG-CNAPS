@@ -69,8 +69,8 @@
       <file leaf-file-name="footer.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/footer.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7021764">
-              <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -133,7 +133,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-3" />
-    <option name="width" value="963" />
+    <option name="width" value="1926" />
     <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -682,15 +682,15 @@
       <created>1457922514557</created>
       <option name="number" value="Default" />
       <updated>1457922514557</updated>
-      <workItem from="1458753149710" duration="585000" />
+      <workItem from="1458753149710" duration="850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="585000" />
+    <option name="totallyTimeSpent" value="850000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="0" width="963" height="1045" extended-state="0" />
+    <frame x="-3" y="0" width="1926" height="1045" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -981,8 +981,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/footer.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7021764">
-          <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
           <folding />
         </state>
       </provider>

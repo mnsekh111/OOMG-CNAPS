@@ -12,39 +12,39 @@
         <div class="container-fluid" style="display:inline-block" align="center">
             <p style="padding-left:10px;">Thanks to our sponsors:</p>
             <div class="row">
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/NASA_logo.JPG"
-                                                    class="img-thumbnail img-responsive" alt="Placeholder image"></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    class="img-thumbnail img-responsive" alt="NASA"></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/NOAA_logo.JPG"
-                                                    class="img-thumbnail img-responsive" alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    class="img-thumbnail img-responsive" alt="NOAA"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/UNC_CSI_logo2.jpg" class="img-thumbnail img-responsive"
-                                                    alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    alt="UNC_CSI"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/USGS.JPG"
-                                                    class="img-thumbnail img-responsive" alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    class="img-thumbnail img-responsive" alt="USGS"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/GOMRI_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    alt="GOMRI"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/NSF_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    alt="NSF"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/ONR_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    alt="ONR"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/SeaGrant_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    alt="SeaGrant"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/SECOORA_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    alt="SECOORA"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/BOEM_logo.JPG" class="img-thumbnail img-responsive"
-                                                    alt="Placeholder image"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    alt="BOEM"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
                                                     src="mns-images/DOE_logo.JPG" class="img-thumbnail img-responsive"
-                                                    alt="Placeholder image"/></div>
+                                                    alt="DOE"/></div>
 
             </div>
         </div>
