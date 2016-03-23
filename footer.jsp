@@ -12,39 +12,85 @@
         <div class="container-fluid" style="display:inline-block" align="center">
             <p style="padding-left:10px;">Thanks to our sponsors:</p>
             <div class="row">
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/NASA_logo.JPG"
-                                                    class="img-thumbnail img-responsive" alt="NASA"></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/NOAA_logo.JPG"
-                                                    class="img-thumbnail img-responsive" alt="NOAA"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/UNC_CSI_logo2.jpg" class="img-thumbnail img-responsive"
-                                                    alt="UNC_CSI"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/USGS.JPG"
-                                                    class="img-thumbnail img-responsive" alt="USGS"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/GOMRI_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="GOMRI"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/NSF_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="NSF"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/ONR_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="ONR"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/SeaGrant_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="SeaGrant"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/SECOORA_logo.jpg" class="img-thumbnail img-responsive"
-                                                    alt="SECOORA"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/BOEM_logo.JPG" class="img-thumbnail img-responsive"
-                                                    alt="BOEM"/></div>
-                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="50px" height="50px"
-                                                    src="mns-images/DOE_logo.JPG" class="img-thumbnail img-responsive"
-                                                    alt="DOE"/></div>
+
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/NASA_logo.JPG"
+                             class="img-thumbnail img-responsive" alt="NASA">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/NOAA_logo.JPG"
+                             class="img-thumbnail img-responsive" alt="NOAA"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/UNC_CSI_logo2.jpg" class="img-thumbnail img-responsive"
+                             alt="UNC_CSI"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/USGS.JPG"
+                             class="img-thumbnail img-responsive" alt="USGS"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/GOMRI_logo.jpg" class="img-thumbnail img-responsive"
+                             alt="GOMRI"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/NSF_logo.jpg" class="img-thumbnail img-responsive"
+                             alt="NSF"/>
+                    </a>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/ONR_logo.jpg" class="img-thumbnail img-responsive"
+                             alt="ONR"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/SeaGrant_logo.jpg" class="img-thumbnail img-responsive"
+                             alt="SeaGrant"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/SECOORA_logo.jpg" class="img-thumbnail img-responsive"
+                             alt="SECOORA"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/BOEM_logo.JPG" class="img-thumbnail img-responsive"
+                             alt="BOEM"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                        <img style="display:inline-block" height="50px"
+                             src="mns-images/DOE_logo.JPG" class="img-thumbnail img-responsive"
+                             alt="DOE"/>
+                    </a>
+                </div>
 
             </div>
         </div>
