@@ -13,82 +13,82 @@
             <p style="padding-left:10px;">Thanks to our sponsors:</p>
             <div class="row">
 
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3" style="height:200px">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/NASA_logo.JPG"
-                             class="img-thumbnail img-responsive" alt="NASA">
+                        <img
+                                src="mns-images/NASA_logo.JPG"
+                                class="img-thumbnail img-responsive" alt="NASA">
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3" style="height:200px">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/NOAA_logo.JPG"
-                             class="img-thumbnail img-responsive" alt="NOAA"/>
+                        <img
+                                src="mns-images/NOAA_logo.JPG"
+                                class="img-thumbnail img-responsive" alt="NOAA"/>
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3" style="height:200px">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/UNC_CSI_logo2.jpg" class="img-thumbnail img-responsive"
-                             alt="UNC_CSI"/>
+                        <img
+                                src="mns-images/UNC_CSI_logo2.jpg" class="img-thumbnail img-responsive"
+                                alt="UNC_CSI"/>
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3" style="height:200px">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/USGS.JPG"
-                             class="img-thumbnail img-responsive" alt="USGS"/>
+                        <img
+                                src="mns-images/USGS.JPG"
+                                class="img-thumbnail img-responsive" alt="USGS"/>
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3" style="height:200px">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/GOMRI_logo.jpg" class="img-thumbnail img-responsive"
-                             alt="GOMRI"/>
+                        <img
+                                src="mns-images/GOMRI_logo.jpg" class="img-thumbnail img-responsive"
+                                alt="GOMRI"/>
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3" style="height:200px">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/NSF_logo.jpg" class="img-thumbnail img-responsive"
-                             alt="NSF"/>
+                        <img
+                                src="mns-images/NSF_logo.jpg" class="img-thumbnail img-responsive"
+                                alt="NSF"/>
                     </a>
                 </div>
 
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3" style="height:200px">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/ONR_logo.jpg" class="img-thumbnail img-responsive"
-                             alt="ONR"/>
+                        <img
+                                src="mns-images/ONR_logo.jpg" class="img-thumbnail img-responsive"
+                                alt="ONR"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3" style="height:200px">
+                    <a href="#" class="thumbnail">
+                        <img
+                                src="mns-images/SeaGrant_logo.jpg" class="img-thumbnail img-responsive"
+                                alt="SeaGrant"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3" style="height:200px">
+                    <a href="#" class="thumbnail">
+                        <img
+                                src="mns-images/SECOORA_logo.jpg" class="img-thumbnail img-responsive"
+                                alt="SECOORA"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/SeaGrant_logo.jpg" class="img-thumbnail img-responsive"
-                             alt="SeaGrant"/>
+                    <a href="#" class="thumbnail" style="height:200px">
+                        <img
+                                src="mns-images/BOEM_logo.JPG" class="img-thumbnail img-responsive"
+                                alt="BOEM"/>
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-6 col-md-3" style="height:200px">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/SECOORA_logo.jpg" class="img-thumbnail img-responsive"
-                             alt="SECOORA"/>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/BOEM_logo.JPG" class="img-thumbnail img-responsive"
-                             alt="BOEM"/>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                        <img style="display:inline-block" height="200px"
-                             src="mns-images/DOE_logo.JPG" class="img-thumbnail img-responsive"
-                             alt="DOE"/>
+                        <img
+                                src="mns-images/DOE_logo.JPG" class="img-thumbnail img-responsive"
+                                alt="DOE"/>
                     </a>
                 </div>
 
