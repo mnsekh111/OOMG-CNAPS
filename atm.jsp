@@ -185,7 +185,7 @@
 
 
 </head>
-<body>
+<body style="background-color:#3A5ECA">
 
 <div class="jumbotron" style="background: -webkit-linear-gradient(left,#0A38B5,
         #33ccff);color:white;margin-bottom: 2px">
@@ -247,7 +247,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
             <!--Nested rows within a column-->
 
-            <table class="table" style="table-layout: fixed; word-wrap: break-word">
+            <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
                 <thead>
                 <tr style="background: #0A38B5; color: white">
                     <td colspan="3">Options</td>
@@ -284,7 +284,7 @@
                 </tbody>
             </table>
 
-            <table class="table" style="table-layout: fixed; word-wrap: break-word">
+            <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
                 <thead>
                 <tr style="background: #0A38B5; color: white">
                     <td colspan="3">Animation</td>
@@ -317,7 +317,7 @@
     </div>
 
     <br><br>
-    <div class="panel panel-primary">
+    <div class="panel panel-primary" style="background-color:#3A5ECA;color:white">
         <div class="panel-heading">Instructions</div>
         <div class="panel-body">
             <ul>
