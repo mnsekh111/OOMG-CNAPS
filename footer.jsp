@@ -13,20 +13,39 @@
             <p style="padding-left:10px;">Thanks to our sponsors:</p>
             <div class="row">
                 <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
-                                                    src="mns-images/omg_logo2.png"
+                                                    src="mns-images/NASA_logo.JPG"
                                                     class="img-thumbnail img-responsive" alt="Placeholder image"></div>
                 <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
-                                                    src="mns-images/ncsu_logo.jpg"
+                                                    src="mns-images/NOAA_logo.JPG"
                                                     class="img-thumbnail img-responsive" alt="Placeholder image"/></div>
                 <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
-                                                    src="mns-images/secoora.jpg" class="img-thumbnail img-responsive"
+                                                    src="mns-images/UNC_CSI_logo2.jpg" class="img-thumbnail img-responsive"
                                                     alt="Placeholder image"/></div>
                 <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
-                                                    src="mns-images/noaa-logo.jpg"
+                                                    src="mns-images/USGS.JPG"
                                                     class="img-thumbnail img-responsive" alt="Placeholder image"/></div>
                 <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
-                                                    src="mns-images/renci.jpg" class="img-thumbnail img-responsive"
+                                                    src="mns-images/GOMRI_logo.jpg" class="img-thumbnail img-responsive"
                                                     alt="Placeholder image"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    src="mns-images/NSF_logo.jpg" class="img-thumbnail img-responsive"
+                                                    alt="Placeholder image"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    src="mns-images/ONR_logo.jpg" class="img-thumbnail img-responsive"
+                                                    alt="Placeholder image"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    src="mns-images/SeaGrant_logo.jpg" class="img-thumbnail img-responsive"
+                                                    alt="Placeholder image"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    src="mns-images/SECOORA_logo.jpg" class="img-thumbnail img-responsive"
+                                                    alt="Placeholder image"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    src="mns-images/BOEM_logo.JPG" class="img-thumbnail img-responsive"
+                                                    alt="Placeholder image"/></div>
+                <div class="col-lg-2 col-md-4"><img style="display:inline-block" width="200px" height="200px"
+                                                    src="mns-images/DOE_logo.JPG" class="img-thumbnail img-responsive"
+                                                    alt="Placeholder image"/></div>
+
             </div>
         </div>
     </div>
