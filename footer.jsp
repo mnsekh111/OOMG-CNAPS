@@ -9,48 +9,48 @@
     </div>
     <hr/>
     <div class="container" align="center">
-        <div class="container-fluid" style="display:inline-block" align="center">
+        <div class="container-fluid"    align="center">
             <p style="padding-left:10px;">Thanks to our sponsors:</p>
             <div class="row">
 
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/NASA_logo.JPG"
                              class="img-thumbnail img-responsive" alt="NASA">
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/NOAA_logo.JPG"
                              class="img-thumbnail img-responsive" alt="NOAA"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/UNC_CSI_logo2.jpg" class="img-thumbnail img-responsive"
                              alt="UNC_CSI"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/USGS.JPG"
-                             class="img-thumbnail img-responsive" alt="USGS"/>
+                             class="img-responsive" alt="USGS"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/GOMRI_logo.jpg" class="img-thumbnail img-responsive"
                              alt="GOMRI"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img   style="min-height:150px;max-height:150px"
                              src="mns-images/NSF_logo.jpg" class="img-thumbnail img-responsive"
                              alt="NSF"/>
                     </a>
@@ -58,35 +58,35 @@
 
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img  style="min-height:150px;max-height:150px"
                              src="mns-images/ONR_logo.jpg" class="img-thumbnail img-responsive"
                              alt="ONR"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/SeaGrant_logo.jpg" class="img-thumbnail img-responsive"
                              alt="SeaGrant"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/SECOORA_logo.jpg" class="img-thumbnail img-responsive"
                              alt="SECOORA"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/BOEM_logo.JPG" class="img-thumbnail img-responsive"
                              alt="BOEM"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <a href="#" class="thumbnail">
-                        <img style="display:inline-block" min-height="200px"
+                        <img    style="min-height:150px;max-height:150px"
                              src="mns-images/DOE_logo.JPG" class="img-thumbnail img-responsive"
                              alt="DOE"/>
                     </a>
@@ -106,7 +106,7 @@
     </div>
 
         <span style="text-align:center;"><a href="http://extremetracking.com/open?login=omgncsu"><img
-                src="http://t1.extreme-dm.com/i.gif" style="border: 0; float:left;" min-height="100" width="100" id="EXim"
+                src="http://t1.extreme-dm.com/i.gif" style="border: 0; float:left;" height="100" width="100" id="EXim"
                 alt="eXTReMe Tracker"/></a></span><br/>
     <br/>
 
@@ -131,10 +131,10 @@
     EXd.write("<img " + EXsrc + "=http://e0.extreme-dm.com",
             "/" + EXvsrv + ".g?login=" + EXlogin + "&amp;",
             "jv=" + EXjv + "&amp;j=y&amp;srw=" + EXw + "&amp;srb=" + EXb + "&amp;",
-            "l=" + escape(EXref) + " min-height=1 width=1>"); //-->
+            "l=" + escape(EXref) + " height=1 width=1>"); //-->
     </script>
     <noscript>
-        <div id="neXTReMe"><img min-height="1" width="1" alt=""
+        <div id="neXTReMe"><img height="1" width="1" alt=""
                                 src="http://e0.extreme-dm.com/s9.g?login=omgncsu&amp;j=n&amp;jv=n"/></div>
     </noscript>
 </footer>

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ea40f01f-08ba-4536-8c78-2ebfafc7899e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.jsp" afterPath="$PROJECT_DIR$/footer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ocean.jsp" afterPath="$PROJECT_DIR$/ocean.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wave.jsp" afterPath="$PROJECT_DIR$/wave.jsp" />
     </list>
     <ignored path="OOMG-CNAPS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,8 +71,8 @@
       <file leaf-file-name="footer.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/footer.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3580247">
-              <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.5308642">
+              <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -674,12 +672,12 @@
       <created>1457922514557</created>
       <option name="number" value="Default" />
       <updated>1457922514557</updated>
-      <workItem from="1458753149710" duration="4921000" />
+      <workItem from="1458753149710" duration="5354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4921000" />
+    <option name="totallyTimeSpent" value="5354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1926" height="1045" extended-state="6" />
@@ -959,8 +957,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/footer.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3580247">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.5308642">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
           <folding />
         </state>
       </provider>
