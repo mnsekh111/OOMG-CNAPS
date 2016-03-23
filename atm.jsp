@@ -274,7 +274,6 @@
                 </tr>
 
                 <tr>
-                    <td>Download</td>
                     <td>
                         <button id="btn_download" class="btn btn-info">Download data</button>
                     </td>
@@ -318,7 +317,7 @@
 
     <br><br>
     <div class="panel panel-primary" style="background-color:#3A5ECA;color:white">
-        <div class="panel-heading">Instructions</div>
+        <div style="background: #0A38B5; color: white">Instructions</div>
         <div class="panel-body">
             <ul>
                 <li><strong>Date and Time:</strong> Click on the date and time from the list to be
@@ -343,7 +342,7 @@
 <br>
 <br>
 
-<jsp:include page="footer.jsp" />
+<jsp:include page="footer.jsp"/>
 
 <script>
     var btn = document.querySelector("#btn");
