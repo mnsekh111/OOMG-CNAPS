@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea40f01f-08ba-4536-8c78-2ebfafc7899e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/header.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/atm.jsp" afterPath="$PROJECT_DIR$/atm.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ocean.jsp" afterPath="$PROJECT_DIR$/ocean.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wave.jsp" afterPath="$PROJECT_DIR$/wave.jsp" />
     </list>
     <ignored path="OOMG-CNAPS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="atm.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="atm.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/atm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52691865">
-              <caret line="275" column="20" selection-start-line="275" selection-start-column="20" selection-end-line="275" selection-end-column="20" />
+            <state vertical-scroll-proportion="-10.344828">
+              <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/header.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.793103">
+              <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -36,16 +49,6 @@
       </file>
       <file leaf-file-name="vertical.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vertical.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -88,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wave.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wave.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wave.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.586206">
-              <caret line="238" column="40" selection-start-line="238" selection-start-column="40" selection-end-line="238" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.20618556">
+              <caret line="146" column="46" selection-start-line="146" selection-start-column="46" selection-end-line="146" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -121,8 +124,8 @@
       <file leaf-file-name="ocean.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ocean.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.931034">
-              <caret line="286" column="8" selection-start-line="286" selection-start-column="8" selection-end-line="286" selection-end-column="40" />
+            <state vertical-scroll-proportion="-0.6896552">
+              <caret line="166" column="45" selection-start-line="166" selection-start-column="45" selection-end-line="166" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -141,10 +144,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/footer.jsp" />
+        <option value="$PROJECT_DIR$/header.jsp" />
+        <option value="$PROJECT_DIR$/atm.jsp" />
         <option value="$PROJECT_DIR$/ocean.jsp" />
         <option value="$PROJECT_DIR$/wave.jsp" />
-        <option value="$PROJECT_DIR$/footer.jsp" />
-        <option value="$PROJECT_DIR$/atm.jsp" />
       </list>
     </option>
   </component>
@@ -682,12 +686,12 @@
       <created>1457922514557</created>
       <option name="number" value="Default" />
       <updated>1457922514557</updated>
-      <workItem from="1458753149710" duration="8629000" />
+      <workItem from="1458753149710" duration="8860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8629000" />
+    <option name="totallyTimeSpent" value="8860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1926" height="1045" extended-state="6" />
@@ -925,34 +929,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ocean.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.931034">
-          <caret line="286" column="8" selection-start-line="286" selection-start-column="8" selection-end-line="286" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weather.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.448277">
-          <caret line="297" column="14" selection-start-line="297" selection-start-column="14" selection-end-line="297" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/methods.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="58.172413">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wave.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.586206">
-          <caret line="238" column="40" selection-start-line="238" selection-start-column="40" selection-end-line="238" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -975,8 +955,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/atm.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52691865">
-          <caret line="275" column="20" selection-start-line="275" selection-start-column="20" selection-end-line="275" selection-end-column="20" />
+        <state vertical-scroll-proportion="-10.344828">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ocean.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6896552">
+          <caret line="166" column="45" selection-start-line="166" selection-start-column="45" selection-end-line="166" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weather.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.448277">
+          <caret line="297" column="14" selection-start-line="297" selection-start-column="14" selection-end-line="297" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.793103">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wave.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20618556">
+          <caret line="146" column="46" selection-start-line="146" selection-start-column="46" selection-end-line="146" selection-end-column="46" />
           <folding />
         </state>
       </provider>

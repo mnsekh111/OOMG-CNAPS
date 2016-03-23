@@ -1,6 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@page import="method.TimePeriod"%>
-<%@page import="util.Global"%>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
+<%@page import="method.TimePeriod" %>
+<%@page import="util.Global" %>
 <%@ page import="java.util.Arrays" %>
 <%
     String path = request.getContextPath();
@@ -9,41 +9,40 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-        <link rel="stylesheet" href="./mns-css/bootstrap.css">
-        <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./mns-css/bootstrap.css">
+    <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
 
-        <!-- Script region -->
+    <!-- Script region -->
 
-        <script type="text/javascript"
-                src="http://maps.google.com/maps/api/js?sensor=false">
-        </script>
+    <script type="text/javascript"
+            src="http://maps.google.com/maps/api/js?sensor=false">
+    </script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-
-        <script type="text/javascript" src="./lib/loadImage.js"></script>
-        <script type="text/javascript" src="./lib/animation_wa.js"></script>
-        <script type="text/javascript" src="./lib/wave.js"></script>
-        <script type="text/javascript" src="./lib/global.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
-        <script type="text/javascript">
-                    var map;
-                    var overlaysArray = [];
-                    var root = "<%=Global.figures_location%>";
-                    var variable = "swd";
-                    var date;
+    <script type="text/javascript" src="./lib/loadImage.js"></script>
+    <script type="text/javascript" src="./lib/animation_wa.js"></script>
+    <script type="text/javascript" src="./lib/wave.js"></script>
+    <script type="text/javascript" src="./lib/global.js"></script>
 
 
+    <script type="text/javascript">
+        var map;
+        var overlaysArray = [];
+        var root = "<%=Global.figures_location%>";
+        var variable = "swd";
+        var date;
 
-                    $(document).ready(function () {
-                        initialize();
-                        loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+
+        $(document).ready(function () {
+            initialize();
+            loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
 //                        alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
             <%
                 TimePeriod tp = new TimePeriod();
@@ -53,203 +52,169 @@
 
                 for (int i = 0; i < dates.size(); i++) {
             %>
-                        availableDates.push(<%=dates.get(i)%>);
+            availableDates.push(<%=dates.get(i)%>);
             <%
                 }
             %>
 
+        });
+
+        function initialize() {
+
+            $('#btn_start_anim').prop('disabled', false);
+            $('#btn_stop_anim').prop('disabled', true);
+            $('#btn_download').prop('disabled', false);
+
+
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                onSelect: function (dateText, inst) {
+                    //alert(dateText);
+                    loadMoreDates(dateText);
+                }
+            }).datepicker("setDate", new Date());
+
+
+            $('#time_list').change(function () {
+                date = this.value;
+                //alert("time list changed " + this.value);
+                plotwa();
+            });
+
+
+            $("#btn_start_anim")
+                    .click(function () {
+                        $(this).prop("disabled", true);
+                        $('#btn_stop_anim').prop("disabled", false);
+                        foo();
                     });
 
-                    function initialize() {
+            $("#btn_stop_anim")
+                    .click(function () {
+                        $(this).prop("disabled", true);
+                        $('#btn_start_anim').prop("disabled", false);
+                        stopCount();
+                    });
 
-                        $('#btn_start_anim').prop('disabled', false);
-                        $('#btn_stop_anim').prop('disabled', true);
-                        $('#btn_download').prop('disabled', false);
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
 
-
-                        $("#datepicker").datepicker({
-                            changeMonth: true,
-                            changeYear: true,
-                            onSelect: function (dateText, inst) {
-                                //alert(dateText);
-                                loadMoreDates(dateText);
-                            }
-                        }).datepicker("setDate", new Date());
-
-
-                        $('#time_list').change(function () {
-                            date = this.value;
-                            //alert("time list changed " + this.value);
-                            plotwa();
-                        });
+            $("#btn_download")
+                    .click(function () {
+                        alert("Download - feature under construction");
+                        document.getElementById('download').href = download();
+                    });
 
 
-                        $("#btn_start_anim")
-                                .click(function () {
-                                    $(this).prop("disabled", true);
-                                    $('#btn_stop_anim').prop("disabled", false);
-                                    foo();
-                                });
+            mapInit();
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12288686-5']);
+            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        }
 
-                        $("#btn_stop_anim")
-                                .click(function () {
-                                    $(this).prop("disabled", true);
-                                    $('#btn_start_anim').prop("disabled", false);
-                                    stopCount();
-                                });
-
-                        $(document).ready(function () {
-                            $('.dropdown-toggle').dropdown();
-                        });
-
-                        $("#btn_download")
-                                .click(function () {
-                                    alert("Download - feature under construction");
-                                    document.getElementById('download').href = download();
-                                });
+    </script>
 
 
-                        mapInit();
-                        var _gaq = _gaq || [];
-                        _gaq.push(['_setAccount', 'UA-12288686-5']);
-                        _gaq.push(['_trackPageview']);
-                        (function () {
-                            var ga = document.createElement('script');
-                            ga.type = 'text/javascript';
-                            ga.async = true;
-                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(ga, s);
-                        })();
-                    }
+    <style>
+        .main-content {
+            background: #dbdfe5;
+        }
 
-        </script>
+    </style>
 
 
-        <style>
-            .main-content {
-                background: #dbdfe5;
-            }
+</head>
+<body>
 
-        </style>
-
-
-    </head>
-    <body>
-
-        <div class="jumbotron" style="background: -webkit-linear-gradient(left,#0A38B5, #33ccff);color:white;margin-bottom: 2px">
-
-            <div class="container">
-                <h1>CNAPS</h1>
-                <p>Coupled Northwest Atlantic Prediction System</p>
-            </div>
+<jsp:include page="header.jsp"></jsp:include>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+            <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
 
         </div>
-        <div class="bs-example">
-            <nav role="navigation" class="navbar navbar-default">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="#" style="background-color: #0A38B5;color: white" class="navbar-brand">CNAPS</a>
-                </div>
-                <!-- Collection of nav links, forms, and other content for toggling -->
-                <div id="navbarCollapse" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav"">
-                        <li><a href="atm.jsp" title="Marine Weather">Marine Weather</a></li>
-                        <li class="active"><a href="wave.jsp" title="waves">Ocean Waves</a></li>
-                        <li ><a href="ocean.jsp" title="Circulation">Ocean Circulation</a></li>
-                        <li class="dropdown"><a href="#" title="Transect" data-toggle="dropdown" class="dropdown-toggle">Virtual
-                                Oceanographer<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="transect.jsp" title="Transect">Virtual Transect</a></li>
-                                <li><a href="vertical.jsp" title="Profile">Temp & Salinity Profile</a></li>
-                                <li><a href="trajectory.jsp" title="Drifter Trajectory">Drifter Trajectory</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="#" title="Model Validation" data-toggle="dropdown"
-                                                class="dropdown-toggle">Model Validation<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="val.jsp" title="MV - Circulation">Circulation</a></li>
-                                <li><a href="weather.jsp" title="MV - Weather">Weather</a></li>
-                                <li><a href="waveval.jsp" title="MV - Wave height">Wave Height</a></li>
-                                <li><a href="ensemble.jsp" title="MV - Ensemble">Ensemble</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="methods.jsp" title="Methods">Methods</a></li>
-                    </ul>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <!--Nested rows within a column-->
 
-
-                </div>
-            </nav>
+            <table class="table" style="table-layout: fixed; word-wrap: break-word">
+                <tbody>
+                <tr>
+                    <td>Dates</td>
+                    <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
+                    </select>
+                        <a href="footer.jsp"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Start Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="btn_stop_anim" class="btn btn-danger">Stop Animation</button>
+                    </td>
+                    <td>
+                        <button id="btn_start_anim" class="btn btn-success">Start Animation</button>
+                    </td>
+                    <td>
+                        <button id="btn_download" class="btn btn-info">Download data</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">Instructions</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li><strong>Date and Time:</strong> Click on the date and time from the list to be
+                                        shown on the map. Dates before the present can be selected to populate the Date
+                                        and Time list.
+                                    </li>
+                                    <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the
+                                        72 hour forecast from today. Click on &quot;Stop&quot; to terminate the
+                                        animation. Please allow the animation to run through once before it becomes
+                                        smooth.
+                                    </li>
+                                    <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
+                                        file).
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-                    <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
-
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                    <!--Nested rows within a column-->
-
-                    <table class="table" style="table-layout: fixed; word-wrap: break-word">
-                        <tbody>
-                            <tr>
-                                <td>Dates</td>
-                                <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
-                                    </select>
-                                    <a href="footer.jsp"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Start Date</td>
-                                <td colspan="2"> <input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
-                            </tr>
-                            <tr>
-                                <td><button id="btn_stop_anim" class="btn btn-danger">Stop Animation</button></td>
-                                <td> <button id="btn_start_anim" class="btn btn-success">Start Animation</button></td>
-                                <td><button id="btn_download" class="btn btn-info">Download data</button></td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <div class="panel panel-success">
-                                        <div class="panel-heading">Instructions</div>
-                                        <div class="panel-body">
-                                            <ul>
-                                                <li><strong>Date and Time:</strong> Click on the date and time from the list to be shown on the map. Dates before the present can be selected to populate the Date and Time list. </li>
-                                                <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the 72 hour forecast from today. Click on &quot;Stop&quot; to terminate the animation. Please allow the animation to run through once before it becomes smooth.</li>
-                                                <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ file).</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <a id="download" href="#" display = "none">Download</a>
-        <jsp:include page="footer.jsp"/>
-        <script>
-                var btn = document.querySelector("#btn");
-                btn.addEventListener("click", function () {
-                    var element = document.getElementById("dropDown");
-                    var newItem = element.getElementsByTagName("li")[0].cloneNode(true);
-                    var childCount = document.querySelectorAll("ul li").length;
-                    var newItemChild = document.createElement("a");
-                    newItemChild.href = "#";
-                    newItemChild.innerHTML = "Element " + (childCount + 1);
-                    newItem.innerHTML = '';
-                    newItem.appendChild(newItemChild);
-                    element.appendChild(newItem);
-                });
-        </script>
-    </body>
+    </div>
+</div>
+<br>
+<br>
+<a id="download" href="#" display="none">Download</a>
+<jsp:include page="footer.jsp"/>
+<script>
+    var btn = document.querySelector("#btn");
+    btn.addEventListener("click", function () {
+        var element = document.getElementById("dropDown");
+        var newItem = element.getElementsByTagName("li")[0].cloneNode(true);
+        var childCount = document.querySelectorAll("ul li").length;
+        var newItemChild = document.createElement("a");
+        newItemChild.href = "#";
+        newItemChild.innerHTML = "Element " + (childCount + 1);
+        newItem.innerHTML = '';
+        newItem.appendChild(newItemChild);
+        element.appendChild(newItem);
+    });
+</script>
+</body>
 </html>
