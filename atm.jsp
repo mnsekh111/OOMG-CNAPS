@@ -272,8 +272,8 @@
     </div>
 
     <br><br>
-    <div class="panel panel-primary sec-header">
-        <div style="background: #0A38B5; color: white;font-size: larger">Instructions</div>
+    <div class="panel panel-primary ">
+        <div class="sec-header">Instructions</div>
         <div class="panel-body">
             <ul>
                 <li><strong>Date and Time:</strong> Click on the date and time from the list to be
