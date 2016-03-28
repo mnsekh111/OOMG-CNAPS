@@ -1,6 +1,4 @@
-/**
-* Created by mns on 3/23/16.
-*/
+
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
 <%@page import="method.TimePeriod" %>
 <%@page import="util.TimeFormat" %>
@@ -133,6 +131,13 @@
             background: #dbdfe5;
         }
 
+        .sec-header {
+            background-color:#3A5ECA;
+            color:white;
+            font-size: larger;
+            font-weight: bold;
+            padding:2px;
+        }
     </style>
 
 
@@ -150,7 +155,7 @@
 
             <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
                 <thead>
-                <tr style="background: #0A38B5; color: white">
+                <tr class="sec-header">
                     <td colspan="3">Options</td>
                 </tr>
                 </thead>
@@ -203,8 +208,8 @@
     </div>
 
     <br><br>
-    <div class="panel panel-primary" style="background-color:#3A5ECA;color:white">
-        <div style="background: #0A38B5; color: white">Instructions</div>
+    <div class="panel panel-primary sec-header" >
+        <div class>Instructions</div>
         <div class="panel-body">
             <ul>
                 <li>Click on two locations in the ocean within the red box,<br>

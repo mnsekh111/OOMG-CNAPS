@@ -181,6 +181,13 @@
             background: #dbdfe5;
         }
 
+        .sec-header {
+            background-color:#3A5ECA;
+            color:white;
+            font-size: larger;
+            font-weight: bold;
+            padding:2px;
+        }
     </style>
 
 
@@ -198,7 +205,7 @@
 
             <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
                 <thead>
-                <tr style="background: #0A38B5; color: white">
+                <tr class="sec-header">
                     <td colspan="3">Options</td>
                 </tr>
                 </thead>
@@ -234,7 +241,7 @@
 
             <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
                 <thead>
-                <tr style="background: #0A38B5; color: white">
+                <tr class="sec-header">
                     <td colspan="3">Animation</td>
                 </tr>
                 </thead>
@@ -265,8 +272,8 @@
     </div>
 
     <br><br>
-    <div class="panel panel-primary" style="background-color:#3A5ECA;color:white">
-        <div style="background: #0A38B5; color: white">Instructions</div>
+    <div class="panel panel-primary sec-header">
+        <div style="background: #0A38B5; color: white;font-size: larger">Instructions</div>
         <div class="panel-body">
             <ul>
                 <li><strong>Date and Time:</strong> Click on the date and time from the list to be
