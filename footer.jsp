@@ -14,42 +14,42 @@
             <div class="row">
 
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.nasa.gov" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/NASA_logo.JPG"
                              class="img-thumbnail img-responsive" alt="NASA">
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.noaa.gov" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/NOAA_logo.JPG"
                              class="img-thumbnail img-responsive" alt="NOAA"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="http://csi.northcarolina.edu/" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/UNC_CSI_logo2.jpg" class="img-thumbnail img-responsive"
                              alt="UNC_CSI"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.usgs.gov" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/USGS.JPG"
                              class="img-responsive" alt="USGS"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.gulfresearchinitiative.org" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/GOMRI_logo.jpg" class="img-thumbnail img-responsive"
                              alt="GOMRI"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.nsf.gov" class="thumbnail">
                         <img   style="min-height:150px;max-height:150px"
                              src="mns-images/NSF_logo.jpg" class="img-thumbnail img-responsive"
                              alt="NSF"/>
@@ -57,35 +57,35 @@
                 </div>
 
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.onr.navy.mil" class="thumbnail">
                         <img  style="min-height:150px;max-height:150px"
                              src="mns-images/ONR_logo.jpg" class="img-thumbnail img-responsive"
                              alt="ONR"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.ncseagrant.org" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/SeaGrant_logo.jpg" class="img-thumbnail img-responsive"
                              alt="SeaGrant"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.secoora.org" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/SECOORA_logo.jpg" class="img-thumbnail img-responsive"
                              alt="SECOORA"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.boem.gov" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/BOEM_logo.JPG" class="img-thumbnail img-responsive"
                              alt="BOEM"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                    <a href="www.energy.gov" class="thumbnail">
                         <img    style="min-height:150px;max-height:150px"
                              src="mns-images/DOE_logo.JPG" class="img-thumbnail img-responsive"
                              alt="DOE"/>
