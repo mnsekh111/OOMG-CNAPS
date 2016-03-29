@@ -142,7 +142,7 @@
 
 
 </head>
-<body style="background-color:#3A5ECA">
+<body style="background-color:#3A5ECA" onload="initialize()">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container-fluid">
     <div class="row">
