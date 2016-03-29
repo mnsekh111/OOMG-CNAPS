@@ -9,7 +9,10 @@
 <html lang="en-US">
 <head>
     <title>CNAPS Coupled Northwest Atlantic Prediction System</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./mns-css/bootstrap.css">
+    <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
 
     <script type="text/javascript"
             src="http://maps.google.com/maps/api/js?sensor=false">
@@ -50,39 +53,39 @@
                 }
             });
 
-            $(document).ready(function () {
-                $("#showtext").click(function () {
-                    $("#description").toggle();
-                });
-            });
-
-            $(function () {
-                $("#showtext").button({
-                    icons: {
-                        primary: "ui-icon-plusthick"
-                    },
-                    text: false
-                });
-            });
-
-            $(document).ready(function () {
-                $("#description").hide();
-            });
-
-            $(function () {
-                //$( "#dates" ).buttonset();
-                $("#time").buttonset();
-                $("#time-list").buttonset();
-
-            });
-            $('#time-list > input').bind("click",
-                    function () {
-                        date = this.id;
-                    });
-            $('#time > input').bind("click",
-                    function () {
-                        time = this.id;
-                    });
+//            $(document).ready(function () {
+//                $("#showtext").click(function () {
+//                    $("#description").toggle();
+//                });
+//            });
+//
+//            $(function () {
+//                $("#showtext").button({
+//                    icons: {
+//                        primary: "ui-icon-plusthick"
+//                    },
+//                    text: false
+//                });
+//            });
+//
+//            $(document).ready(function () {
+//                $("#description").hide();
+//            });
+//
+//            $(function () {
+//                //$( "#dates" ).buttonset();
+//                $("#time").buttonset();
+//                $("#time-list").buttonset();
+//
+//            });
+//            $('#time-list > input').bind("click",
+//                    function () {
+//                        date = this.id;
+//                    });
+//            $('#time > input').bind("click",
+//                    function () {
+//                        time = this.id;
+//                    });
         }
     </script>
 
