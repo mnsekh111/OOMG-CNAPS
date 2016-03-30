@@ -53,6 +53,18 @@
                 }
             });
 
+            $('#time_list').change(function () {
+                date = this.value;
+                //alert("time list changed " + this.value);
+                plotwa();
+            });
+
+            $('#variable_list').change(function () {
+                variable = this.value;
+                //alert("variable list changed " + this.value);
+                plotwa();
+            });
+
 //            $(document).ready(function () {
 //                $("#showtext").click(function () {
 //                    $("#description").toggle();
@@ -106,6 +118,20 @@
 
     </script>
 
+    <style>
+        .main-content {
+            background: #dbdfe5;
+        }
+
+        .sec-header {
+            background-color:#3A5ECA;
+            color:white;
+            font-size: larger;
+            font-weight: bold;
+            padding:2px;
+        }
+    </style>
+
 </head>
 <body style="background-color:#3A5ECA" onload="initialize()">
 <jsp:include page="header.jsp"></jsp:include>
@@ -126,11 +152,11 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Date</td>
+                    <td class="sec-header">Date</td>
                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                 </tr>
                 <tr>
-                    <td>Time</td>
+                    <td class="sec-header">Time</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="time">
                         <option value="0.0">0:00</option>
                         <option value="0.125">3:00</option>
