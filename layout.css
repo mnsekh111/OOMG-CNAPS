@@ -4,7 +4,6 @@
 	margin: 0px;
 	padding: 0px;
 	background-color: #3A5ECA;
-	text-align: center;
 	}
 
  #page {
@@ -29,13 +28,11 @@ h1{
 	color:aqua;
 	font-size:16px;
 	font-weight:bold;
-	text-align:center;
 }
 p, text 
 {
 	text-align:justify;
 	font-size:14px;
-	color:white;
 }
 
   #logo{

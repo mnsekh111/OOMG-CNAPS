@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="./mns-css/bootstrap.css">
     <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
 
+    <link type="text/css" href="layout.css" rel="stylesheet">
+    <link type="text/css" href="reset.css" rel="stylesheet">
+    <link type="text/css" href="jquery/css/custom-theme/jquery-ui-1.9.1.custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/jquery-ui.css" />
+
+    
     <script type="text/javascript"
             src="http://maps.google.com/maps/api/js?sensor=false">
     </script>
@@ -31,6 +37,7 @@
     <script type="text/javascript" src="./lib/vertical.js"></script>
     <script type="text/javascript" src="./lib/maps.google.polygon.containsLatLng.js"></script>
 
+
     <script type="text/javascript">
         var map;
         var overlays;
@@ -47,6 +54,8 @@
                             map: map
                         });
                         overlays = event.latLng;
+                    }else{
+                        alert("overlay is not null")
                     }
                 } else {
                     alert("Sorry, this is outside our support domain.");
@@ -57,12 +66,22 @@
                 changeMonth: true,
                 changeYear: true,
                 minDate: new Date,
+                maxDate: '+4D',
                 onSelect: function (dateText, inst) {
-                    var date = new Date(dateText);
-                    start_date = getYYYYMMYY(date);
-                    alert("Selected data " + dateText);
+                    var mydate = new Date(dateText);
+                    date = getYYYYMMYY(mydate);
+                    alert("Selected data " + date);
                 }
             }).datepicker("setDate", new Date());
+
+            $('#time_list').change(function () {
+                time = this.value;
+                alert("time list changed " + this.value);
+            });
+
+            $("#btn_plot").click(function () {
+                showVertical();
+            });
         }
     </script>
 
@@ -122,7 +141,7 @@
                 </tr>
                 <tr>
                     <td class="sec-header">Time</td>
-                    <td colspan="2"><select class="form-control" style="width: 100%" id="time">
+                    <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
                         <option value="0.0">0:00</option>
                         <option value="0.125">3:00</option>
                         <option value="0.25">6:00</option>
@@ -144,49 +163,25 @@
                         <button id="btn_clear" class="btn btn-danger">Clear</button>
                     </td>
                 </tr>
-                <tr>
-                    <%
-                        TimePeriod tp = new TimePeriod();
-                        ArrayList<String> dates = tp.getTimePeriod();
-                        for (int i = dates.size() - 4; i < dates.size(); i++) {
-                            String str_date_format = dates.get(i).subSequence(4, 6) + "/" + dates.get(i).substring(6, 8) + "/" + dates.get(i).substring(0, 4);
-                    %>
-                    alert(<%=dates.get(i)%>);
-                    <input type="radio" id="<%=dates.get(i)%>" name="radio"/><label
-                        for="<%=dates.get(i)%>"><%=str_date_format%>
-                </label>
-                    <%
-                        }
-                    %>
-                </tr>
                 <tr style="height: 40px">
+                    <div class="panel panel-primary ">
+                        <div class="sec-header">Instructions</div>
+                        <div class="panel-body">
+                            <ul>
+                                <li>
+                                    Select one location on the map and the criteria below, click on "Plot"
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </tr>
                 </tbody>
             </table>
-
-
         </div>
     </div>
 
     <br><br>
-    <div class="panel panel-primary sec-header">
-        <div class>Instructions</div>
-        <div class="panel-body">
-            <ul>
-                <li>Click on two locations in the ocean within the red box,<br>
-                    which will be the beginning and end points of your transect.<br>
-                    Select the variable, date, and time, then click on "Show Transect"
-                </li>
-                <li><strong>Variables:</strong> Click on the variable to be shown on the transect. "u" is water movement<br>
-                    in the east (positive)-- west (negative) direction. "v" is water movement in the north
-                    (positive)<br>
-                    -- south (negative) direction.
-                </li>
-                <li>Click your browser's refresh button to reset all criteria.
-                </li>
-            </ul>
-        </div>
-    </div>
+
 </div>
 
 
