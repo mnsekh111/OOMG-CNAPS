@@ -14,12 +14,6 @@
     <link rel="stylesheet" href="./mns-css/bootstrap.css">
     <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
 
-    <link type="text/css" href="layout.css" rel="stylesheet">
-    <link type="text/css" href="reset.css" rel="stylesheet">
-    <link type="text/css" href="jquery/css/custom-theme/jquery-ui-1.9.1.custom.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/jquery-ui.css" />
-
-    
     <script type="text/javascript"
             src="http://maps.google.com/maps/api/js?sensor=false">
     </script>
@@ -27,6 +21,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 
     <script type="text/javascript" src="./lib/loadImage.js"></script>
     <script type="text/javascript" src="./lib/animation.js"></script>
@@ -37,6 +32,11 @@
     <script type="text/javascript" src="./lib/vertical.js"></script>
     <script type="text/javascript" src="./lib/maps.google.polygon.containsLatLng.js"></script>
 
+    <link type="text/css" href="layout.css" rel="stylesheet">
+    <link type="text/css" href="reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 
     <script type="text/javascript">
         var map;
@@ -54,7 +54,7 @@
                             map: map
                         });
                         overlays = event.latLng;
-                    }else{
+                    } else {
                         alert("overlay is not null")
                     }
                 } else {
