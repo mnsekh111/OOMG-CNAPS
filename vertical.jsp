@@ -60,7 +60,7 @@
                 onSelect: function (dateText, inst) {
                     var date = new Date(dateText);
                     start_date = getYYYYMMYY(date);
-                    alert("Selected data " + start_date);
+                    alert("Selected data " + dateText);
                 }
             }).datepicker("setDate", new Date());
         }
@@ -150,9 +150,8 @@
                         ArrayList<String> dates = tp.getTimePeriod();
                         for (int i = dates.size() - 4; i < dates.size(); i++) {
                             String str_date_format = dates.get(i).subSequence(4, 6) + "/" + dates.get(i).substring(6, 8) + "/" + dates.get(i).substring(0, 4);
-                        if(i == dates.size()-1)
-                            alert(str_date_format);
                     %>
+                    alert(<%=dates.get(i)%>);
                     <input type="radio" id="<%=dates.get(i)%>" name="radio"/><label
                         for="<%=dates.get(i)%>"><%=str_date_format%>
                 </label>
