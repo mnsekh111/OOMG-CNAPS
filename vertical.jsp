@@ -82,6 +82,10 @@
             $("#btn_plot").click(function () {
                 showVertical();
             });
+
+            $("btn_clear").click(function(){
+                window.location.href=window.location.href
+            });
         }
     </script>
 
@@ -160,7 +164,7 @@
                         <button id="btn_plot" class="btn btn-success">Plot</button>
                     </td>
                     <td>
-                        <button id="btn_clear" class="btn btn-danger">Clear</button>
+                        <button id="btn_clear"  class="btn btn-danger">Clear</button>
                     </td>
                 </tr>
                 <tr style="height: 40px"></tr>
@@ -192,20 +196,5 @@
 <br>
 
 <jsp:include page="footer.jsp"/>
-
-<script>
-    var btn = document.querySelector("#btn");
-    btn.addEventListener("click", function () {
-        var element = document.getElementById("dropDown");
-        var newItem = element.getElementsByTagName("li")[0].cloneNode(true);
-        var childCount = document.querySelectorAll("ul li").length;
-        var newItemChild = document.createElement("a");
-        newItemChild.href = "#";
-        newItemChild.innerHTML = "Element " + (childCount + 1);
-        newItem.innerHTML = '';
-        newItem.appendChild(newItemChild);
-        element.appendChild(newItem);
-    });
-</script>
 </body>
 </html>
