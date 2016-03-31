@@ -60,7 +60,7 @@
                 onSelect: function (dateText, inst) {
                     var date = new Date(dateText);
                     start_date = getYYYYMMYY(date);
-                    alert("Selected data " + start_date);d
+                    alert("Selected data " + start_date);
                 }
             }).datepicker("setDate", new Date());
         }
@@ -89,11 +89,11 @@
         }
 
         .sec-header {
-            background-color:#3A5ECA;
-            color:white;
+            background-color: #3A5ECA;
+            color: white;
             font-size: larger;
             font-weight: bold;
-            padding:2px;
+            padding: 2px;
         }
     </style>
 
@@ -146,13 +146,16 @@
                 </tr>
                 <tr>
                     <%
-                        TimePeriod tp=new TimePeriod();
-                        ArrayList<String> dates=tp.getTimePeriod();
-                        for(int i=dates.size()-4;i<dates.size();i++)
-                        {
-                            String str_date_format=dates.get(i).subSequence(4,6)+"/"+dates.get(i).substring(6,8)+"/"+dates.get(i).substring(0,4);
+                        TimePeriod tp = new TimePeriod();
+                        ArrayList<String> dates = tp.getTimePeriod();
+                        for (int i = dates.size() - 4; i < dates.size(); i++) {
+                            String str_date_format = dates.get(i).subSequence(4, 6) + "/" + dates.get(i).substring(6, 8) + "/" + dates.get(i).substring(0, 4);
+                        if(i == dates.size()-1)
+                            alert(str_date_format);
                     %>
-                    <input type="radio" id="<%=dates.get(i)%>" name="radio" /><label for="<%=dates.get(i)%>"><%=str_date_format%></label>
+                    <input type="radio" id="<%=dates.get(i)%>" name="radio"/><label
+                        for="<%=dates.get(i)%>"><%=str_date_format%>
+                </label>
                     <%
                         }
                     %>
