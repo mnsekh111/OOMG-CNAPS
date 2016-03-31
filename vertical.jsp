@@ -169,7 +169,7 @@
                     <div class="panel panel-primary ">
                         <div class="sec-header">Instructions</div>
                         <div class="panel-body">
-                            <ul>
+                            <ul style="color: black">
                                 <li>
                                     Select one location on the map and the criteria below, click on "Plot"
                                 </li>
