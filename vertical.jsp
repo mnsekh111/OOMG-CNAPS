@@ -53,51 +53,16 @@
                 }
             });
 
-            $('#time_list').change(function () {
-                date = this.value;
-                //alert("time list changed " + this.value);
-                plotwa();
-            });
-
-            $('#variable_list').change(function () {
-                variable = this.value;
-                //alert("variable list changed " + this.value);
-                plotwa();
-            });
-
-//            $(document).ready(function () {
-//                $("#showtext").click(function () {
-//                    $("#description").toggle();
-//                });
-//            });
-//
-//            $(function () {
-//                $("#showtext").button({
-//                    icons: {
-//                        primary: "ui-icon-plusthick"
-//                    },
-//                    text: false
-//                });
-//            });
-//
-//            $(document).ready(function () {
-//                $("#description").hide();
-//            });
-//
-//            $(function () {
-//                //$( "#dates" ).buttonset();
-//                $("#time").buttonset();
-//                $("#time-list").buttonset();
-//
-//            });
-//            $('#time-list > input').bind("click",
-//                    function () {
-//                        date = this.id;
-//                    });
-//            $('#time > input').bind("click",
-//                    function () {
-//                        time = this.id;
-//                    });
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date,
+                onSelect: function (dateText, inst) {
+                    var date = new Date(dateText);
+                    start_date = getYYYYMMYY(date);
+                    alert("Selected data " + start_date);d
+                }
+            }).datepicker("setDate", new Date());
         }
     </script>
 
@@ -173,11 +138,24 @@
 
                 <tr>
                     <td>
-                        <button id="btn_clear" class="btn btn-success">Plot</button>
+                        <button id="btn_plot" class="btn btn-success">Plot</button>
                     </td>
                     <td>
-                        <button id="btn_plot" class="btn btn-danger">Clear</button>
+                        <button id="btn_clear" class="btn btn-danger">Clear</button>
                     </td>
+                </tr>
+                <tr>
+                    <%
+                        TimePeriod tp=new TimePeriod();
+                        ArrayList<String> dates=tp.getTimePeriod();
+                        for(int i=dates.size()-4;i<dates.size();i++)
+                        {
+                            String str_date_format=dates.get(i).subSequence(4,6)+"/"+dates.get(i).substring(6,8)+"/"+dates.get(i).substring(0,4);
+                    %>
+                    <input type="radio" id="<%=dates.get(i)%>" name="radio" /><label for="<%=dates.get(i)%>"><%=str_date_format%></label>
+                    <%
+                        }
+                    %>
                 </tr>
                 <tr style="height: 40px">
                 </tr>
