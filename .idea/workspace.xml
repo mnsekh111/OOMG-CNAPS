@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="333d6575-e0cf-4632-8169-45a43b40ac3d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trajectory.jsp" afterPath="$PROJECT_DIR$/trajectory.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vertical.jsp" afterPath="$PROJECT_DIR$/vertical.jsp" />
     </list>
     <ignored path="OOMG-CNAPS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="vertical.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vertical.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.096774">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="38" selection-end-column="72" />
+            <state vertical-scroll-proportion="-12.774194">
+              <caret line="123" column="38" selection-start-line="123" selection-start-column="6" selection-end-line="123" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -38,8 +37,8 @@
       <file leaf-file-name="trajectory.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trajectory.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54522926">
-              <caret line="127" column="63" selection-start-line="127" selection-start-column="63" selection-end-line="127" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.08178439">
+              <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -624,12 +623,12 @@
       <workItem from="1459194621198" duration="10498000" />
       <workItem from="1459348165471" duration="3268000" />
       <workItem from="1459277475012" duration="4527000" />
-      <workItem from="1459381644457" duration="12818000" />
+      <workItem from="1459381644457" duration="12947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43487000" />
+    <option name="totallyTimeSpent" value="43616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1289" y="-9" width="1298" height="1004" extended-state="6" />
@@ -752,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vertical.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.096774">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="38" selection-end-column="72" />
+        <state vertical-scroll-proportion="-12.774194">
+          <caret line="123" column="38" selection-start-line="123" selection-start-column="6" selection-end-line="123" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -773,8 +772,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trajectory.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54522926">
-          <caret line="127" column="63" selection-start-line="127" selection-start-column="63" selection-end-line="127" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.08178439">
+          <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
           <folding />
         </state>
       </provider>
