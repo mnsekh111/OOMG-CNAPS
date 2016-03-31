@@ -163,7 +163,9 @@
                         <button id="btn_clear" class="btn btn-danger">Clear</button>
                     </td>
                 </tr>
-                <tr style="height: 40px">
+                <tr style="height: 40px"></tr>
+                <tr>
+                    <td colspan="3">
                     <div class="panel panel-primary ">
                         <div class="sec-header">Instructions</div>
                         <div class="panel-body">
@@ -174,6 +176,7 @@
                             </ul>
                         </div>
                     </div>
+                    </td>
                 </tr>
                 </tbody>
             </table>
