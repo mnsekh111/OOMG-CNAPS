@@ -245,7 +245,9 @@
             </table>
         </div>
     </div>
-    <div class="panel panel-success">
+    <br>
+    <br>
+    <div class="panel panel-primary">
         <div class="panel-heading sec-header">Instructions</div>
         <div class="panel-body">
             <ul>
