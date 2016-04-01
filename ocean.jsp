@@ -24,12 +24,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">< /
-    script
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    < script
-    type = "text/javascript"
-    src = "./lib/loadImage.js" ></script>
+    <script
+            type="text/javascript"
+            src="./lib/loadImage.js"></script>
     <script type="text/javascript" src="./lib/animation.js"></script>
     <script type="text/javascript" src="./lib/wave.js"></script>
     <script type="text/javascript" src="./lib/global.js"></script>
@@ -158,14 +157,21 @@
             background: #dbdfe5;
         }
 
+        .sec-header {
+            background-color: #3A5ECA;
+            color: white;
+            font-size: larger;
+            font-weight: bold;
+            padding: 2px;
+        }
     </style>
 
 
 </head>
-<body>
+<body style="background-color:#3A5ECA" onLoad="initialize()">
 
 <jsp:include page="header.jsp"></jsp:include>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
             <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
@@ -177,7 +183,7 @@
             <table class="table" style="table-layout: fixed; word-wrap: break-word">
                 <tbody>
                 <tr>
-                    <td>Variable</td>
+                    <td class="sec-header">Variable</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="variable_list">
                         <option value="uv">Current</option>
                         <option value="t">Temperature</option>
@@ -185,13 +191,13 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td>Dates</td>
+                    <td class="sec-header" >Dates</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
                     </select>
                     </td>
                 </tr>
                 <tr>
-                    <td>Depth</td>
+                    <td class="sec-header">Depth</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="depth_list">
                         <option value="0">0 m</option>
                         <option value="5">5 m</option>
@@ -204,7 +210,7 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td>Start Date</td>
+                    <td class="sec-header">Start Date</td>
                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                 </tr>
                 <tr>
@@ -221,7 +227,7 @@
                 <tr>
                     <td colspan="3">
                         <div class="panel panel-success">
-                            <div class="panel-heading">Instructions</div>
+                            <div class="panel-heading sec-header">Instructions</div>
                             <div class="panel-body">
                                 <ul>
                                     <li><strong>Date and Time:</strong> Click on the date and time from the list to be

@@ -53,6 +53,7 @@
         function initialize() {
             mapInit();
 
+            alert("haha");
             InitLatlng(map);
 
             google.maps.event.addListener(map, 'click', function (event) {
@@ -128,7 +129,7 @@
 
 
 </head>
-<body style="background-color:#3A5ECA" onLoad="initialize()">
+<body style="background-color:#3A5ECA" onload="initialize()">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container-fluid">
     <div class="row">

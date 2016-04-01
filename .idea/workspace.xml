@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="333d6575-e0cf-4632-8169-45a43b40ac3d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ocean.jsp" afterPath="$PROJECT_DIR$/ocean.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/transect2.jsp" afterPath="$PROJECT_DIR$/transect2.jsp" />
     </list>
     <ignored path="OOMG-CNAPS.iws" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="vertical.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vertical.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.67742">
-              <caret line="20" column="6" selection-start-line="20" selection-start-column="0" selection-end-line="38" selection-end-column="72" />
+            <state vertical-scroll-proportion="-18.612904">
+              <caret line="142" column="42" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -47,18 +48,28 @@
       <file leaf-file-name="transect.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transect.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4193548">
+            <state vertical-scroll-proportion="44.0">
               <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transect2.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="transect2.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transect2.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7777778">
-              <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+            <state vertical-scroll-proportion="-11.387096">
+              <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ocean.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ocean.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="5.4356894">
+              <caret line="229" column="65" selection-start-line="229" selection-start-column="65" selection-end-line="229" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -115,7 +126,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/header.jsp" />
-        <option value="$PROJECT_DIR$/ocean.jsp" />
         <option value="$PROJECT_DIR$/wave.jsp" />
         <option value="$PROJECT_DIR$/transect2.jsp.js" />
         <option value="$PROJECT_DIR$/footer.jsp" />
@@ -126,6 +136,7 @@
         <option value="$PROJECT_DIR$/vertical.jsp" />
         <option value="$PROJECT_DIR$/trajectory.jsp" />
         <option value="$PROJECT_DIR$/transect2.jsp" />
+        <option value="$PROJECT_DIR$/ocean.jsp" />
       </list>
     </option>
   </component>
@@ -628,12 +639,12 @@
       <workItem from="1459194621198" duration="10498000" />
       <workItem from="1459348165471" duration="3268000" />
       <workItem from="1459277475012" duration="4527000" />
-      <workItem from="1459381644457" duration="18698000" />
+      <workItem from="1459381644457" duration="19389000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49367000" />
+    <option name="totallyTimeSpent" value="50058000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -759,22 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vertical.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.67742">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="0" selection-end-line="38" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/transection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/global.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -791,9 +786,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/transection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transection.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/transect.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4193548">
+        <state vertical-scroll-proportion="44.0">
           <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="71" />
           <folding />
         </state>
@@ -801,8 +812,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/transect2.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7777778">
-          <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+        <state vertical-scroll-proportion="-11.387096">
+          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vertical.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.612904">
+          <caret line="142" column="42" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ocean.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.4356894">
+          <caret line="229" column="65" selection-start-line="229" selection-start-column="65" selection-end-line="229" selection-end-column="65" />
           <folding />
         </state>
       </provider>
