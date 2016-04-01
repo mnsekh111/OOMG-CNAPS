@@ -31,7 +31,7 @@
     <script type="text/javascript" src="./lib/trajectory.js"></script>
     <script type="text/javascript" src="./lib/listener.js"></script>
     <script type="text/javascript" src="./lib/showLatLng.js"></script>
-    <script type="text/javascript" src="./lib/transection.js"></script>
+    <script type="text/javascript" src="./lib/transect.js"></script>
     <script type="text/javascript" src="./lib/global.js"></script>
     <script type="text/javascript" src="./lib/vertical.js"></script>
     <script type="text/javascript" src="./lib/maps.google.polygon.containsLatLng.js"></script>
@@ -44,9 +44,6 @@
     <script type="text/javascript">
         var map;
         var overlaysArray = [];
-        var vname = "temp";
-        var date;
-        var time;
 
         function initialize() {
             mapInit();
@@ -80,8 +77,8 @@
                 showTransecton();
             });
 
-            $("#btn_clear").click(function(){
-                window.location.href=window.location.href
+            $("#btn_clear").click(function () {
+                window.location.href = window.location.href
             });
 
 
@@ -99,7 +96,7 @@
 
         }
 
-        $( document ).ready(function() {
+        $(document).ready(function () {
             initialize();
         });
 
