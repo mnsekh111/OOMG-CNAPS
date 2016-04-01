@@ -38,7 +38,6 @@
 
     <link type="text/css" href="layout.css" rel="stylesheet">
     <link type="text/css" href="reset.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/jquery-ui.css"/>
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
     <script type="text/javascript">
