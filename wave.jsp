@@ -78,6 +78,7 @@
                 }
             }).datepicker("setDate", new Date());
 
+            var minDate = new Date
             $("#datepicker-anim-end").datepicker({
                 changeMonth: true,
                 changeYear: true,
