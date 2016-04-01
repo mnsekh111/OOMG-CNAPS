@@ -191,22 +191,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  ifshowhf = false;
 		  });
 	  });
-		
-	  	/* to show instructions when "+" is clicked ; not needed, because we want instructions to show always
-		$(document).ready(function(){
-	  		$("#showtext").click(function(){
-	  			$("#description").toggle();
-	  		});
-	  	});
-		
-	  	$(function(){
-	  		$("#showtext").button({
-	  			icons: {
-	  				primary: "ui-icon-plusthick"
-	  			},
-	  			text: false
-	  		});
-	  	});  */
+
 	  	
 	  	$(document).ready(function(){
 			//next line shows HR radar zones on map
