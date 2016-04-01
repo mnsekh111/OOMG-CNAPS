@@ -67,10 +67,12 @@
             });
 
             $("#time_list").change(function () {
-                time = this.val;
+                time = $( "#time_list" ).val();;
+                alert(""+time);
             });
             $("#variable_list").change(function () {
-                vname = this.val;
+                vname = $( "#variable_list" ).val();;
+                alert(""+vname);
             });
 
             $("#btn_show_transect").click(function () {
@@ -93,6 +95,9 @@
                     alert("Selected data " + date);
                 }
             }).datepicker("setDate", new Date());
+
+            date = getYYYYMMYY(new Date());
+            time = getTime(new Date());
 
         }
 
