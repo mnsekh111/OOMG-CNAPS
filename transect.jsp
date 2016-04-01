@@ -51,17 +51,16 @@
         function initialize() {
             mapInit();
 
-            alert("haha");
             InitLatlng(map);
 
             google.maps.event.addListener(map, 'click', function (event) {
                 if (limitArea_polygon.containsLatLng(event.latLng)) {
-                    if (transection_array.length < 2) {
+                    if (transect_array.length < 2) {
                         marker = new google.maps.Marker({
                             position: event.latLng,
                             map: map
                         });
-                        transection_array.push(event.latLng);
+                        transect_array.push(event.latLng);
                     }
                 }
                 else {
@@ -76,6 +75,15 @@
             $("#variable_list").change(function () {
                 vname = this.val;
             });
+
+            $("#btn_show_transect").click(function () {
+                showTransecton();
+            });
+
+            $("#btn_clear").click(function(){
+                window.location.href=window.location.href
+            });
+
 
             $("#datepicker").datepicker({
                 changeMonth: true,

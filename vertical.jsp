@@ -82,7 +82,7 @@
                 showVertical();
             });
 
-            $("btn_clear").click(function(){
+            $("#btn_clear").click(function(){
                 window.location.href=window.location.href
             });
         }
