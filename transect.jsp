@@ -38,12 +38,10 @@
 
     <link type="text/css" href="layout.css" rel="stylesheet">
     <link type="text/css" href="reset.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/jquery-ui.css"/>
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 
     <script type="text/javascript">
-        type = "text/javascript" >
         var map;
         var overlaysArray = [];
         var vname = "temp";
@@ -93,6 +91,10 @@
 
         }
 
+        $( document ).ready(function() {
+            initialize();
+        });
+
     </script>
 
     <script type="text/javascript">
@@ -129,7 +131,7 @@
 
 
 </head>
-<body style="background-color:#3A5ECA" onLoad="initialize();">
+<body style="background-color:#3A5ECA">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container-fluid">
     <div class="row">
@@ -218,27 +220,7 @@
 
     <br><br>
 </div>
-
-
-<br>
-<br>
-
 <jsp:include page="footer.jsp"/>
-
-<script>
-    var btn = document.querySelector("#btn");
-    btn.addEventListener("click", function () {
-        var element = document.getElementById("dropDown");
-        var newItem = element.getElementsByTagName("li")[0].cloneNode(true);
-        var childCount = document.querySelectorAll("ul li").length;
-        var newItemChild = document.createElement("a");
-        newItemChild.href = "#";
-        newItemChild.innerHTML = "Element " + (childCount + 1);
-        newItem.innerHTML = '';
-        newItem.appendChild(newItemChild);
-        element.appendChild(newItem);
-    });
-</script>
 </body>
 </html>
 
