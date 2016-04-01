@@ -66,6 +66,9 @@
             $('#btn_download').prop('disabled', false);
 
 
+            start_date = getYYYYMMYY(new Date);
+            end_date = getYYYYMMYY(new Date);
+
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -106,7 +109,7 @@
                     start_date = getYYYYMMYY(date);
                 }
             }).datepicker("setDate", new Date());
-            
+
 
             $('#time_list').change(function () {
                 date = this.value;
