@@ -75,6 +75,38 @@
                 }
             }).datepicker("setDate", new Date());
 
+            $("#datepicker-anim-end").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: minDate,
+                maxDate: "+2D",
+                onSelect: function (dateText, inst) {
+                    var date = new Date(dateText);
+                    end_date = getYYYYMMYY(date);
+                }
+            }).datepicker("setDate", new Date);
+
+
+            $("#datepicker-anim-start").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                maxDate: new Date,
+                onSelect: function (dateText, inst) {
+                    var endDate = new Date(dateText);
+                    endDate.setDate(endDate.getDate() + 2);
+                    $("#datepicker-anim-end").datepicker(
+                            "change",
+                            {
+                                minDate: new Date($('#datepicker-anim-start').val()),
+                                maxDate: endDate
+                            }
+                    );
+
+                    var date = new Date(dateText);
+                    start_date = getYYYYMMYY(date);
+                }
+            }).datepicker("setDate", new Date());
+            
 
             $('#time_list').change(function () {
                 date = this.value;
@@ -153,7 +185,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
             <!--Nested rows within a column-->
 
-            <table class="table" style="table-layout: fixed; word-wrap: break-word">
+            <table class="table" style="table-layout: fixed; word-wrap: break-word;color: white">
                 <thead>
                 <tr class="sec-header">
                     <td colspan="3">Options</td>
@@ -161,15 +193,14 @@
                 </thead>
                 <tbody>
                 <tr>
+                    <td>Start Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
+                </tr>
+                <tr>
                     <td>Dates</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
                     </select>
-                        <a href="footer.jsp"></a>
                     </td>
-                </tr>
-                <tr>
-                    <td>Start Date</td>
-                    <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                 </tr>
                 <tr>
                     <td>
