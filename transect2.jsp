@@ -26,17 +26,21 @@
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-
     <script type="text/javascript" src="./lib/loadImage.js"></script>
-    <script src="./jquery/development-bundle/ui/jquery.ui.datepicker.js"></script>
     <script type="text/javascript" src="./lib/animation.js"></script>
     <script type="text/javascript" src="./lib/trajectory.js"></script>
     <script type="text/javascript" src="./lib/listener.js"></script>
     <script type="text/javascript" src="./lib/showLatLng.js"></script>
-    <script type="text/javascript" src="./lib/global.js"></script>
     <script type="text/javascript" src="./lib/transection.js"></script>
+    <script type="text/javascript" src="./lib/global.js"></script>
+    <script type="text/javascript" src="./lib/vertical.js"></script>
     <script type="text/javascript" src="./lib/maps.google.polygon.containsLatLng.js"></script>
 
+    <link type="text/css" href="layout.css" rel="stylesheet">
+    <link type="text/css" href="reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 
     <script type="text/javascript">
         type = "text/javascript" >
@@ -144,7 +148,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Variable</td>
+                    <td>Variables</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="variable_list">
                         <option value="temp">Temperature</option>
                         <option value="salt">Salinity</option>
@@ -169,8 +173,6 @@
                         <option value="0.75">18:00</option>
                         <option value="0.875">21:00</option>
                     </select></td>
-
-
                 </tr>
 
                 <tr>
@@ -184,11 +186,11 @@
                 <tr style="height: 40px">
                 </tr>
                 <tr>
-                    <td>
+                    <td colspan="3">
                         <div class="panel panel-primary">
                             <div class="sec-header">Instructions</div>
                             <div class="panel-body">
-                                <ul>
+                                <ul style="color: black">
                                     <li>Click on two locations in the ocean within the red box,<br>
                                         which will be the beginning and end points of your transect.<br>
                                         Select the variable, date, and time, then click on "Show Transect"
