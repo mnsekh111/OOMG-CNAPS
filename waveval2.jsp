@@ -27,9 +27,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
+    <link type="text/css" href="jquery/css/custom-theme/jquery-ui-1.9.1.custom.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script type="text/javascript" src=".jquery/js/jquery-ui-1.9.1.custom.js"></script>
+    <script type="text/javascript" src=".jquery/js/jquery-ui-1.9.1.custom.min.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="./development-bundle/ui/jquery.ui.button.js"></script>
+    <script src="./jquery/development-bundle/external/jquery.bgiframe-2.1.2.js"></script>
+    <script src="./development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.mouse.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.draggable.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.resizable.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.dialog.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.datepicker.js"></script>
     <script type="text/javascript" src="./lib/loadImage.js"></script>
-    <script type="text/javascript" src="./lib/animation_wa.js"></script>
-    <script type="text/javascript" src="./lib/wave.js"></script>
+    <script type="text/javascript" src="./lib/animation_model.js"></script>
+    <script type="text/javascript" src="./lib/val.js"></script>
     <script type="text/javascript" src="./lib/global.js"></script>
 
 
@@ -49,7 +68,8 @@
                 changeMonth: true,
                 changeYear: true,
                 onSelect: function (dateText, inst) {
-                    buoy_date=dateText;
+                    var date = new Date(dateText);
+                    buoy_date = getYYYYMMYY(date);
                     if(buoy!==null)
                     {
                         alert(buoy_date);
@@ -61,6 +81,8 @@
                                 return;
                             }});
                         window_handle = window.open("wavevalimage.jsp?day="+buoy_date.substring(0,8)+"&"+"date="+buoy_date+"&"+"buoy="+buoy, "Model Validation", 'top='+e.screenY + ',left=' + e.screenX +', height=470, width=800' );
+                    }else{
+                        alert("Please select a buoy station");
                     }
                 }
             }).datepicker("setDate", new Date());
@@ -71,11 +93,6 @@
                 if (buoy_date != null) {
                     window.open("wavevalimage.jsp?day=" + buoy_date.substring(0, 8) + "&date=" + buoy_date + "&buoy=" + buoy, "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=800');
                 }
-            });
-
-
-            $(document).ready(function () {
-                $('.dropdown-toggle').dropdown();
             });
 
             mapInit();
@@ -194,20 +211,7 @@
 
 <jsp:include page="footer.jsp"/>
 
-<script>
-    var btn = document.querySelector("#btn");
-    btn.addEventListener("click", function () {
-        var element = document.getElementById("dropDown");
-        var newItem = element.getElementsByTagName("li")[0].cloneNode(true);
-        var childCount = document.querySelectorAll("ul li").length;
-        var newItemChild = document.createElement("a");
-        newItemChild.href = "#";
-        newItemChild.innerHTML = "Element " + (childCount + 1);
-        newItem.innerHTML = '';
-        newItem.appendChild(newItemChild);
-        element.appendChild(newItem);
-    });
-</script>
+
 </body>
 </html>
 

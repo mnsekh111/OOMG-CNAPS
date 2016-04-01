@@ -130,14 +130,21 @@
             background: #dbdfe5;
         }
 
+        .sec-header {
+            background-color: #3A5ECA;
+            color: white;
+            font-size: larger;
+            font-weight: bold;
+            padding: 2px;
+        }
     </style>
 
 
 </head>
-<body>
+<body style="background-color:#3A5ECA">
 
 <jsp:include page="header.jsp"></jsp:include>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
             <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
@@ -170,34 +177,62 @@
                         <button id="btn_download" class="btn btn-info">Download data</button>
                     </td>
                 </tr>
+                </tbody>
+            </table>
+
+            <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
+                <thead>
+                <tr class="sec-header">
+                    <td colspan="3">Animation</td>
+                </tr>
+                </thead>
+                <tbody>
+
                 <tr>
-                    <td colspan="3">
-                        <div class="panel panel-success">
-                            <div class="panel-heading">Instructions</div>
-                            <div class="panel-body">
-                                <ul>
-                                    <li><strong>Date and Time:</strong> Click on the date and time from the list to be
-                                        shown on the map. Dates before the present can be selected to populate the Date
-                                        and Time list.
-                                    </li>
-                                    <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the
-                                        72 hour forecast from today. Click on &quot;Stop&quot; to terminate the
-                                        animation. Please allow the animation to run through once before it becomes
-                                        smooth.
-                                    </li>
-                                    <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
-                                        file).
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <td>Start Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text"
+                                           id="datepicker-anim-start"></td>
+                </tr>
+                <tr>
+                    <td>End Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text"
+                                           id="datepicker-anim-end"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button id="btn_start_anim" class="btn btn-success">Start Animation</button>
+                    </td>
+                    <td>
+                        <button id="btn_stop_anim" class="btn btn-danger">Stop Animation</button>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    <div class="panel panel-success">
+        <div class="panel-heading sec-header">Instructions</div>
+        <div class="panel-body">
+            <ul>
+                <li><strong>Date and Time:</strong> Click on the date and time from the list to be
+                    shown on the map. Dates before the present can be selected to populate the Date
+                    and Time list.
+                </li>
+                <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the
+                    72 hour forecast from today. Click on &quot;Stop&quot; to terminate the
+                    animation. Please allow the animation to run through once before it becomes
+                    smooth.
+                </li>
+                <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
+                    file).
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+
 <br>
 <br>
 <a id="download" href="#" display="none">Download</a>
