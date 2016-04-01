@@ -1,203 +1,249 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@page import="method.TimePeriod"%>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
+<%@page import="method.TimePeriod" %>
+<%@page import="util.TimeFormat" %>
+<%@page import="util.Global" %>
+<%@ page import="java.util.Arrays" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 <head>
-<title>CNAPS Coupled Northwest Atlantic Prediction System</title>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./mns-css/bootstrap.css">
+    <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
 
-<script type="text/javascript"
-    src="http://maps.google.com/maps/api/js?sensor=false">
-</script>
-	<link type="text/css" href="layout.css" rel="stylesheet">
-	<link type="text/css" href="reset.css" rel="stylesheet">
-	<link type="text/css" href="jquery/css/custom-theme/jquery-ui-1.9.1.custom.css" rel="stylesheet" />   
-	<link rel="stylesheet" href="/css/jquery-ui.css" />
-    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <!-- Script region -->
+
+    <script type="text/javascript"
+            src="http://maps.google.com/maps/api/js?sensor=false">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css" />
-	<script type="text/javascript" src=".jquery/js/jquery-ui-1.9.1.custom.js"></script>
-	<script type="text/javascript" src=".jquery/js/jquery-ui-1.9.1.custom.min.js"></script>
-	<script src="./jquery/development-bundle/ui/jquery.ui.core.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.widget.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.button.js"></script> 
-	<script src="./jquery/development-bundle/external/jquery.bgiframe-2.1.2.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.core.js"></script> 
-	<script type="text/javascript" src="./lib/loadImage.js"></script>
-   	<script src="./jquery/development-bundle/ui/jquery.ui.datepicker.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="./lib/loadImage.js"></script>
     <script type="text/javascript" src="./lib/animation.js"></script>
     <script type="text/javascript" src="./lib/trajectory.js"></script>
     <script type="text/javascript" src="./lib/listener.js"></script>
     <script type="text/javascript" src="./lib/showLatLng.js"></script>
-    <script type="text/javascript" src="./lib/global.js"></script>
     <script type="text/javascript" src="./lib/transection.js"></script>
+    <script type="text/javascript" src="./lib/global.js"></script>
+    <script type="text/javascript" src="./lib/vertical.js"></script>
     <script type="text/javascript" src="./lib/maps.google.polygon.containsLatLng.js"></script>
 
-<script type="text/javascript">
-  var map;
-  var overlaysArray=[];
-  var vname="temp";
-  var date;
-  var time;
+    <link type="text/css" href="layout.css" rel="stylesheet">
+    <link type="text/css" href="reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/jquery-ui.css"/>
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 
-  function initialize() {
-     
-	 mapInit();
-     
-     InitLatlng(map);
-         	
-  	google.maps.event.addListener(map, 'click', function(event) {
-  	 if(limitArea_polygon.containsLatLng(event.latLng)){
-		if (transection_array.length<2){
-    	marker=new google.maps.Marker({
-			position:event.latLng,
-			map:map
-		});
-    	transection_array.push(event.latLng);
-	 }
-	 }
-	else{
-		alert("Sorry, this is outside our support domain.");
-	
-		}
-  	}); 
-  	
-  	$(function() {
-		$( "#variables" ).buttonset();
-		$( "#time-list" ).buttonset();
-		$( "#time" ).buttonset();
-		//$( "#variables" ).buttonset();
-	});
-	
-	$('#variables > input').bind("click",
-			function(){
-				vname=this.id;
-						});
-	$('#time-list > input').bind("click",
-			function(){
-				date=this.id;
-						});
- 	$('#time > input').bind("click",
-			function(){
-				time=this.id;
-						});  
- 	$(function() {
-		$( "#datepicker" ).datepicker({
-	             changeMonth: true,
-				 changeYear: true,	
-				 
-				 //Date range from Feb to Aug of current year
-				 maxDate: max_date,
-				 minDate: min_date,
-				 
-				 onSelect: function(dateText,inst){
-			 		changeDate(dateText,null);
-			 	}
-		});
-	});
-}
+    <script type="text/javascript">
+        type = "text/javascript" >
+        var map;
+        var overlaysArray = [];
+        var vname = "temp";
+        var date;
+        var time;
 
-</script>
+        function initialize() {
+            mapInit();
 
-<script type="text/javascript">
+            alert("haha");
+            InitLatlng(map);
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-12288686-5']);
-  _gaq.push(['_trackPageview']);
+            google.maps.event.addListener(map, 'click', function (event) {
+                if (limitArea_polygon.containsLatLng(event.latLng)) {
+                    if (transection_array.length < 2) {
+                        marker = new google.maps.Marker({
+                            position: event.latLng,
+                            map: map
+                        });
+                        transection_array.push(event.latLng);
+                    }
+                }
+                else {
+                    alert("Sorry, this is outside our support domain.");
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+                }
+            });
 
-</script>
+            $("#time_list").change(function () {
+                time = this.val;
+            });
+            $("#variable_list").change(function () {
+                vname = this.val;
+            });
+
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date,
+                maxDate: '+4D',
+                onSelect: function (dateText, inst) {
+                    var mydate = new Date(dateText);
+                    date = getYYYYMMYY(mydate);
+                    alert("Selected data " + date);
+                }
+            }).datepicker("setDate", new Date());
+
+        }
+
+    </script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-12288686-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+
+    <style>
+        .main-content {
+            background: #dbdfe5;
+        }
+
+        .sec-header {
+            background-color: #3A5ECA;
+            color: white;
+            font-size: larger;
+            font-weight: bold;
+            padding: 2px;
+        }
+    </style>
+
 
 </head>
-<body onLoad="initialize()">
-	<div id="page">
-		<div id="logo" >
-			<img src="image/bannerCNAPS.png" width="1140" height = "120">
-		</div> <!-- end div id "logo" -->
-		
-		<div id="box">
-			<div id="links" >  <!-- horizontal menu at top of each CNAPS page-->
-				<jsp:include page="links.jsp"></jsp:include>
-			</div> <!-- end div id "links" -->
-			<div id="title">Virtual Transect
-		    </div> <!-- end div id "title" -->
-			<div id="map">
-				<form>
-					<div id="variables">
-						<span class="text">Variables:</span>
-					      	<input type="radio" id="temp" name="radio"  checked="checked"/><label for="temp">temperature</label> 
-					        <input type="radio" id="salt" name="radio"   /><label for="salt">salinity</label> 
-					      	<input type="radio" id="u" name="radio"  /><label for="u">u</label> 
-					      	<input type="radio" id="v" name="radio"  /><label for="v">v</label>
-					</div> <!-- end div id "variables" -->
-				</form>
-				<div id="map_canvas">
-                </div>  <!-- end div id "map_canvas" -->
-				<div id="date">
-					
-					<form>
-						<div id="time-list"  style= "margin-top:10px;" >
-							<span class="text">Dates:</span>
-								<%
-									TimePeriod tp=new TimePeriod();
-									ArrayList<String> dates=tp.getTimePeriod();
-									for(int i=dates.size()-4;i<dates.size();i++)
-									{
-										String str_date_format=dates.get(i).subSequence(4,6)+"/"+dates.get(i).substring(6,8)+"/"+dates.get(i).substring(0,4);
-										%>
-											<input type="radio" id="<%=dates.get(i)%>" name="radio" /><label for="<%=dates.get(i)%>"><%=str_date_format%></label>							
-										<%
-									}
-								%>	
-						</div> <!-- end div id "time-list" -->
-					</form>
-					  
-					<form>
-						<div id="time">
-							<span class="text">Time:</span>
-							  <% for (int i=0;i<=21;i+=3)
-							  {
-							  		double value=i;
-							   %>
-							  	<input type="radio" id="<%=value/24.0  %>" name="radio"/><label for="<%=value/24.0%>"> <%=i %>:00</label>
-							  <%
-							  } 
-							  %>
-						</div> <!-- end div id "time" -->
-					</form>
-					 
-					<div id="archive_0">
-		  	                Choose a date to populate the Date and Time box: <input type="text" id="datepicker"> 	
-		            </div>  <!-- end div id "archive_0" -->
-					 <br>
-					<form>
-			        	<div id="animationbutton" style="text-align:center;">
-							<input type="button" onClick="showTransection();" value="Show Transect"/>
-			        		<input type="button" onClick="window.location.href=window.location.href" value="Clear"/>
-						</div> <!-- end div id "animationbutton" -->
-					</form>
-				 <div id="description">
-						<h1>Instructions</h1>
-						<p>Click on two locations in the ocean within the red box, which will be the beginning and end points of your transect. Select the variable, date, and time, then click on "Show Transect".</p>
-						<p><strong>Variables:</strong> Click on the variable to be shown on the transect. "u" is water movement in the east (positive) -- west (negative) direction. "v" is water movement in the north (positive) -- south (negative) direction.</p> 
-						<p>Click your browser's refresh button to reset all criteria.</p>
-					</div><!-- end div "description"  -->
-					</div><!-- end div "date"  -->
-				</div>  <!-- end div id "map" -->
-			</div> <!-- end div id "box" -->
-			<div id="footer">
-	        	<jsp:include page="footer.jsp"></jsp:include>
-	    	</div><!-- end div id "footer" --> 
-		</div> <!-- end div id "page" -->
+<body style="background-color:#3A5ECA" onLoad="initialize();">
+<jsp:include page="header.jsp"></jsp:include>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+            <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
+            <br><br>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <!--Nested rows within a column-->
+
+            <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
+                <thead>
+                <tr class="sec-header">
+                    <td colspan="3">Options</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Variables</td>
+                    <td colspan="2"><select class="form-control" style="width: 100%" id="variable_list">
+                        <option value="temp">Temperature</option>
+                        <option value="salt">Salinity</option>
+                        <option value="u">u</option>
+                        <option value="v">v</option>
+                    </select></td>
+
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
+                        <option value="0.0">0:00</option>
+                        <option value="0.125">3:00</option>
+                        <option value="0.25">6:00</option>
+                        <option value="0.375">9:00</option>
+                        <option value="0.5">12:00</option>
+                        <option value="0.625">15:00</option>
+                        <option value="0.75">18:00</option>
+                        <option value="0.875">21:00</option>
+                    </select></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button id="btn_show_transect" class="btn btn-success">Show Transect</button>
+                    </td>
+                    <td>
+                        <button id="btn_clear" class="btn btn-danger">Clear</button>
+                    </td>
+                </tr>
+                <tr style="height: 40px">
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="panel panel-primary">
+                            <div class="sec-header">Instructions</div>
+                            <div class="panel-body">
+                                <ul style="color: black">
+                                    <li>Click on two locations in the ocean within the red box,<br>
+                                        which will be the beginning and end points of your transect.<br>
+                                        Select the variable, date, and time, then click on "Show Transect"
+                                    </li>
+                                    <li><strong>Variables:</strong> Click on the variable to be shown on the transect.
+                                        "u" is water movement<br>
+                                        in the east (positive)-- west (negative) direction. "v" is water movement in the
+                                        north
+                                        (positive)<br>
+                                        -- south (negative) direction.
+                                    </li>
+                                    <li>Click your browser's refresh button to reset all criteria.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+    <br><br>
+</div>
+
+
+<br>
+<br>
+
+<jsp:include page="footer.jsp"/>
+
+<script>
+    var btn = document.querySelector("#btn");
+    btn.addEventListener("click", function () {
+        var element = document.getElementById("dropDown");
+        var newItem = element.getElementsByTagName("li")[0].cloneNode(true);
+        var childCount = document.querySelectorAll("ul li").length;
+        var newItemChild = document.createElement("a");
+        newItemChild.href = "#";
+        newItemChild.innerHTML = "Element " + (childCount + 1);
+        newItem.innerHTML = '';
+        newItem.appendChild(newItemChild);
+        element.appendChild(newItem);
+    });
+</script>
 </body>
 </html>
+
+
+
+
+
+

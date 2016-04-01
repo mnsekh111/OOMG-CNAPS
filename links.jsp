@@ -3,7 +3,7 @@
     	<li><a href="atm.jsp" title="Marine Weather">Marine Weather</a></li>
     	<li><a href="wave.jsp" title="waves">Ocean Waves</a></li>
     	<li><a href="ocean.jsp" title="Circulation">Ocean Circulation</a>
-    	<li><a href="transect.jsp" title="Transect">Virtual Oceanographer</a>	
+    	<li><a href="transect.jsp" title="Transect">Virtual Oceanographer</a>
             <ul class = "noJS">
       			<li><a href="transect.jsp" title="Transect">Virtual Transect</a></li>
       			<li><a href="vertical.jsp" title="Profile">Temp & Salinity Profile</a></li>
