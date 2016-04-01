@@ -154,6 +154,11 @@
             <!--Nested rows within a column-->
 
             <table class="table" style="table-layout: fixed; word-wrap: break-word">
+                <thead>
+                <tr class="sec-header">
+                    <td colspan="3">Options</td>
+                </tr>
+                </thead>
                 <tbody>
                 <tr>
                     <td>Dates</td>
@@ -167,12 +172,6 @@
                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                 </tr>
                 <tr>
-                    <td>
-                        <button id="btn_stop_anim" class="btn btn-danger">Stop Animation</button>
-                    </td>
-                    <td>
-                        <button id="btn_start_anim" class="btn btn-success">Start Animation</button>
-                    </td>
                     <td>
                         <button id="btn_download" class="btn btn-info">Download data</button>
                     </td>
