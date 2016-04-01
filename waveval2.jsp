@@ -44,19 +44,33 @@
 
         function initialize() {
 
-
+            getTodayStr();
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
                 onSelect: function (dateText, inst) {
-                    //alert(dateText);
-                    loadMoreDates(dateText);
+                    buoy_date=dateText;
+                    if(buoy!==null)
+                    {
+                        alert(buoy_date);
+                        $.get(	"servlet/WaveValServlet?"+
+                                "day="+buoy_date.substring(0,8)+"&"+
+                                "date="+buoy_date+"&"+"buoy="+buoy, function(data){
+                            if (data=="fail"){
+                                alert("Sorry, this data is not available yet.");
+                                return;
+                            }});
+                        window_handle = window.open("wavevalimage.jsp?day="+buoy_date.substring(0,8)+"&"+"date="+buoy_date+"&"+"buoy="+buoy, "Model Validation", 'top='+e.screenY + ',left=' + e.screenX +', height=470, width=800' );
+                    }
                 }
             }).datepicker("setDate", new Date());
 
 
             $('#buoy_list').change(function () {
-                buoy = this.value;
+                buoy = this.id;
+                if (buoy_date != null) {
+                    window.open("wavevalimage.jsp?day=" + buoy_date.substring(0, 8) + "&date=" + buoy_date + "&buoy=" + buoy, "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=800');
+                }
             });
 
 
@@ -98,7 +112,7 @@
 
 
 </head>
-<body style="background-color:#3A5ECA">
+<body style="background-color:#3A5ECA" onload="initialize()">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container-fluid">
     <div class="row">
