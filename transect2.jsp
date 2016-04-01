@@ -1,4 +1,3 @@
-
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
 <%@page import="method.TimePeriod" %>
 <%@page import="util.TimeFormat" %>
@@ -40,8 +39,6 @@
 
 
     <script type="text/javascript">
-        <
-        script
         type = "text/javascript" >
         var map;
         var overlaysArray = [];
@@ -71,39 +68,25 @@
                 }
             });
 
-            $(function () {
-                $("#variables").buttonset();
-                $("#time-list").buttonset();
-                $("#time").buttonset();
-                //$( "#variables" ).buttonset();
+            $("#time_list").change(function () {
+                time = this.val;
+            });
+            $("#variable_list").change(function () {
+                vname = this.val;
             });
 
-            $('#variables > input').bind("click",
-                    function () {
-                        vname = this.id;
-                    });
-            $('#time-list > input').bind("click",
-                    function () {
-                        date = this.id;
-                    });
-            $('#time > input').bind("click",
-                    function () {
-                        time = this.id;
-                    });
-            $(function () {
-                $("#datepicker").datepicker({
-                    changeMonth: true,
-                    changeYear: true,
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: new Date,
+                maxDate: '+4D',
+                onSelect: function (dateText, inst) {
+                    var mydate = new Date(dateText);
+                    date = getYYYYMMYY(mydate);
+                    alert("Selected data " + date);
+                }
+            }).datepicker("setDate", new Date());
 
-                    //Date range from Feb to Aug of current year
-                    maxDate: max_date,
-                    minDate: min_date,
-
-                    onSelect: function (dateText, inst) {
-                        changeDate(dateText, null);
-                    }
-                });
-            });
         }
 
     </script>
@@ -132,11 +115,11 @@
         }
 
         .sec-header {
-            background-color:#3A5ECA;
-            color:white;
+            background-color: #3A5ECA;
+            color: white;
             font-size: larger;
             font-weight: bold;
-            padding:2px;
+            padding: 2px;
         }
     </style>
 
@@ -176,7 +159,7 @@
                 </tr>
                 <tr>
                     <td>Time</td>
-                    <td colspan="2"><select class="form-control" style="width: 100%" id="time">
+                    <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
                         <option value="0.0">0:00</option>
                         <option value="0.125">3:00</option>
                         <option value="0.25">6:00</option>
@@ -200,6 +183,30 @@
                 </tr>
                 <tr style="height: 40px">
                 </tr>
+                <tr>
+                    <td>
+                        <div class="panel panel-primary">
+                            <div class="sec-header">Instructions</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li>Click on two locations in the ocean within the red box,<br>
+                                        which will be the beginning and end points of your transect.<br>
+                                        Select the variable, date, and time, then click on "Show Transect"
+                                    </li>
+                                    <li><strong>Variables:</strong> Click on the variable to be shown on the transect.
+                                        "u" is water movement<br>
+                                        in the east (positive)-- west (negative) direction. "v" is water movement in the
+                                        north
+                                        (positive)<br>
+                                        -- south (negative) direction.
+                                    </li>
+                                    <li>Click your browser's refresh button to reset all criteria.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
                 </tbody>
             </table>
 
@@ -208,24 +215,6 @@
     </div>
 
     <br><br>
-    <div class="panel panel-primary sec-header" >
-        <div class>Instructions</div>
-        <div class="panel-body">
-            <ul>
-                <li>Click on two locations in the ocean within the red box,<br>
-                    which will be the beginning and end points of your transect.<br>
-                    Select the variable, date, and time, then click on "Show Transect"
-                </li>
-                <li><strong>Variables:</strong> Click on the variable to be shown on the transect. "u" is water movement<br>
-                    in the east (positive)-- west (negative) direction. "v" is water movement in the north
-                    (positive)<br>
-                    -- south (negative) direction.
-                </li>
-                <li>Click your browser's refresh button to reset all criteria.
-                </li>
-            </ul>
-        </div>
-    </div>
 </div>
 
 
