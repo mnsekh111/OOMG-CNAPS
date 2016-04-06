@@ -1,241 +1,218 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@page import="method.TimePeriod"%>
-<%@page import="util.Global"%>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
+<%@page import="method.TimePeriod" %>
+<%@page import="util.TimeFormat" %>
+<%@page import="util.Global" %>
 <%@ page import="java.util.Arrays" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
 <head>
-<title>CNAPS Coupled Northwest Atlantic Prediction System</title>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<link type="text/css" href="layout.css" rel="stylesheet">
-<script type="text/javascript"
-    src="http://maps.google.com/maps/api/js?sensor=false">
-</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="./mns-css/bootstrap.css">
+    <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
 
-	<link type="text/css" href="jquery/css/custom-theme/jquery-ui-1.9.1.custom.css" rel="stylesheet" />   
+    <!-- Script region -->
+
+    <script type="text/javascript"
+            src="http://maps.google.com/maps/api/js?sensor=false">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <link type="text/css" href="jquery/css/custom-theme/jquery-ui-1.9.1.custom.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/jquery-ui.css"/>
     <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-	<script src="./jquery/development-bundle/ui/jquery.ui.core.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.widget.js"></script> 
-	<script src="./development-bundle/ui/jquery.ui.button.js"></script> 
-	<script src="./jquery/development-bundle/external/jquery.bgiframe-2.1.2.js"></script> 
-	<script src="./development-bundle/ui/jquery.ui.core.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.widget.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.mouse.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.draggable.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.position.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.resizable.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.dialog.js"></script> 
-	<script src="./jquery/development-bundle/ui/jquery.ui.datepicker.js"></script> 
-	
-	<script type="text/javascript" src="./lib/loadImage.js"></script>
-<script type="text/javascript" src="./lib/animation_model.js"></script>
-<script type="text/javascript" src="./lib/ensemble.js"></script>
-<script type="text/javascript" src="./lib/global.js"></script>
-<script type="text/javascript">
-	
-	var overlaysArray=[];
-	var root="<%=Global.val_figures_location %>"; 
-	var day;
-	var variable="t";
+    <link rel="stylesheet" href="/resources/demos/style.css"/>
+    <script type="text/javascript" src=".jquery/js/jquery-ui-1.9.1.custom.js"></script>
+    <script type="text/javascript" src=".jquery/js/jquery-ui-1.9.1.custom.min.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="./development-bundle/ui/jquery.ui.button.js"></script>
+    <script src="./jquery/development-bundle/external/jquery.bgiframe-2.1.2.js"></script>
+    <script src="./development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.mouse.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.draggable.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.position.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.resizable.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.dialog.js"></script>
+    <script src="./jquery/development-bundle/ui/jquery.ui.datepicker.js"></script>
+    <script type="text/javascript" src="./lib/loadImage.js"></script>
+    <script type="text/javascript" src="./lib/animation_model.js"></script>
+    <script type="text/javascript" src="./lib/val.js"></script>
+    <script type="text/javascript" src="./lib/global.js"></script>
 
-  $(document).ready(function () {
-  		initialize();
-  		document.getElementById("ensembleimage").src="servlet/Ensemble?"+"day="+day+"&variable="+variable;
-});
-  
-  
-  function initialize() {
-	  
-  $( "#time-list" ).buttonset();  
-  $( "#variables" ).buttonset();
-  //$( "#animationbutton").buttonset();
-  
-  $('#variables > input').on("click",
-			function(){
-				variable=this.id;
-				$.get(	"servlet/Ensemble?"+
-						"day="+day.substring(0,8)+"&variable="+variable, function(data){
-						if (data=="fail"){
-							alert("Sorry, this data is not available yet."+data);
-							return;
-						}});
-				document.getElementById("ensembleimage").src="servlet/Ensemble?day="+day.substring(0,8)+"&variable="+variable;
-						});
-  
-  jQuery(document).ready(function(){
-  	$("#time-list > input").click(function(e){
-		day=this.id;
-			$.get(	"servlet/Ensemble?"+
-					"day="+day.substring(0,8)+"&variable="+variable, function(data){
-					if (data=="fail"){
-						alert("Sorry, this data is not available yet.");
-						return;
-					}});
-			document.getElementById("ensembleimage").src="servlet/Ensemble?"+"day="+day.substring(0,8)+"&variable="+variable;
-		});
-	});
-  
-  $(function() {
-		$( "#datepicker" ).datepicker({
-	             changeMonth: true,
-				 changeYear: true,	
-				 onSelect: function(dateText,inst){
-			 		loadMoreDates(dateText);
-			 	}
-		});
-	});
-  
-  //don't need following section to toggle instructions with click on "+"
-  /* $(document).ready(function(){
-		$("#showtext").click(function(){
-			$("#description").toggle();
-		});
-	});
-	
-	$(function(){
-		$("#showtext").button({
-			icons: {
-				primary: "ui-icon-plusthick"
-			},
-			text: false
-		});
-	});   
-	
-	$(document).ready(function(){
-		$("#description").hide();
-	}); */
-	  
-  
-  var d=new Date();
-  var month=d.getMonth()+1;
-  var day_0=d.getDate();
-  if (month<10)
-  	month="0"+month.toString();
-  else
-  	month=month.toString();
-  if (day_0 <10)
-  	day_0="0"+day_0.toString();
-  else
-  	day_0=day_0.toString();
-  day=(d.getYear()+1900).toString()+month+day_0;
-  //var s=(d.getYear()+1900).toString()+month+day_0+"_0000";
-  
- // $('#'+s).click();
-  //setbackground();
 
-  }
-  
-</script>
+    <script type="text/javascript">
+        var map;
+        var overlaysArray = [];
+        var root = "<%=Global.val_figures_location %>";
+        var hfdate;
+        var buoy_date;
+        var buoy = null;
 
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-12288686-5']);
-  _gaq.push(['_trackPageview']);
+        function initialize() {
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+            getTodayStr();
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                onSelect: function (dateText, inst) {
+                    var date = new Date(dateText);
+                    buoy_date = getYYYYMMYY(date);
+                    if (buoy !== null) {
+                        alert(buoy_date);
+                        $.get("servlet/WaveValServlet?" +
+                                "day=" + buoy_date.substring(0, 8) + "&" +
+                                "date=" + buoy_date + "&" + "buoy=" + buoy, function (data) {
+                            if (data == "fail") {
+                                alert("Sorry, this data is not available yet.");
+                                return;
+                            }
+                        });
+                        window_handle = window.open("wavevalimage.jsp?day=" + buoy_date.substring(0, 8) + "&" + "date=" + buoy_date + "&" + "buoy=" + buoy, "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=800');
+                    } else {
+                        alert("Please select a buoy station");
+                    }
+                }
+            }).datepicker("setDate", new Date());
 
-</script>
+
+            $('#buoy_list').change(function () {
+                buoy = this.id;
+                if (buoy_date != null) {
+                    window.open("wavevalimage.jsp?day=" + buoy_date.substring(0, 8) + "&date=" + buoy_date + "&buoy=" + buoy, "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=800');
+                }
+            });
+
+            mapInit();
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12288686-5']);
+            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                        '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        }
+
+    </script>
+
+
+    <style>
+        .main-content {
+            background: #dbdfe5;
+        }
+
+        .sec-header {
+            background-color: #3A5ECA;
+            color: white;
+            font-size: larger;
+            font-weight: bold;
+            padding: 2px;
+        }
+    </style>
+
 
 </head>
-<body>
-    <div id="page">
-        <div id="logo">
-            <img src="image/bannerCNAPS.png" width="1140" height = "120">
-        </div> <!--end div id "logo" -->
-        <div id="box">
-            <div id="links" >
-                <jsp:include page="links.jsp"></jsp:include>
-            </div><!-- end div "links" -->
-            <div id="title">Model Ensemble
-            </div>  <!-- end div "title" -->
-            <div id="map">
-	            <form>
-                    <div id="variables">
-				        <span class="text">Variables:</span>
-            	        <input value="Temperature" type="radio" id="t" name="radio"  /><label for="t">Temperature</label>
-				        <input type="radio" id="s" name="radio"   /><label for="s">Salinity</label>
-				        <input type="radio" id="uv" name="radio"  checked="checked" /><label for="uv">Current</label>
-                    </div> <!-- end div id "variables" -->
-  		        </form>
-                    <div id="map_canvas" style="height:782;"> 
-	  	                <img id="ensembleimage" src='' width="800" height = "782">
-	                </div>  <!-- end div id "map_canvas" -->
-	            
-                <div id="date">
-                    <form>
-		                <div id="time-list" style="height:450px;">
-                        <span class="text">Date:</span>
-                        <br>
-			 <%
-				TimePeriod tp1=new TimePeriod();
-				ArrayList<String> tmp1=tp1.getTimePeriod();
-				
-				//Only last 30 days is needed
-				List<String> dates1=tmp1.subList(tmp1.size()-14,tmp1.size());
-			
-				%>
-				<script type="text/javascript">
-					day=<%=dates1.get(dates1.size()-4) %>+"_0000";
-				</script>
-				<% 
-				
-				for (int i=0;i<dates1.size()-1;i++)
-				{
-					%>
-					<script>
-						availableDates1.push(<%=dates1.get(i)%>);
-					</script>
-					<%
-						String str_date1=dates1.get(i)+"_";
-						String str_date_format1=dates1.get(i).subSequence(4,6)+"/"+dates1.get(i).substring(6,8)+"/"+dates1.get(i).substring(0,4);
-					%>
-				 <!--  [if IE]>
-						<input type="radio" id="<%=str_date1%>" name="radio" class="ui-helper-hidden-accessible"/>
-						 <label for="<%=str_date1%>" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-disabled="false">
-						 		<span class="ui-button-text"><%=str_date_format1%></span>
-						 </label>
-		  			<![endif]>
-		  			
-		  			<![if !IE]>-->
-						<input type="radio" id="<%=str_date1%>" name="radio" /><label for="<%=str_date1%>"><%=str_date_format1%></label>
-		  		    <!--  [endif]>-->  			
-					<%
-					}							
-			 %>  
-		                </div> <!-- end div id "time-list"-->
-                    </form>
-		  <!--  <div id="archive_0" >
-		  	        <a  onClick="showDatepicker();">Archive</a>	
-		        </div> -->
-		 
-                <dir id="archive_1" >
-		            Choose a date to populate the Date list: 
-                    <input type="text" id="datepicker"> 
-		        </dir> 
+<body style="background-color:#3A5ECA" onload="initialize()">
+<jsp:include page="header.jsp"></jsp:include>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+            <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
+            <br><br>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <!--Nested rows within a column-->
 
-       	        <h1>Model Ensemble</h1>
-	      	    <p>Because there are a number of operational ocean models providing predictions of the marine environment for the northwest Atlantic Ocean, a multi-model ensemble is used routinely to generate a representative ocean state estimation and to facilitate inter-model comparison. This Ensemble page shows the CNAPS model (top left), the U.S. Navy's HYCOM model, the National Centers for Environmental Prediction (NCEP)'s HYCOM model, and an ensemble of the three models.</p>
-            
-                <h1>Instructions</h1>
-                <p><b>Date:</b> Click on the date from the list to be shown on the maps. Dates before the present can be selected to populate the Date list. <br>
-                <b>Variables:</b> Click on the variable to be shown on the map.</p>
-                </div>  <!-- end div id "date" -->
-            </div> <!-- end div id "map" -->
-        </div> <!-- end div id "box" -->
-        <div id="footer">
-        	<jsp:include page="footer.jsp"></jsp:include>
-        </div> <!-- end div id "footer" -->
-    </div> <!-- end div id "page" -->
+            <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
+                <thead>
+                <tr class="sec-header">
+                    <td colspan="3">Options</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
+                </tr>
+                <tr>
+                    <td>Buoy Stations</td>
+                    <td colspan="2"><select class="form-control" style="width: 100%" id="buoy_list">
+                        <option value="t">Temperature</option>
+                        <option value="s">Salinity</option>
+                        <option value="uv">Current</option>
+                    </select></td>
+                </tr>
+
+                <tr style="height: 40px"></tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="panel panel-primary">
+                            <div class="sec-header">Model Ensemble</div>
+                            <div class="panel-body">
+                                <ul style="color: black">
+                                    <li>Because there are a number of operational ocean models providing predictions of
+                                        the marine environment for <br>
+                                        the northwest Atlantic Ocean, a multi-model ensemble is used routinely to
+                                        generate a representative ocean state <br>
+                                        estimation and to facilitate inter-model comparison. This Ensemble page shows
+                                        the CNAPS model (top left), the U.S. Navy's HYCOM model, <br>
+                                        the National Centers for Environmental Prediction (NCEP)'s HYCOM model, and an
+                                        ensemble of the three models.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr style="height: 40px"></tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="panel panel-primary">
+                            <div class="sec-header">Instructions</div>
+                            <div class="panel-body">
+                                <ul style="color: black">
+                                    <li><strong>Date:</strong> Click on the date from the list to be shown on the maps.
+                                        <br>
+                                        Dates before the present can be selected to populate the Date list.
+                                    </li>
+                                    <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+
+<jsp:include page="footer.jsp"/>
+
+
 </body>
 </html>
+
