@@ -125,9 +125,10 @@
                     .click(function () {
                         $(this).prop("disabled", true);
                         $('#btn_stop_anim').prop("disabled", false);
-
-
-                        foo();
+                        var start = availableDates.indexOf(parseInt(start_date));
+                        var end = availableDates.indexOf(parseInt(end_date));
+                        alert(""+ start + " " + end);
+                        //foo();
                     });
 
             $("#btn_stop_anim")
