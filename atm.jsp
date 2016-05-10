@@ -137,7 +137,7 @@
                         var start = availableDates.indexOf(parseInt(start_date));
                         var end = availableDates.indexOf(parseInt(end_date));
 
-                        alert(""+ start + " " + end);
+                        alert(availableDates.length+""+ start + " " + end);
                         //foo();
                     });
 
