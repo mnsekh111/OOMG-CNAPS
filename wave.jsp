@@ -125,6 +125,8 @@
                     .click(function () {
                         $(this).prop("disabled", true);
                         $('#btn_stop_anim').prop("disabled", false);
+
+
                         foo();
                     });
 
