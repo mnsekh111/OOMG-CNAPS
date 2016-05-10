@@ -57,7 +57,7 @@
                 }
             %>
 
-            $("#id_list_nav > li:nth-child(2)").css({ "background-color": "#0A38B5"})
+            $("#id_list_nav > li:nth-child(2)").css({ "background-color": "#041648"})
 
         });
 

@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  	getTodayStr();
   		initialize();
   		Init_map();
-      $("#id_list_nav > li:nth-child(5)").css({ "background-color": "#0A38B5"})
+      $("#id_list_nav > li:nth-child(5)").css({ "background-color": "#041648"})
 });
   function initialize() { 
     $(function() {
