@@ -69,6 +69,8 @@
                 addDrifter();
             });
 
+            $("#id_list_nav > li:nth-child(4)").css({ "background-color": "#0A38B5"})
+
         }
     </script>
 

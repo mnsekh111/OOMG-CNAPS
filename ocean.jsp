@@ -46,6 +46,7 @@
         $(document).ready(function () {
             initialize();
             $("#datepicker").datepicker().datepicker("setDate", new Date());
+            $("#id_list_nav > li:nth-child(2)").css({ "background-color": "#0A38B5"})
         });
 
         function initialize() {

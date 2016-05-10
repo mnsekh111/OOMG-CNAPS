@@ -58,7 +58,7 @@
             %>
 
             loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
-            $("#id_list_nav:nth-child(2)").css({ "background-color": "#0A38B5"},{ "color": white});
+            $("#id_list_nav > li:nth-child(1)").css({ "background-color": "#0A38B5"})
 
         });
 

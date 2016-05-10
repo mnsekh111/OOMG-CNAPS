@@ -102,10 +102,13 @@
             date = getYYYYMMYY(new Date());
             time = getTime(new Date());
 
+
+
         }
 
         $(document).ready(function () {
             initialize();
+            $("#id_list_nav > li:nth-child(5)").css({ "background-color": "#0A38B5"})
         });
 
     </script>

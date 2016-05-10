@@ -85,6 +85,8 @@
             $("#btn_clear").click(function(){
                 window.location.href=window.location.href
             });
+
+            $("#id_list_nav > li:nth-child(4)").css({ "background-color": "#0A38B5"})
         }
     </script>
 
