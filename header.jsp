@@ -21,7 +21,7 @@
         </div>
         <!-- Collection of nav links, forms, and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" id="id_list_nav">
                 <li><a href="atm.jsp" title="Marine Weather">Marine Weather</a></li>
                 <li><a href="wave.jsp" title="waves">Ocean Waves</a></li>
                 <li><a href="ocean.jsp" title="Circulation">Ocean Circulation</a></li>

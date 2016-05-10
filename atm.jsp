@@ -58,6 +58,9 @@
             %>
 
             loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+            $("#id_list_nav").each(function(){
+                alert($(this).text());
+            })
 
         });
 
