@@ -87,11 +87,6 @@
             });
 
 
-            $("#btn_clear").click(function () {
-                window.location.href = window.location.href
-            });
-
-
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -108,22 +103,7 @@
             time = getTime(new Date());
 
             mapInit();
-            var d1=new Date();
-            var d=new Date(new Date(d1.getFullYear(),d1.getMonth(),d1.getDate())-24);
-            var month=d.getMonth()+1;
-            //d.setDate(d.getDate()-1)
-            var day_0=d.getDate();
-            if (month<10)
-                month="0"+month.toString();
-            else
-                month=month.toString();
-            if (day_0 <10)
-                day_0="0"+day_0.toString();
-            else
-                day_0=day_0.toString();
-            s=(d.getYear()+1900).toString()+month+day_0+"_0000";
-
-            alert("S is " + s + "and " + date)
+            s = date + "_0000";
             setbackground();
 
         }
@@ -205,6 +185,31 @@
                         <option value="0.625">15:00</option>
                         <option value="0.75">18:00</option>
                         <option value="0.875">21:00</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Buoy Stations</td>
+                    <td colspan="2"><select class="form-control" style="width: 100%" id="buoy_list">
+                        <option value="44037">Jordan Basin, Gulf of Maine</option>
+                        <option value="44065">New York Harbor</option>
+                        <option value="44014">Virginia Beach, VA</option>
+                        <option value="44056">Duck FRF, NC</option>
+                        <option value="41013">Frying Pan Shoals, NC</option>
+                        <option value="41002">South Hatteras, NC</option>
+                        <option value="41008">Grays Reef, GA</option>
+                        <option value="41012">St. Augustine, FL</option>
+                        <option value="41048">West Bermuda</option>
+                        <option value="41047">Northeast Bahamas</option>
+                        <option value="41046">East Bahamas</option>
+                        <option value="42036">West Tampa, FL</option>
+                        <option value="42012">Orange Beach, AL</option>
+                        <option value="LOPL1">Oil Platform, LA</option>
+                        <option value="42003">East Gulf of Mexico</option>
+                        <option value="42001">Mid Gulf of Mexico</option>
+                        <option value="42020">Corpus Christi, TX</option>
+                        <option value="42055">Bay of Campeche, MX</option>
+                        <option value="42056">Yucatan Basin</option>
+                        <option value="42058">Central Caribbean</option>
                     </select></td>
                 </tr>
 
