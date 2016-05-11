@@ -29,7 +29,7 @@
     <script
             type="text/javascript"
             src="./lib/loadImage.js"></script>
-    <script type="text/javascript" src="./lib/animation.js"></script>
+    <script type="text/javascript" src="./lib/animation_wa.js"></script>
     <script type="text/javascript" src="./lib/wave.js"></script>
     <script type="text/javascript" src="./lib/global.js"></script>
 
@@ -148,13 +148,10 @@
                     });
 
 
-            //
-            //
-            //
-            //                        $("#btn-download")
-            //                                .click(function () {
-            //                                    document.getElementById('download').href = download();
-            //                                });
+            $("#btn_download")
+                    .click(function () {
+                        document.getElementById('download').href = download();
+                    });
 
 
             mapInit();
