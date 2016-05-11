@@ -108,6 +108,22 @@
             time = getTime(new Date());
 
             mapInit();
+            var d1=new Date();
+            var d=new Date(new Date(d1.getFullYear(),d1.getMonth(),d1.getDate())-24);
+            var month=d.getMonth()+1;
+            //d.setDate(d.getDate()-1)
+            var day_0=d.getDate();
+            if (month<10)
+                month="0"+month.toString();
+            else
+                month=month.toString();
+            if (day_0 <10)
+                day_0="0"+day_0.toString();
+            else
+                day_0=day_0.toString();
+            s=(d.getYear()+1900).toString()+month+day_0+"_0000";
+
+            alert("S is " + s + "and " + date)
             setbackground();
 
         }
