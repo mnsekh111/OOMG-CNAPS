@@ -258,29 +258,29 @@
         </div>
         <br>
         <br>
-        <div class="panel panel-success">
-            <div class="panel-heading sec-header">Instructions</div>
-            <div class="panel-body">
-                <ul>
-                    <li><strong>Date and Time:</strong> Click on the date and time from the list to be
-                        shown on the map. Dates before the present can be selected to populate the Date
-                        and Time list.
-                    </li>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading sec-header">Instructions</div>
+        <div class="panel-body">
+            <ul>
+                <li><strong>Date and Time:</strong> Click on the date and time from the list to be
+                    shown on the map. Dates before the present can be selected to populate the Date
+                    and Time list.
+                </li>
 
-                    <li><strong>Depth:</strong> Click on the depth isosurface to display. Current at 0 m
-                        shows currents, wind vectors (magenta arrows), and sea surface height (colors).
-                    </li>
-                    <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>
-                    <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the
-                        72 hour forecast from today. Click on &quot;Stop&quot; to terminate the
-                        animation. Please allow the animation to run through once before it becomes
-                        smooth.
-                    </li>
-                    <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
-                        file).
-                    </li>
-                </ul>
-            </div>
+                <li><strong>Depth:</strong> Click on the depth isosurface to display. Current at 0 m
+                    shows currents, wind vectors (magenta arrows), and sea surface height (colors).
+                </li>
+                <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>
+                <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the
+                    72 hour forecast from today. Click on &quot;Stop&quot; to terminate the
+                    animation. Please allow the animation to run through once before it becomes
+                    smooth.
+                </li>
+                <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
+                    file).
+                </li>
+            </ul>
         </div>
     </div>
 </div>
