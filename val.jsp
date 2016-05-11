@@ -125,6 +125,8 @@
 
             mapInit();
             s = date + "_0000";
+            hfdate = date;
+            buoy_date = date;
             setbackground();
 
         }
