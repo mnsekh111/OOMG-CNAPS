@@ -42,11 +42,25 @@
         var variable = "uv";
         var date;
 
-
         $(document).ready(function () {
             initialize();
-            $("#datepicker").datepicker().datepicker("setDate", new Date());
+            loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+//                        alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+            <%
+                TimePeriod tp = new TimePeriod();
+                ArrayList<String> tmp = tp.getTimePeriod();
+                //Only last 7 days is needed
+                //List<String> dates = tmp.subList(tmp.size() - 7, tmp.size());
+                List<String> dates = tmp;
+                for (int i = 0; i < dates.size(); i++) {
+            %>
+            availableDates.push(<%=dates.get(i)%>);
+            <%
+                }
+            %>
+
             $("#id_list_nav > li:nth-child(3)").css({"background-color": "#041648"})
+
         });
 
         function initialize() {
@@ -55,15 +69,47 @@
             $('#btn_stop_anim').prop('disabled', true);
             $('#btn_download').prop('disabled', false);
 
-            $(function () {
-                $("#datepicker").datepicker({
-                    changeMonth: true,
-                    changeYear: true,
-                    onSelect: function (dateText, inst) {
-                        loadMoreDates(dateText);
-                    }
-                });
-            });
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                onSelect: function (dateText, inst) {
+                    //alert(dateText);
+                    loadMoreDates(dateText);
+                }
+            }).datepicker("setDate", new Date());
+
+            var minDate = new Date
+            $("#datepicker-anim-end").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: minDate,
+                maxDate: "+2D",
+                onSelect: function (dateText, inst) {
+                    var date = new Date(dateText);
+                    end_date = getYYYYMMYY(date);
+                }
+            }).datepicker("setDate", new Date);
+
+
+            $("#datepicker-anim-start").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                maxDate: new Date,
+                onSelect: function (dateText, inst) {
+                    var endDate = new Date(dateText);
+                    endDate.setDate(endDate.getDate() + 2);
+                    $("#datepicker-anim-end").datepicker(
+                            "change",
+                            {
+                                minDate: new Date($('#datepicker-anim-start').val()),
+                                maxDate: endDate
+                            }
+                    );
+
+                    var date = new Date(dateText);
+                    start_date = getYYYYMMYY(date);
+                }
+            }).datepicker("setDate", new Date());
 
             $('#time_list').change(function () {
                 date = this.value;
