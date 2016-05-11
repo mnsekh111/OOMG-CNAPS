@@ -38,6 +38,7 @@
         var overlaysArray = [];
         var root = "<%=Global.figures_location%>";
         var variable = "slp";
+        var depth="";
         var date;
 
 

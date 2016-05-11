@@ -114,19 +114,19 @@
             $('#time_list').change(function () {
                 date = this.value;
                 alert("time list changed " + this.value);
-                plot;
+                plotwa();
             });
 
             $('#variable_list').change(function () {
                 variable = this.value;
                 alert("variable list changed " + this.value);
-                plot;
+                plotwa();
             });
 
             $('#depth_list').change(function () {
                 depth = this.value;
                 alert("depth list changed " + this.value);
-                plot;
+                plotwa();
             });
 
 
