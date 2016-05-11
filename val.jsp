@@ -39,8 +39,8 @@
 
     <script type="text/javascript">
         var map;
-        var overlaysArray=[];
-        var root="<%=Global.val_figures_location %>";
+        var overlaysArray = [];
+        var root = "<%=Global.val_figures_location %>";
         var ifshowhf = false;
         var hfdate;
         var buoy_date;
@@ -49,23 +49,27 @@
 
         $(document).ready(function () {
             initialize();
-            $("#id_list_nav > li:nth-child(5)").css({ "background-color":"#041648"})
+            $("#id_list_nav > li:nth-child(5)").css({"background-color": "#041648"})
+            $('#variable_list')
+                    .val('hf')
+                    .trigger('change');
         });
 
         function initialize() {
 
             $("#time_list").change(function () {
-                time = $( "#time_list" ).val();;
-                alert(""+time);
+                time = $("#time_list").val();
+                ;
+                alert("" + time);
             });
             $("#variable_list").change(function () {
-                vname = $( "#variable_list" ).val();;
-                alert(""+vname);
+                vname = $("#variable_list").val();
+                ;
+                alert("" + vname);
                 var rows = $("table tr")
-                if(vname == "hf"){
+                if (vname == "hf") {
                     alert("hf inside");
-                    if(ifshowhf == false)
-                    {
+                    if (ifshowhf == false) {
                         rows.filter(".hf").show();
                         rows.filter(".buoy").hide();
                         Hide_buoymap();
@@ -73,15 +77,14 @@
                     }
                     ifshowhf = true;
 
-                }else if(vname == "buoy"){
+                } else if (vname == "buoy") {
                     rows.filter(".hf").hide();
                     rows.filter(".buoy").show();
                     alert("buoy inside");
-                    ifhf="false";
+                    ifhf = "false";
                     //google.maps.event.addDomListener(window,'load',Init_buoy_map);
 
-                    if(ifshowhf == true)
-                    {
+                    if (ifshowhf == true) {
                         Hide_hfradar();
                         Init_buoy_map();
                     }
@@ -105,8 +108,8 @@
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
-                minDate:'-4D',
-                maxDate:new Date,
+                minDate: '-4D',
+                maxDate: new Date,
                 onSelect: function (dateText, inst) {
                     var mydate = new Date(dateText);
                     date = getYYYYMMYY(mydate);
@@ -115,34 +118,32 @@
             }).datepicker("setDate", new Date());
 
 
-
             date = getYYYYMMYY(new Date());
             time = getTime(new Date());
 
             mapInit();
-            // this section is about Google Analytics and page counter
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-12288686-5']);
-            _gaq.push(['_trackPageview']);
-
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-
-
-
             s = date + "_0000";
             setbackground();
-
-            $('#variable_list')
-                    .val('hf')
-                    .trigger('change');
 
         }
 
 
+    </script>
+
+    <script type="text/javascript">
+        // this section is about Google Analytics and page counter
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-12288686-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
     </script>
 
@@ -248,11 +249,14 @@
                                     </li>
                                     <li>First, choose HF Radar or Tide Gauge from the buttons above the map.
                                     </li>
-                                    <li>Second, choose a date from the Date list. Dates before the present can be selected to populate <br>
+                                    <li>Second, choose a date from the Date list. Dates before the present can be
+                                        selected to populate <br>
                                         the Date list.
                                     </li>
-                                    <li>Third, choose a radar or buoy station from the map or list. A plot of observational data,<br>
-                                        when available, and model output will appear in a new window.</li>
+                                    <li>Third, choose a radar or buoy station from the map or list. A plot of
+                                        observational data,<br>
+                                        when available, and model output will appear in a new window.
+                                    </li>
                                 </ul>
                             </div>
                         </div>
