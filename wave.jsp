@@ -48,8 +48,8 @@
                 TimePeriod tp = new TimePeriod();
                 ArrayList<String> tmp = tp.getTimePeriod();
                 //Only last 7 days is needed
-                List<String> dates = tmp.subList(tmp.size() - 7, tmp.size());
-
+                //List<String> dates = tmp.subList(tmp.size() - 7, tmp.size());
+                List<String> dates = tmp;
                 for (int i = 0; i < dates.size(); i++) {
             %>
             availableDates.push(<%=dates.get(i)%>);
