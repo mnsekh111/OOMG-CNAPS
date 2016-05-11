@@ -120,6 +120,19 @@
             time = getTime(new Date());
 
             mapInit();
+            // this section is about Google Analytics and page counter
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12288686-5']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+
+
             s = date + "_0000";
             setbackground();
 
@@ -132,21 +145,6 @@
 
 
     </script>
-
-    <script type="text/javascript">
-        // this section is about Google Analytics and page counter
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-12288686-5']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-
 
 
     <style>
