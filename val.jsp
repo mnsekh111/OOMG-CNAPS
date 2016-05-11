@@ -50,9 +50,11 @@
         $(document).ready(function () {
             initialize();
             $("#id_list_nav > li:nth-child(5)").css({"background-color": "#041648"})
+            alert("going to be called.......")
             $('#variable_list')
                     .val('hf')
                     .trigger('change');
+            alert("It has been called.......")
         });
 
         function initialize() {
