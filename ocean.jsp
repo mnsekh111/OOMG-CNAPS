@@ -42,6 +42,7 @@
         var date;
 
         $(document).ready(function () {
+            mapInit();
             initialize();
             loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
 //                        alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
@@ -80,7 +81,7 @@
                 }
             }).datepicker("setDate", new Date());
 
-
+            var minDate = new Date
             $("#datepicker-anim-end").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -92,7 +93,7 @@
                 }
             }).datepicker("setDate", new Date);
 
-            var minDate = new Date
+
             $("#datepicker-anim-start").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -147,7 +148,9 @@
                         $('#btn_start_anim').prop("disabled", false);
                         stopCount();
                     });
-
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
 
             $("#btn_download")
                     .click(function () {
@@ -155,7 +158,7 @@
                     });
 
 
-            mapInit();
+
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-12288686-5']);
             _gaq.push(['_trackPageview']);
