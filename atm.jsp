@@ -78,7 +78,8 @@
                 changeYear: true,
                 onSelect: function (dateText, inst) {
                     //alert(dateText);
-                    loadMoreDates(dateText);
+                    //loadMoreDates(dateText);
+                    date = dateText;
                 }
             }).datepicker("setDate", new Date());
 
@@ -119,7 +120,8 @@
 
             $('#time_list').change(function () {
                 date = this.value;
-                alert(""+this.value + " " + start_date)
+                date += "_"+this.id;
+                alert(" " + date)
                 //alert("time list changed " + this.value);
                 plotwa();
             });
