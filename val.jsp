@@ -47,27 +47,12 @@
         var buoy;
         var s;
 
+        $(document).ready(function () {
+            initialize();
+            $("#id_list_nav > li:nth-child(5)").css({ "background-color":"#041648"})
+        });
 
         function initialize() {
-            mapInit();
-
-            InitLatlng(map);
-
-            google.maps.event.addListener(map, 'click', function (event) {
-                if (limitArea_polygon.containsLatLng(event.latLng)) {
-                    if (transect_array.length < 2) {
-                        marker = new google.maps.Marker({
-                            position: event.latLng,
-                            map: map
-                        });
-                        transect_array.push(event.latLng);
-                    }
-                }
-                else {
-                    alert("Sorry, this is outside our support domain.");
-
-                }
-            });
 
             $("#time_list").change(function () {
                 time = $( "#time_list" ).val();;
@@ -76,11 +61,29 @@
             $("#variable_list").change(function () {
                 vname = $( "#variable_list" ).val();;
                 alert(""+vname);
+                if(vname == "hf"){
+
+                    if(ifshowhf == false)
+                    {
+                        Hide_buoymap();
+                        Init_hfradar_map();
+                    }
+                    ifshowhf = true;
+
+                }else if(vname == "buoy"){
+                    ifhf="false";
+                    //google.maps.event.addDomListener(window,'load',Init_buoy_map);
+
+                    if(ifshowhf == true)
+                    {
+                        Hide_hfradar();
+                        Init_buoy_map();
+                    }
+
+                    ifshowhf = false;
+                }
             });
 
-            $("#btn_show_transect").click(function () {
-                showTransecton();
-            });
 
             $("#btn_clear").click(function () {
                 window.location.href = window.location.href
@@ -102,14 +105,12 @@
             date = getYYYYMMYY(new Date());
             time = getTime(new Date());
 
-
+            mapInit();
+            setbackground();
 
         }
 
-        $(document).ready(function () {
-            initialize();
-            $("#id_list_nav > li:nth-child(5)").css({ "background-color":"#041648"})
-        });
+
 
     </script>
 
@@ -168,8 +169,8 @@
                 <tr>
                     <td>Variables</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="variable_list">
-                        <option value="temp">HF-Radar</option>
-                        <option value="salt">Tide Guage</option>
+                        <option value="hf">HF-Radar</option>
+                        <option value="buoy">Tide Guage</option>
                     </select></td>
 
                 </tr>
