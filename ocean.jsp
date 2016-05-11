@@ -26,9 +26,7 @@
     <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <script
-            type="text/javascript"
-            src="./lib/loadImage.js"></script>
+    <script type="text/javascript" src="./lib/loadImage.js"></script>
     <script type="text/javascript" src="./lib/animation_wa.js"></script>
     <script type="text/javascript" src="./lib/wave.js"></script>
     <script type="text/javascript" src="./lib/global.js"></script>
@@ -70,6 +68,9 @@
             $('#btn_stop_anim').prop('disabled', true);
             $('#btn_download').prop('disabled', false);
 
+            start_date = getYYYYMMYY(new Date);
+            end_date = getYYYYMMYY(new Date);
+
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -79,7 +80,7 @@
                 }
             }).datepicker("setDate", new Date());
 
-            var minDate = new Date
+
             $("#datepicker-anim-end").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -91,7 +92,7 @@
                 }
             }).datepicker("setDate", new Date);
 
-
+            var minDate = new Date
             $("#datepicker-anim-start").datepicker({
                 changeMonth: true,
                 changeYear: true,
