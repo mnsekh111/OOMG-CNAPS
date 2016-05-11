@@ -62,7 +62,7 @@
                 vname = $( "#variable_list" ).val();;
                 alert(""+vname);
                 if(vname == "hf"){
-
+                    alert("hf inside");
                     if(ifshowhf == false)
                     {
                         Hide_buoymap();
@@ -71,6 +71,8 @@
                     ifshowhf = true;
 
                 }else if(vname == "buoy"){
+
+                    alert("buoy inside");
                     ifhf="false";
                     //google.maps.event.addDomListener(window,'load',Init_buoy_map);
 
@@ -115,21 +117,19 @@
     </script>
 
     <script type="text/javascript">
-
+        // this section is about Google Analytics and page counter
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-12288686-5']);
         _gaq.push(['_trackPageview']);
 
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
 
     </script>
+
 
 
     <style>
