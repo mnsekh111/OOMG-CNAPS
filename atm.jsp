@@ -57,7 +57,7 @@
                 }
             %>
 
-            loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+            //loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
             $("#id_list_nav > li:nth-child(1)").css({ "background-color": "#041648"})
 
         });
@@ -119,6 +119,7 @@
 
             $('#time_list').change(function () {
                 date = this.value;
+                alert(""+this.value + " " + start_date)
                 //alert("time list changed " + this.value);
                 plotwa();
             });
@@ -219,12 +220,20 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td>Start Date</td>
+                    <td>Date</td>
                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                 </tr>
                 <tr>
-                    <td>Date and Time</td>
+                    <td>Time</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
+                        <option id="0000">00:00</option>
+                        <option id="0300">03:00</option>
+                        <option id="0600">06:00</option>
+                        <option id="0900">09:00</option>
+                        <option id="1200">12:00</option>
+                        <option id="1500">15:00</option>
+                        <option id="1800">18:00</option>
+                        <option id="2100">21:00</option>
                     </select>
                     </td>
                 </tr>
