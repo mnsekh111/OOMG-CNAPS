@@ -39,7 +39,8 @@
         var overlaysArray = [];
         var root = "<%=Global.figures_location%>";
         var depth = "0";
-        var variable = "uv";
+        var variable1 = "uv";
+        var variable = variable1 +"_"+depth;
         var date;
 
         $(document).ready(function () {
@@ -118,13 +119,15 @@
             });
 
             $('#variable_list').change(function () {
-                variable = this.value;
+                variable1 = this.value;
+                variable = variable1 +"_"+depth;
                 alert("variable list changed " + this.value);
                 plotwa();
             });
 
             $('#depth_list').change(function () {
                 depth = this.value;
+                variable = variable1 +"_"+depth;
                 alert("depth list changed " + this.value);
                 plotwa();
             });
