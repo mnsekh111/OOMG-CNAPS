@@ -57,7 +57,7 @@
                 }
             %>
 
-            $("#id_list_nav > li:nth-child(2)").css({ "background-color": "#041648"})
+            $("#id_list_nav > li:nth-child(2)").css({"background-color": "#041648"})
 
         });
 
@@ -127,8 +127,8 @@
                         $('#btn_stop_anim').prop("disabled", false);
                         var start = availableDates.indexOf(parseInt(start_date));
                         var end = availableDates.indexOf(parseInt(end_date));
-                        alert(availableDates.length+""+ start + " " + end);
-                        //foo();
+                        alert(availableDates.length + "" + start + " " + end);
+                        foo();
                     });
 
             $("#btn_stop_anim")

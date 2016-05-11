@@ -57,8 +57,8 @@
                 }
             %>
 
-            //loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
-            $("#id_list_nav > li:nth-child(1)").css({ "background-color": "#041648"})
+            loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
+            $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"})
 
         });
 
@@ -78,8 +78,7 @@
                 changeYear: true,
                 onSelect: function (dateText, inst) {
                     //alert(dateText);
-                    //loadMoreDates(dateText);
-                    date = dateText;
+                    loadMoreDates(dateText);
                 }
             }).datepicker("setDate", new Date());
 
@@ -120,8 +119,6 @@
 
             $('#time_list').change(function () {
                 date = this.value;
-                date += "_"+this.id;
-                alert(" " + date)
                 //alert("time list changed " + this.value);
                 plotwa();
             });
@@ -139,9 +136,7 @@
                         $('#btn_stop_anim').prop("disabled", false);
                         var start = availableDates.indexOf(parseInt(start_date));
                         var end = availableDates.indexOf(parseInt(end_date));
-
-                        alert(availableDates.length+""+ start + " " + end);
-                        //foo();
+                        foo();
                     });
 
             $("#btn_stop_anim")
@@ -185,11 +180,11 @@
         }
 
         .sec-header {
-            background-color:#3A5ECA;
-            color:white;
+            background-color: #3A5ECA;
+            color: white;
             font-size: larger;
             font-weight: bold;
-            padding:2px;
+            padding: 2px;
         }
     </style>
 
@@ -222,20 +217,12 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td>Date</td>
+                    <td>Start Date</td>
                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                 </tr>
                 <tr>
-                    <td>Time</td>
+                    <td>Date and Time</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
-                        <option id="0000">00:00</option>
-                        <option id="0300">03:00</option>
-                        <option id="0600">06:00</option>
-                        <option id="0900">09:00</option>
-                        <option id="1200">12:00</option>
-                        <option id="1500">15:00</option>
-                        <option id="1800">18:00</option>
-                        <option id="2100">21:00</option>
                     </select>
                     </td>
                 </tr>
