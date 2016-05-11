@@ -46,7 +46,7 @@
         $(document).ready(function () {
             initialize();
             $("#datepicker").datepicker().datepicker("setDate", new Date());
-            $("#id_list_nav > li:nth-child(3)").css({ "background-color":"#041648"})
+            $("#id_list_nav > li:nth-child(3)").css({"background-color": "#041648"})
         });
 
         function initialize() {
@@ -180,8 +180,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
             <!--Nested rows within a column-->
-
-            <table class="table" style="table-layout: fixed; word-wrap: break-word">
+            <table class="table" style="table-layout: fixed; word-wrap: break-word;color: white">
+                <thead>
+                <tr class="sec-header">
+                    <td colspan="3">Options</td>
+                </tr>
+                </thead>
                 <tbody>
                 <tr>
                     <td class="sec-header">Variable</td>
@@ -192,7 +196,11 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td class="sec-header" >Dates</td>
+                    <td>Start Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
+                </tr>
+                <tr>
+                    <td>Dates</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
                     </select>
                     </td>
@@ -211,50 +219,68 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td class="sec-header">Start Date</td>
-                    <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="btn_stop_anim" class="btn btn-danger">Stop Animation</button>
-                    </td>
-                    <td>
-                        <button id="btn_start_anim" class="btn btn-success">Start Animation</button>
-                    </td>
                     <td>
                         <button id="btn_download" class="btn btn-info">Download data</button>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="3">
-                        <div class="panel panel-success">
-                            <div class="panel-heading sec-header">Instructions</div>
-                            <div class="panel-body">
-                                <ul>
-                                    <li><strong>Date and Time:</strong> Click on the date and time from the list to be
-                                        shown on the map. Dates before the present can be selected to populate the Date
-                                        and Time list.
-                                    </li>
+                </tbody>
+            </table>
 
-                                    <li><strong>Depth:</strong> Click on the depth isosurface to display. Current at 0 m
-                                        shows currents, wind vectors (magenta arrows), and sea surface height (colors).
-                                    </li>
-                                    <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>
-                                    <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the
-                                        72 hour forecast from today. Click on &quot;Stop&quot; to terminate the
-                                        animation. Please allow the animation to run through once before it becomes
-                                        smooth.
-                                    </li>
-                                    <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
-                                        file).
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+            <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
+                <thead>
+                <tr class="sec-header">
+                    <td colspan="3">Animation</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>Start Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text"
+                                           id="datepicker-anim-start"></td>
+                </tr>
+                <tr>
+                    <td>End Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text"
+                                           id="datepicker-anim-end"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button id="btn_start_anim" class="btn btn-success">Start Animation</button>
+                    </td>
+                    <td>
+                        <button id="btn_stop_anim" class="btn btn-danger">Stop Animation</button>
                     </td>
                 </tr>
                 </tbody>
             </table>
+        </div>
+        <br>
+        <br>
+        <div class="panel panel-success">
+            <div class="panel-heading sec-header">Instructions</div>
+            <div class="panel-body">
+                <ul>
+                    <li><strong>Date and Time:</strong> Click on the date and time from the list to be
+                        shown on the map. Dates before the present can be selected to populate the Date
+                        and Time list.
+                    </li>
+
+                    <li><strong>Depth:</strong> Click on the depth isosurface to display. Current at 0 m
+                        shows currents, wind vectors (magenta arrows), and sea surface height (colors).
+                    </li>
+                    <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>
+                    <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the
+                        72 hour forecast from today. Click on &quot;Stop&quot; to terminate the
+                        animation. Please allow the animation to run through once before it becomes
+                        smooth.
+                    </li>
+                    <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
+                        file).
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
