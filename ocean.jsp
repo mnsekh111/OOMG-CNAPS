@@ -155,49 +155,21 @@
 
 
             mapInit();
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12288686-5']);
+            _gaq.push(['_trackPageview']);
 
-            //InitLatlng(map);
-
-            //To display the default figure (current day, 0 meter, uv) on the map
-            var d = new Date();
-            var month = d.getMonth() + 1;
-            //d.setDate(d.getDate()-1)
-            var day_0 = d.getDate();
-            //d.setDate(day_0+1);
-            //var day_0=d.getDate()-1;
-            if (month < 10)
-                month = "0" + month.toString();
-            else
-                month = month.toString();
-            if (day_0 < 10)
-                day_0 = "0" + day_0.toString();
-            else
-                day_0 = day_0.toString();
-            var s = (d.getYear() + 1900).toString() + month + day_0 + "_0000";
-
-            //ie doesn't work using $().click();
-            $('#' + s).trigger('click');
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
         }
 
     </script>
-
-    <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-12288686-5']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-
 
     <style>
         .main-content {
