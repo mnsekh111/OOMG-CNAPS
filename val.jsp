@@ -61,17 +61,21 @@
             $("#variable_list").change(function () {
                 vname = $( "#variable_list" ).val();;
                 alert(""+vname);
+                var rows = $("table tr")
                 if(vname == "hf"){
                     alert("hf inside");
                     if(ifshowhf == false)
                     {
+                        rows.filter(".hf").show();
+                        rows.filter(".buoy").hide();
                         Hide_buoymap();
                         Init_hfradar_map();
                     }
                     ifshowhf = true;
 
                 }else if(vname == "buoy"){
-
+                    rows.filter(".hf").hide();
+                    rows.filter(".buoy").show();
                     alert("buoy inside");
                     ifhf="false";
                     //google.maps.event.addDomListener(window,'load',Init_buoy_map);
@@ -86,12 +90,11 @@
                 }
             });
 
-
-            $("#datepicker").datepicker({
+            $("#datepicker2").datepicker({
                 changeMonth: true,
                 changeYear: true,
-                minDate: new Date,
-                maxDate: '+4D',
+                minDate: '-10D',
+                maxDate: new Date,
                 onSelect: function (dateText, inst) {
                     var mydate = new Date(dateText);
                     date = getYYYYMMYY(mydate);
@@ -99,12 +102,30 @@
                 }
             }).datepicker("setDate", new Date());
 
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate:'-4D',
+                maxDate:new Date,
+                onSelect: function (dateText, inst) {
+                    var mydate = new Date(dateText);
+                    date = getYYYYMMYY(mydate);
+                    alert("Selected data " + date);
+                }
+            }).datepicker("setDate", new Date());
+
+
+
             date = getYYYYMMYY(new Date());
             time = getTime(new Date());
 
             mapInit();
             s = date + "_0000";
             setbackground();
+
+            $('#variable_list')
+                    .val('hf')
+                    .trigger('change');
 
         }
 
@@ -170,11 +191,11 @@
                     </select></td>
 
                 </tr>
-                <tr>
-                    <td>Date</td>
+                <tr class="hf">
+                    <td>HF Radar Date</td>
                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                 </tr>
-                <tr>
+                <tr class="hf">
                     <td>Time</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
                         <option value="0.0">0:00</option>
@@ -187,7 +208,7 @@
                         <option value="0.875">21:00</option>
                     </select></td>
                 </tr>
-                <tr>
+                <tr class="buoy">
                     <td>Buoy Stations</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="buoy_list">
                         <option value="44037">Jordan Basin, Gulf of Maine</option>
@@ -211,6 +232,10 @@
                         <option value="42056">Yucatan Basin</option>
                         <option value="42058">Central Caribbean</option>
                     </select></td>
+                </tr>
+                <tr class="buoy">
+                    <td>Buoy Date</td>
+                    <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker2"></td>
                 </tr>
 
                 <tr style="height: 40px">
