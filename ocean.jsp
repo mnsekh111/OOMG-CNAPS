@@ -238,6 +238,21 @@
                         <option value="30">30 m</option>
                         <option value="40">40 m</option>
                         <option value="50">50 m</option>
+                        <option value="75">75 m</option>
+                        <option value="100">100 m</option>
+                        <option value="125">125 m</option>
+                        <option value="150">150 m</option>
+                        <option value="200">200 m</option>
+                        <option value="250">250 m</option>
+                        <option value="300">300 m</option>
+                        <option value="400">400 m</option>
+                        <option value="500">500 m</option>
+                        <option value="600">600 m</option>
+                        <option value="800">800 m</option>
+                        <option value="1000">1000 m</option>
+                        <option value="1200">1200 m</option>
+                        <option value="1500">1500 m</option>
+                        <option value="2000">2000 m</option>
                     </select></td>
                 </tr>
                 <tr>
