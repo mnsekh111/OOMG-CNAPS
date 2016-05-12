@@ -45,21 +45,6 @@
 
         $(document).ready(function () {
             initialize();
-            // alert($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
-
-            <%
-                TimePeriod tp = new TimePeriod();
-                ArrayList<String> tmp = tp.getTimePeriod();
-
-                for (int i = 0; i < tmp.size(); i++) {
-            %>
-            availableDates.push(<%=tmp.get(i)%>);
-
-            <%
-                }
-            %>
-
-            loadMoreDates($("#datepicker").datepicker({dateFormat: 'mm/dd/yyyy'}).val());
             $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"})
 
         });
@@ -74,22 +59,22 @@
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
+                minDate: "-14D",
+                maxDate: "+0D",
                 onSelect: function (dateText, inst) {
-                    //alert(dateText);
-                    loadMoreDates(dateText);
+                    alert(dateText);
                 }
             }).datepicker("setDate", new Date());
 
-
-            $('#time_list').change(function () {
-                date = this.value;
-                //alert("time list changed " + this.value);
+            $('#variable_list').change(function () {
+                variable = this.value;
+                alert("variable list changed " + this.value);
                 plotwa();
             });
 
-            $('#variable_list').change(function () {
-                variable = this.value;
-                //alert("variable list changed " + this.value);
+            $('#buoy_list').change(function () {
+                buoy = this.value;
+                alert("variable list changed " + this.value);
                 plotwa();
             });
 
@@ -97,11 +82,6 @@
             $(document).ready(function () {
                 $('.dropdown-toggle').dropdown();
             });
-
-            $("#btn_download")
-                    .click(function () {
-                        window.location = download();
-                    });
 
             var date = getYYYYMMYY(new Date());
             buoy_date = date;
@@ -167,14 +147,8 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td>Start Date</td>
+                    <td>Buoy Date</td>
                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
-                </tr>
-                <tr>
-                    <td>Date and Time</td>
-                    <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
-                    </select>
-                    </td>
                 </tr>
 
                 <tr class="buoy">
