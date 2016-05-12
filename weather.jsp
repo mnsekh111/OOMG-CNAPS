@@ -37,7 +37,7 @@
         var map;
         var overlaysArray = [];
         var root = "<%=Global.figures_location%>";
-        var variable ="Pair";
+        var variable = "Pair";
         var buoy = "44037";
         var buoy_date;
         var date;
@@ -48,6 +48,18 @@
             $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"})
 
         });
+
+        function winOutput(){
+            $.get(	"servlet/WeatherValServlet?"+
+                    "day="+buoy_date.substring(0,8)+"&"+
+                    "date="+buoy_date+"&buoy="+buoy+"&variable="+variable, function(data){
+                if (data=="fail"){
+                    alert("Sorry, this data is not available yet.");
+                    return;
+                }});
+            window.open("weathervalimage.jsp?day="+buoy_date.substring(0,8)+"&date="+buoy_date+"&buoy="+buoy+"&variable="+variable,
+                    "Model Validation", 'top='+e.screenY + ',left=' + e.screenX +', height=470, width=665' );
+        }
 
         function initialize() {
 
@@ -62,20 +74,23 @@
                 minDate: "-14D",
                 maxDate: "+0D",
                 onSelect: function (dateText, inst) {
+                    var tmpDate = new Date(dateText);
+                    buoy_date = getYYYYMMYY(tmpDate)
                     alert(dateText);
+                    winOutput();
                 }
             }).datepicker("setDate", new Date());
 
             $('#variable_list').change(function () {
                 variable = this.value;
                 alert("variable list changed " + this.value);
-                plotwa();
+                winOutput();
             });
 
             $('#buoy_list').change(function () {
                 buoy = this.value;
                 alert("variable list changed " + this.value);
-                plotwa();
+                winOutput();
             });
 
 
@@ -178,21 +193,24 @@
                 </tr>
                 <tr style="height: 40px">
                 </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="panel panel-primary ">
+                            <div class="sec-header">Instructions</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li>Click on a buoy station button from the list. A new window will appear. Then
+                                        select the date from
+                                        the Date list.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
                 </tbody>
             </table>
 
-        </div>
-    </div>
-
-    <br><br>
-    <div class="panel panel-primary ">
-        <div class="sec-header">Instructions</div>
-        <div class="panel-body">
-            <ul>
-                <li>Click on a buoy station button from the list. A new window will appear. Then select the date from
-                    the Date list.
-                </li>
-            </ul>
         </div>
     </div>
 </div>
