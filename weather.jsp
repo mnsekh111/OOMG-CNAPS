@@ -37,7 +37,7 @@
     <script type="text/javascript">
         var map;
         var overlaysArray = [];
-        var root = "<%=Global.figures_location%>";
+        var root = "/raid0/xzeng2/operational/plot/";
         var variable = "Pair";
         var buoy = "44037";
         var buoy_date;
@@ -47,7 +47,7 @@
         $(document).ready(function () {
             initialize();
             $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"})
-
+            Init_map();
         });
 
         function winOutput() {
@@ -85,6 +85,9 @@
 
             $('#variable_list').change(function () {
                 variable = this.value;
+                if(variable == "Pair"){
+                    Init_slp_map();
+                }
                 alert("variable list changed " + this.value);
                 winOutput();
             });
@@ -116,7 +119,6 @@
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(ga, s);
             })();
-            Init_map();
         }
 
     </script>
