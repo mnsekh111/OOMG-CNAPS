@@ -39,7 +39,7 @@
         var overlaysArray = [];
         var root="<%=Global.val_figures_location %>";
         var variable = "Pair";
-        var buoy = "44037";
+        var buoy = "41002";
         var buoy_date;
         var date;
 
@@ -174,26 +174,26 @@
                 <tr class="buoy">
                     <td>Buoy Stations</td>
                     <td colspan="2"><select class="form-control" style="width: 100%" id="buoy_list">
-                        <option value="44037">Jordan Basin, Gulf of Maine</option>
-                        <option value="44065">New York Harbor</option>
-                        <option value="44014">Virginia Beach, VA</option>
-                        <option value="44056">Duck FRF, NC</option>
-                        <option value="41013">Frying Pan Shoals, NC</option>
-                        <option value="41002">South Hatteras, NC</option>
-                        <option value="41008">Grays Reef, GA</option>
-                        <option value="41012">St. Augustine, FL</option>
-                        <option value="41048">West Bermuda</option>
-                        <option value="41047">Northeast Bahamas</option>
-                        <option value="41046">East Bahamas</option>
-                        <option value="42036">West Tampa, FL</option>
-                        <option value="42012">Orange Beach, AL</option>
-                        <option value="LOPL1">Oil Platform, LA</option>
-                        <option value="42003">East Gulf of Mexico</option>
-                        <option value="42001">Mid Gulf of Mexico</option>
-                        <option value="42020">Corpus Christi, TX</option>
-                        <option value="42055">Bay of Campeche, MX</option>
-                        <option value="42056">Yucatan Basin</option>
-                        <option value="42058">Central Caribbean</option>
+                        <option value="41002">	Cape Hatteras, NC </option>
+                        <option value="41008">	Savannah, GA</option>
+                        <option value="41012">	St. Augustine, FL</option>
+                        <option value="41013">	Frying Pan Shoals, NC</option>
+                        <option value="41046">	San Salvador, Bahamas</option>
+                        <option value="41047">	Nassau, Bahamas</option>
+                        <option value="41048">	Bermuda</option>
+                        <option value="42001">	Southwest Pass, LA</option>
+                        <option value="42003">	Naples, FL</option>
+                        <option value="42012">	Mobile, AL</option>
+                        <option value="42020">	Corpus Christi, TX</option>
+                        <option value="42036">	Tampa, FL</option>
+                        <option value="42056">	Cozumel, Mexico</option>
+                        <option value="42058">	Kingston, Jamaica</option>
+                        <option value="44014">	Virginia Beach, VA</option>
+                        <option value="44025">	Islip, NY</option>
+                        <option value="44037">	Jordan Basin</option>
+                        <option value="44056">	Duck, NC</option>
+                        <option value="44065">	New York Harbor, NY</option>
+                        <option value="99999">	Grand Isle, LA</option>
                     </select></td>
                 </tr>
                 <tr style="height: 40px">
