@@ -226,20 +226,6 @@
 
 <jsp:include page="footer.jsp"/>
 
-<script>
-    var btn = document.querySelector("#btn");
-    btn.addEventListener("click", function () {
-        var element = document.getElementById("dropDown");
-        var newItem = element.getElementsByTagName("li")[0].cloneNode(true);
-        var childCount = document.querySelectorAll("ul li").length;
-        var newItemChild = document.createElement("a");
-        newItemChild.href = "#";
-        newItemChild.innerHTML = "Element " + (childCount + 1);
-        newItem.innerHTML = '';
-        newItem.appendChild(newItemChild);
-        element.appendChild(newItem);
-    });
-</script>
 </body>
 </html>
 
