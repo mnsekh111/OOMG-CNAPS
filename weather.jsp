@@ -65,11 +65,6 @@
 
         function initialize() {
 
-
-            $('#btn_start_anim').prop('disabled', false);
-            $('#btn_stop_anim').prop('disabled', true);
-            $('#btn_download').prop('disabled', false);
-
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -79,16 +74,12 @@
                     var tmpDate = new Date(dateText);
                     buoy_date = getYYYYMMYY(tmpDate)
                     alert(dateText);
-                    //winOutput();
+                    winOutput();
                 }
             }).datepicker("setDate", new Date());
 
             $('#variable_list').change(function (e) {
                 variable = this.value;
-                if(variable == "Pair"){
-                    Init_slp_map();
-                }
-                alert("variable list changed " + this.value);
                 winOutput(e);
             });
 
@@ -119,6 +110,8 @@
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(ga, s);
             })();
+
+            Init_slp_map();
         }
 
     </script>
@@ -203,7 +196,7 @@
                         <div class="panel panel-primary ">
                             <div class="sec-header">Instructions</div>
                             <div class="panel-body">
-                                <ul>
+                                <ul style="color: black">
                                     <li>Click on a buoy station button from the list. A new window will appear. Then
                                         select the date from
                                         the Date list.
