@@ -37,7 +37,7 @@
     <script type="text/javascript">
         var map;
         var overlaysArray = [];
-        var root = "/raid0/xzeng2/operational/plot/";
+        var root="<%=Global.val_figures_location %>";
         var variable = "Pair";
         var buoy = "44037";
         var buoy_date;
