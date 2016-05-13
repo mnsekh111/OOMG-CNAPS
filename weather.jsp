@@ -50,7 +50,7 @@
             Init_map();
         });
 
-        function winOutput() {
+        function winOutput(e) {
             $.get("servlet/WeatherValServlet?" +
                     "day=" + buoy_date.substring(0, 8) + "&" +
                     "date=" + buoy_date + "&buoy=" + buoy + "&variable=" + variable, function (data) {
@@ -79,23 +79,23 @@
                     var tmpDate = new Date(dateText);
                     buoy_date = getYYYYMMYY(tmpDate)
                     alert(dateText);
-                    winOutput();
+                    //winOutput();
                 }
             }).datepicker("setDate", new Date());
 
-            $('#variable_list').change(function () {
+            $('#variable_list').change(function (e) {
                 variable = this.value;
                 if(variable == "Pair"){
                     Init_slp_map();
                 }
                 alert("variable list changed " + this.value);
-                winOutput();
+                winOutput(e);
             });
 
-            $('#buoy_list').change(function () {
+            $('#buoy_list').change(function (e) {
                 buoy = this.value;
                 alert("variable list changed " + this.value);
-                winOutput();
+                winOutput(e);
             });
 
 
