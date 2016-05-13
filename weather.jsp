@@ -116,6 +116,7 @@
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(ga, s);
             })();
+            Init_map();
         }
 
     </script>
