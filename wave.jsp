@@ -127,7 +127,7 @@
                         $('#btn_stop_anim').prop("disabled", false);
                         var start = availableDates.indexOf(parseInt(start_date));
                         var end = availableDates.indexOf(parseInt(end_date));
-                        alert(availableDates.length + "" + start + " " + end);
+                        //alert(availableDates.length + "" + start + " " + end);
                         foo();
                     });
 
