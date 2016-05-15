@@ -144,9 +144,9 @@
 
             $("#btn_download")
                     .click(function () {
-                        alert("Download - feature under construction");
-                        document.getElementById('download').href = download();
+                        window.location = download();
                     });
+
 
 
             mapInit();

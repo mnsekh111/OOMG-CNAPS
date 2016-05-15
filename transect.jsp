@@ -87,8 +87,8 @@
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
-                minDate: new Date,
-                maxDate: '+4D',
+                minDate: '-4D',
+                maxDate: new Date,
                 onSelect: function (dateText, inst) {
                     var mydate = new Date(dateText);
                     date = getYYYYMMYY(mydate);

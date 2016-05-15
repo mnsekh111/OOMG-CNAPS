@@ -38,7 +38,7 @@
         var root = "<%=Global.figures_location%>";
         var depth = "0";
         var variable1 = "uv";
-        var variable = variable1 +"_"+depth;
+        var variable = variable1 + "_" + depth;
         var date;
 
         $(document).ready(function () {
@@ -122,14 +122,14 @@
 
             $('#variable_list').change(function () {
                 variable1 = this.value;
-                variable = variable1 +"_"+depth;
+                variable = variable1 + "_" + depth;
                 alert("variable list changed " + this.value);
                 plotwa();
             });
 
             $('#depth_list').change(function () {
                 depth = this.value;
-                variable = variable1 +"_"+depth;
+                variable = variable1 + "_" + depth;
                 alert("depth list changed " + this.value);
                 plotwa();
             });
@@ -154,9 +154,8 @@
 
             $("#btn_download")
                     .click(function () {
-                        document.getElementById('download').href = download();
+                        window.location = download();
                     });
-
 
 
             var _gaq = _gaq || [];
@@ -324,19 +323,5 @@
 <br>
 <br>
 <jsp:include page="footer.jsp"/>
-<script>
-    var btn = document.querySelector("#btn");
-    btn.addEventListener("click", function () {
-        var element = document.getElementById("dropDown");
-        var newItem = element.getElementsByTagName("li")[0].cloneNode(true);
-        var childCount = document.querySelectorAll("ul li").length;
-        var newItemChild = document.createElement("a");
-        newItemChild.href = "#";
-        newItemChild.innerHTML = "Element " + (childCount + 1);
-        newItem.innerHTML = '';
-        newItem.appendChild(newItemChild);
-        element.appendChild(newItem);
-    });
-</script>
 </body>
 </html>
