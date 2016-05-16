@@ -68,11 +68,11 @@
 
             $("#time_list").change(function () {
                 time = $( "#time_list" ).val();;
-                alert(""+time);
+                //alert(""+time);
             });
             $("#variable_list").change(function () {
                 vname = $( "#variable_list" ).val();;
-                alert(""+vname);
+                //alert(""+vname);
             });
 
             $("#btn_show_transect").click(function () {
@@ -92,7 +92,7 @@
                 onSelect: function (dateText, inst) {
                     var mydate = new Date(dateText);
                     date = getYYYYMMYY(mydate);
-                    alert("Selected data " + date);
+                    //alert("Selected data " + date);
                 }
             }).datepicker("setDate", new Date());
 

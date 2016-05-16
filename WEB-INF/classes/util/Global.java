@@ -5,8 +5,8 @@ package util;
 	 static public final String figures_location="/current/coawst_useast/Plot/";
 	 static public final String dir="/home/jbzambon/forecast/roms/useast/autoUSeast/upfunc/";
      
-     static public final String val_figures_location="/raid0/xzeng2/operational/plot/";
-     static public final String circulation_figures_location="/raid0/zyao/Project/USeast/Plot/";
+     static public final String val_figures_location="/current/coawst_useast/Plot/";
+     static public final String circulation_figures_location="/current/coawst_useast/Plot/";
 	 static public final String val_dir="/raid0/xzeng2/operational/";
 	 
 	 static public final String buoy_figures_location="/raid0/xzeng2/operational/plot/";

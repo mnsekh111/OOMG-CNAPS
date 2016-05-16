@@ -41,7 +41,7 @@
         var map;
         var overlays;
         var date;
-        var time;
+        var time=0.0;
         function initialize() {
             mapInit();
             InitLatlng(map);
@@ -69,13 +69,13 @@
                 onSelect: function (dateText, inst) {
                     var mydate = new Date(dateText);
                     date = getYYYYMMYY(mydate);
-                    alert("Selected data " + date);
+                    //alert("Selected data " + date);
                 }
             }).datepicker("setDate", new Date());
 
             $('#time_list').change(function () {
                 time = this.value;
-                alert("time list changed " + this.value);
+                //alert("time list changed " + this.value);
             });
 
             $("#btn_plot").click(function () {
@@ -86,6 +86,8 @@
                 window.location.href=window.location.href
             });
 
+            date = getYYYYMMYY(new Date());
+            time = getTime(new Date());
             $("#id_list_nav > li:nth-child(3)").css({ "background-color": "#041648"})
         }
     </script>
