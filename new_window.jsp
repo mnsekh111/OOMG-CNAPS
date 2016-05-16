@@ -32,6 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$(document).ready(function(){
 			parameters=window.location.href.substring(window.location.href.indexOf('?')+1);
 			if (parameters!=null){
+                alert("servlet/Transection?"+parameters);
 				$("#image").image("servlet/Transection?"+parameters,function(){
 					$('.loading').remove();
 				});
