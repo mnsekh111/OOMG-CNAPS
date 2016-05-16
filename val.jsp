@@ -50,11 +50,11 @@
         $(document).ready(function () {
             initialize();
             $("#id_list_nav > li:nth-child(5)").css({"background-color": "#041648"})
-            alert("going to be called.......")
+            //alert("going to be called.......")
             $('#variable_list')
                     .val('hf')
                     .trigger('change');
-            alert("It has been called.......")
+            //alert("It has been called.......")
         });
 
         function initialize() {
@@ -62,15 +62,15 @@
             $("#time_list").change(function () {
                 time = $("#time_list").val();
                 ;
-                alert("" + time);
+                //alert("" + time);
             });
             $("#variable_list").change(function () {
                 vname = $("#variable_list").val();
                 ;
-                alert("" + vname);
+                //alert("" + vname);
                 var rows = $("table tr")
                 if (vname == "hf") {
-                    alert("hf inside");
+                    //alert("hf inside");
                     if (ifshowhf == false) {
                         rows.filter(".hf").show();
                         rows.filter(".buoy").hide();
@@ -82,7 +82,7 @@
                 } else if (vname == "buoy") {
                     rows.filter(".hf").hide();
                     rows.filter(".buoy").show();
-                    alert("buoy inside");
+                    //alert("buoy inside");
                     ifhf = "false";
                     //google.maps.event.addDomListener(window,'load',Init_buoy_map);
 
@@ -103,7 +103,7 @@
                 onSelect: function (dateText, inst) {
                     var mydate = new Date(dateText);
                     date = getYYYYMMYY(mydate);
-                    alert("Selected data " + date);
+                    //alert("Selected data " + date);
                 }
             }).datepicker("setDate", new Date());
 
@@ -115,7 +115,7 @@
                 onSelect: function (dateText, inst) {
                     var mydate = new Date(dateText);
                     date = getYYYYMMYY(mydate);
-                    alert("Selected data " + date);
+                    //alert("Selected data " + date);
                 }
             }).datepicker("setDate", new Date());
 
