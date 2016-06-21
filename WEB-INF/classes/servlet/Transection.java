@@ -93,18 +93,8 @@ public class Transection extends HttpServlet {
 
             p.waitFor();
 
-//
-//
-//
             reader.close();
 
-//		    if (timeout==Global.MaxTimeout){
-//		    	//p.destroy();
-//			    BufferedWriter writer= new BufferedWriter(new OutputStreamWriter(p.getOutputStream()));
-//			    writer.write("exit\n");
-//			    writer.close();
-//		    	return;
-//		    }
         } catch (Exception e) {
             e.printStackTrace();
         }

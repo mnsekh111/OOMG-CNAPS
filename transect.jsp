@@ -27,7 +27,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="./lib/loadImage.js"></script>
-    <script type="text/javascript" src="./lib/animation.js"></script>
     <script type="text/javascript" src="./lib/trajectory.js"></script>
     <script type="text/javascript" src="./lib/listener.js"></script>
     <script type="text/javascript" src="./lib/showLatLng.js"></script>
@@ -44,7 +43,6 @@
     <script type="text/javascript">
         var map;
         var overlaysArray = [];
-
         function initialize() {
             mapInit();
 
@@ -84,6 +82,7 @@
             });
 
 
+            //minDate: '-4D'
             $("#datepicker").datepicker({
                 changeMonth: true,
                 changeYear: true,
@@ -97,6 +96,8 @@
 
             date = getYYYYMMYY(new Date());
             time = getTime(new Date());
+            
+            $("#variable_list").val()
 
         }
 
