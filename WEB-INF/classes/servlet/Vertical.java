@@ -40,7 +40,7 @@ public class Vertical extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         response.setContentType("text/html");
         String lon, lat, date, time;
         String ID = RandomID.getID();
@@ -88,13 +88,6 @@ public class Vertical extends HttpServlet {
             reader.close();
             reader_e.close();
 
-//		    if (timeout==Global.MaxTimeout){
-//		    	//p.destroy();
-//			    BufferedWriter writer= new BufferedWriter(new OutputStreamWriter(p.getOutputStream()));
-//			    writer.write("exit\n");
-//			    writer.close();
-//		    	return;
-//		    }
         } catch (IOException e) {
             System.out.println(e.getMessage());
             //new Log().log(e.getMessage());				
