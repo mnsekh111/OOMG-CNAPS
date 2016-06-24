@@ -27,12 +27,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
         <script type="text/javascript" src="./lib/loadImage.js"></script>
-        <script type="text/javascript" src="./lib/trajectory.js"></script>
         <script type="text/javascript" src="./lib/listener.js"></script>
         <script type="text/javascript" src="./lib/showLatLng.js"></script>
         <script type="text/javascript" src="./lib/transect.js"></script>
         <script type="text/javascript" src="./lib/global.js"></script>
-        <script type="text/javascript" src="./lib/vertical.js"></script>
         <script type="text/javascript" src="./lib/maps.google.polygon.containsLatLng.js"></script>
 
         <link type="text/css" href="layout.css" rel="stylesheet">
