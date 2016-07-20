@@ -19,7 +19,7 @@
         <!-- Script region -->
 
         <script type="text/javascript"
-                src="http://maps.google.com/maps/api/js?key=AIzaSyDx-ZeKRkXTjD1iNGF6tGD85U3M2x5lYV4">
+                src="http://maps.google.com/maps/api/js?key=AIzaSyCvEYHHNT3dEAXI0QX9RN99nsLZr0F7x9c">
         </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
