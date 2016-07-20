@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <servlet>
         <description>This is the description of my J2EE component</description>
         <display-name>This is the display name of my J2EE component</display-name>
@@ -11,18 +11,6 @@
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>Transection</servlet-name>
         <servlet-class>servlet.Transection</servlet-class>
-    </servlet>
-    <servlet>
-        <description>This is the description of my J2EE component</description>
-        <display-name>This is the display name of my J2EE component</display-name>
-        <servlet-name>Test</servlet-name>
-        <servlet-class>servlet.Test</servlet-class>
-    </servlet>
-    <servlet>
-        <description>This is the description of my J2EE component</description>
-        <display-name>This is the display name of my J2EE component</display-name>
-        <servlet-name>GetImage</servlet-name>
-        <servlet-class>servlet.GetImage</servlet-class>
     </servlet>
     <servlet>
         <description>This is the description of my J2EE component</description>
@@ -47,18 +35,6 @@
         <display-name>This is the display name of my J2EE component</display-name>
         <servlet-name>Vertical</servlet-name>
         <servlet-class>servlet.Vertical</servlet-class>
-    </servlet>
-    <servlet>
-        <description>This is the description of my J2EE component</description>
-        <display-name>This is the display name of my J2EE component</display-name>
-        <servlet-name>GetImage2</servlet-name>
-        <servlet-class>servlet.GetImage2</servlet-class>
-    </servlet>
-    <servlet>
-        <description>This is the description of my J2EE component</description>
-        <display-name>This is the display name of my J2EE component</display-name>
-        <servlet-name>GetImage3</servlet-name>
-        <servlet-class>servlet.GetImage3</servlet-class>
     </servlet>
     <servlet>
         <description>This is the description of my J2EE component</description>
@@ -109,10 +85,8 @@
         <servlet-class>servlet.WaveValServlet</servlet-class>
     </servlet>
     <servlet>
-        <description>This is the description of my J2EE component</description>
-        <display-name>This is the display name of my J2EE component</display-name>
-        <servlet-name>GetImage4</servlet-name>
-        <servlet-class>servlet.GetImage4</servlet-class>
+        <servlet-name>ImageFetchServlet</servlet-name>
+        <servlet-class>servlet.ImageFetchServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Table</servlet-name>
@@ -121,14 +95,6 @@
     <servlet-mapping>
         <servlet-name>Transection</servlet-name>
         <url-pattern>/servlet/Transection</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Test</servlet-name>
-        <url-pattern>/servlet/Test</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetImage</servlet-name>
-        <url-pattern>/servlet/GetImage</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Trajectory</servlet-name>
@@ -145,14 +111,6 @@
     <servlet-mapping>
         <servlet-name>Vertical</servlet-name>
         <url-pattern>/servlet/Vertical</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetImage2</servlet-name>
-        <url-pattern>/servlet/GetImage2</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetImage3</servlet-name>
-        <url-pattern>/servlet/GetImage3</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ValServlet1</servlet-name>
@@ -187,8 +145,8 @@
         <url-pattern>/servlet/WaveValServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>GetImage4</servlet-name>
-        <url-pattern>/servlet/GetImage4</url-pattern>
+        <servlet-name>ImageFetchServlet</servlet-name>
+        <url-pattern>/ImageFetchServlet</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>/atm.jsp</welcome-file>
