@@ -8,11 +8,6 @@ function mapInit() {
     map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
 }
 
-function download() {
-    var addr = circulation_figure_location + date.substring(0, 6) + "/" + date.substring(0, 8) + "/" + date + "_" + variable + ".kmz";
-    return addr;
-}
-
 function getYYYYMMYY(date) {
     return "" + date.getFullYear() + "" + ((date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1))
             + "" + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate());
@@ -32,7 +27,7 @@ function getTime(date) {
     else if (hrs < 6)
         return "0.125";
     else if (hrs < 9)
-        return "0.250";
+        return "0.25";
     else if (hrs < 12)
         return "0.375";
     else if (hrs < 15)
@@ -50,7 +45,7 @@ function getTimeHHHH(str) {
         return "0000";
     } else if (str == "0.125") {
         return "0300";
-    } else if (str == "0.250") {
+    } else if (str == "0.25") {
         return "0600";
     } else if (str == "0.375") {
         return "0900";
