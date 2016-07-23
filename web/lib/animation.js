@@ -1,79 +1,54 @@
-var timer_is_on = 0;
-var c = 0;	//counter for animation
-var t;
-var overlaysArray = [];
-var isFirstTime = true;
+var kmzNames = [];
+var overlayArray = [];
+var intervalId = null;
+var currIndex = 0;
 
-function foo()
-{
+function animate(overlay) {
+    if (overlaywa != null)
+        overlaywa.setMap(null);
+    overlaywa = null;
 
-    overlaysArray = [];
+    overlaywa = overlay;
+    overlaywa.setMap(map);
+}
 
+function startAnimation() {
+    $.get("AnimationServlet?startDate=" + start_date + "&endDate=" + end_date + "&variable=" + variable + "&depth=" + depth, function (data, status) {
+        alert("Data: " + data + "\nStatus: " + status);
+        if (data.length > 0) {
+            kmzNames = data.split("\n");
+            if (kmzNames == null || kmzNames.length == 0) {
+                alert("No data available for the specified parameters");
+                return;
+            }
 
-    if (overlay != null)
-        overlay.setMap(null);
+            for (i=0;i<kmzNames.length - 1;i++) {
+                var overlay = new google.maps.KmlLayer({
+                    url: getAnimationFullPath(kmzNames[i]),
+                    map: map});
+                overlayArray.push(overlay);
+            }
 
-    var length = availableDates.length;
-    for (i = length - 4; i < length; i++) {
-        for (j = 0; j <= 21; j += 3) {
-            d1 = availableDates[i];
-            setDate(d1, j);
-            overlay = new google.maps.KmlLayer(
-                    circulation_figure_location + d1.substring(0, 6) + "/" + d1 + "/" + date + "_" + variable + "_" + depth + ".kmz"
-                    , imageBounds);
-            overlaysArray.push(overlay);
+            intervalId = setInterval(function () {
+                animate(overlayArray[currIndex]);
+                currIndex = (currIndex + 1)%overlayArray.length;
+            }, 1000);
+        } else {
+            alert("No data available for the specified parameters");
         }
+    });
+}
+
+
+function stopAnimation() {
+    if (intervalId != null) {
+        clearInterval(intervalId);
     }
-    doTimer();
-}
 
-function animation()
-{
-    if (isFirstTime != true && c != 0)
-        overlaysArray[c - 1].setMap(null);
-    else if (c == 0)
-        overlaysArray[overlaysArray.length - 1].setMap(null);
-    isFirstTime = false;
-    overlaysArray[c].setMap(map);
-    t = setTimeout("animation()", 1000);
-    c = (c + 1) % overlaysArray.length;
+    overlayArray = [];
+    currIndex = 0;
+    intervalId = null;
 
-}
-
-function clearOverlays() {
-    if (overlaysArray) {
-        for (i in overlaysArray) {
-            overlaysArray[i].setMap(null);
-        }
-    }
-}
-
-function showOverlays() {
-    if (overlaysArray) {
-        for (i in overlaysArray) {
-            overlaysArray[i].setMap(map);
-        }
-    }
-}
-
-function doTimer()
-{
-    if (!timer_is_on)
-    {
-        timer_is_on = 1;
-        animation();
-    }
-}
-
-function stopCount()
-{
-    clearTimeout(t);
-    timer_is_on = 0;
-    isFirstTime = true;
-    clearOverlays();
-
-    $('input:button')[1].disabled = "disabled";
-    $('input:button')[0].disabled = "";
-
+    downloadFigure();
 }
 
