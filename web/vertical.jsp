@@ -14,8 +14,9 @@
         <link rel="stylesheet" href="./mns-css/bootstrap.css">
         <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbeiqBit7rIdLkW4n1wB7ESlVHAXE0g_Q"
-        type="text/javascript"></script>
+        <script type="text/javascript"
+                src="http://maps.google.com/maps/api/js?sensor=false">
+        </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>

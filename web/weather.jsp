@@ -1,8 +1,8 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
+<%@page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
 <%@page import="method.TimePeriod" %>
 <%@page import="util.TimeFormat" %>
 <%@page import="util.Global" %>
-<%@ page import="java.util.Arrays" %>
+<%@page import="java.util.Arrays" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";

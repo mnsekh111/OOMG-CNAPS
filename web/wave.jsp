@@ -36,6 +36,7 @@
         var overlaysArray = [];
         var root = "<%=Global.figures_location%>";
         var variable = "swd";
+        var depth="";
         var date;
 
 
