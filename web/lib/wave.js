@@ -22,6 +22,11 @@ function downloadFigure() {
     overlaywa = new google.maps.KmlLayer({
             url:url,
             map: map});
+    google.maps.event.addListener(overlaywa,"status_changed",function(){
+       if(overlaywa.getStatus() != google.maps.KmlLayerStatus.OK){
+           alert("KMZ Data is unavailable");
+       }
+    });
     overlaywa.setMap(map);
 }
 
