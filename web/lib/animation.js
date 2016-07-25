@@ -7,7 +7,7 @@ var currIndex = 0;
 
 function startAnimation() {
     $.get("AnimationServlet?startDate=" + start_date + "&endDate=" + end_date + "&variable=" + variable + "&depth=" + depth, function (data, status) {
-        alert("Data: " + data + "\nStatus: " + status);
+        //alert("Data: " + data + "\nStatus: " + status);
         if (data.length > 0) {
             kmzNames = data.split("\n");
             if (kmzNames == null || kmzNames.length == 0) {

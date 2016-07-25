@@ -69,7 +69,7 @@
 
                     $(document).ready(function () {
                         initialize();
-                        $("#id_list_nav > li:nth-child(4)").css({"background-color": "#041648"})
+                        $("#id_list_nav > li:nth-child(4)").addClass("active");
                     });
         </script>
 
@@ -89,6 +89,19 @@
 
         </script>
 
+          <style>
+            .main-content {
+                background: #dbdfe5;
+            }
+
+            .sec-header {
+                background-color: #3A5ECA;
+                color: white;
+                font-size: larger;
+                font-weight: bold;
+                padding: 2px;
+            }
+        </style>
     </head>
     <body style="background-color:#3A5ECA">
         <jsp:include page="header.jsp"></jsp:include>
@@ -122,7 +135,7 @@
                                 <tr>
                             <button id="btn_drift" class="btn btn-success">Add Drifter</button>
                             </tr>
-                            <tr style="height: 40px"></tr>
+                            <tr style="height: 10px"></tr>
                             <tr>
                                 <td>
                                     <button id="btn_traj" class="btn btn-success">Show Trajectory</button>
@@ -137,7 +150,7 @@
                                     <div class="panel panel-primary ">
                                         <div class="sec-header">Instructions</div>
                                         <div class="panel-body">
-                                            <ul style="color: black">
+                                            <ul style="color: black; padding-left: 20px">
                                                 <li>Click in the ocean within the red box to "place" passive drifters at one or more
                                                     locations.
                                                 </li>

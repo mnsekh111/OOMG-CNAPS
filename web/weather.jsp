@@ -45,7 +45,7 @@
 
                     $(document).ready(function () {
                         initialize();
-                        $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"})
+                        $("#id_list_nav > li:nth-child(5)").addClass("active");
                         Init_map();
                     });
 
@@ -161,7 +161,7 @@
                                 <tr>
                                     <td>Variable</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="variable_list">
-                                            <option value="Pair">Sea-level Air Pressure</option>
+                                            <option value="Pair">Sea Level Air Pressure</option>
                                             <option value="Wind">Wind</option>
                                             <option value="Tair">Air Temperature</option>
                                         </select></td>
@@ -172,7 +172,7 @@
                                 </tr>
 
                                 <tr class="buoy">
-                                    <td>Buoy Stations</td>
+                                    <td>Buoy Station</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="buoy_list">
                                             <option value="41002"> Cape Hatteras, NC</option>
                                             <option value="41008"> Savannah, GA</option>
@@ -190,10 +190,10 @@
                                             <option value="42058"> Kingston, Jamaica</option>
                                             <option value="44014"> Virginia Beach, VA</option>
                                             <option value="44025"> Islip, NY</option>
-                                            <option value="44037"> Jordan Basin</option>
+                                            <option value="44037"> Jordan Basin, Gulf of ME</option>
                                             <option value="44056"> Duck, NC</option>
                                             <option value="44065"> New York Harbor, NY</option>
-                                            <option value="99999"> Grand Isle, LA</option>
+                                            <option value="99999"> Offshore Oil Port, LA</option>
                                         </select></td>
                                 </tr>
                                 <tr style="height: 40px">
@@ -203,7 +203,7 @@
                                         <div class="panel panel-primary ">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
+                                                <ul style="color: black;padding-left: 20px">
                                                     <li>Click on a buoy station button from the list. A new window will appear. Then
                                                         select the date from
                                                         the Date list.

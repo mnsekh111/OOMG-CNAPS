@@ -60,7 +60,6 @@
                         ensemble_date = date;
                         $('#variable_list').change(function () {
                             variable = this.value;
-                            loadEnsembleImage();
                         });
 
 
@@ -70,12 +69,14 @@
                             onSelect: function (dateText, inst) {
                                 var date = new Date(dateText);
                                 ensemble_date = getYYYYMMYY(date);
-                                loadEnsembleImage();
+                                
                             }
 
                         }).datepicker("setDate", new Date());
 
-
+                        $('#btn_show_model').on("click",function(){
+                            loadEnsembleImage();
+                        });
 
                         var _gaq = _gaq || [];
                         _gaq.push(['_setAccount', 'UA-12288686-5']);
@@ -90,7 +91,7 @@
                             s.parentNode.insertBefore(ga, s);
                         })();
 
-                        $("#id_list_nav > li:nth-child(5)").css({"background-color": "#041648"});
+                        $("#id_list_nav > li:nth-child(5)").addClass("active");
                     }
 
         </script>
@@ -118,14 +119,13 @@
                 <div class="row">
                     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                        <div class="main-content"  style="float:left; width:100%;height:600px;">
-                            <img id="img_ensemble" src="" alt="Sorry, the image is not available yet" height="600px" width="100%"  >
+                        <div class="main-content"  style="float:left; width:90%;height:700px;">
+                            <img id="img_ensemble" src="" alt="Sorry, the image is not available yet" height="700px" width="100%"  >
                         </div>
                         <br><br>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                         <!--Nested rows within a column-->
-
                         <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
                             <thead>
                                 <tr class="sec-header">
@@ -147,20 +147,23 @@
                                         </select></td>
                                 </tr>
 
+                                <tr>
+                                    <td>
+                                        <button id="btn_show_model" class="btn btn-success">Show Models</button>
+                                    </td>
+                                </tr>
+
                                 <tr style="height: 40px"></tr>
                                 <tr>
                                     <td colspan="3">
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Model Ensemble</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
+                                                <ul style="color: black;padding-left: 20px">
                                                     <li>Because there are a number of operational ocean models providing predictions of
-                                                        the marine environment for <br>
-                                                        the northwest Atlantic Ocean, a multi-model ensemble is used routinely to
-                                                        generate a representative ocean state <br>
-                                                        estimation and to facilitate inter-model comparison. This Ensemble page shows
-                                                        the CNAPS model (top left), the U.S. Navy's HYCOM model, <br>
-                                                        the National Centers for Environmental Prediction (NCEP)'s HYCOM model, and an
+                                                        the marine environment for the northwest Atlantic Ocean, a multi-model ensemble is used routinely to
+                                                        generate a representative ocean state estimation and to facilitate inter-model comparison. This Ensemble page shows
+                                                        the CNAPS model (top left), the U.S. Navy's HYCOM model, the National Centers for Environmental Prediction (NCEP)'s HYCOM model, and an
                                                         ensemble of the three models.
                                                     </li>
                                                 </ul>
@@ -175,9 +178,8 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
+                                                <ul style="color: black;padding-left: 20px">
                                                     <li><strong>Date:</strong> Click on the date from the list to be shown on the maps.
-                                                        <br>
                                                         Dates before the present can be selected to populate the Date list.
                                                     </li>
                                                     <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>

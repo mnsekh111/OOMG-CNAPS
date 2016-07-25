@@ -1,8 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
-<%@page import="method.TimePeriod" %>
-<%@page import="util.TimeFormat" %>
 <%@page import="util.Global" %>
-<%@ page import="java.util.Arrays" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -32,17 +29,17 @@
 
         <script type="text/javascript">
             var map;
-            var overlaysArray = [];
             var root = "<%=Global.figures_location%>";
             var variable = "slp";
             var date;
+            var start_date,end_date;
             var depth="";
             var time;
 
 
             $(document).ready(function () {
                 initialize();
-                $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"});
+                $("#id_list_nav > li:nth-child(1)").addClass("active");
                 downloadFigure();
             });
             
@@ -73,15 +70,17 @@
             
             function initialize() {
 
-
-                $('#btn_start_anim').prop('disabled', false);
-                $('#btn_stop_anim').prop('disabled', true);
-                $('#btn_download').prop('disabled', false);
-
                 start_date = getYYYYMMYY(new Date);
                 end_date = getYYYYMMYY(new Date);
                 date = getYYYYMMYY(new Date);
                 time = getTimeHHHH(getTime(new Date()));
+                
+                $('#btn_start_anim').prop('disabled', false);
+                $('#btn_stop_anim').prop('disabled', true);
+                $('#btn_download').prop('disabled', false);
+                $("#time_list").val(getTime(new Date())).change();
+
+                
 
                 $("#datepicker").datepicker({
                     changeMonth: true,
@@ -121,7 +120,7 @@
                                     maxDate: endDate
                                 }
                         );
-
+                        
                         var date = new Date(dateText);
                         start_date = getYYYYMMYY(date);
                         end_date = getYYYYMMYY(endDate);
@@ -144,8 +143,6 @@
                 $("#btn_start_anim")
                         .click(function () {
                             disableUI();
-                            var start = availableDates.indexOf(parseInt(start_date));
-                            var end = availableDates.indexOf(parseInt(end_date));
                             startAnimation();
                         });
 
@@ -221,7 +218,7 @@
                                 <tr>
                                     <td>Variable</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="variable_list">
-                                            <option value="slp">Sea level Pressure</option>
+                                            <option value="slp">Sea level Air Pressure</option>
                                             <option value="w">10 m Wind</option>
                                             <option value="at">2 m Temperature</option>
                                         </select></td>
