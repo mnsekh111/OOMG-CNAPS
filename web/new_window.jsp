@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'new_window.jsp' starting page</title>
+    <title>Transection</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -21,23 +21,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<script type="text/javascript" src="./js/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript">
-		$.fn.image=function(src,f){
-			return this.each(function(){
-				var i=new Image();
-				i.src=src;
-				i.onload=f;
-				this.appendChild(i);
-			});
-		}
+		
 		$(document).ready(function(){
 			parameters=window.location.href.substring(window.location.href.indexOf('?')+1);
 			if (parameters!=null){
-                alert("servlet/Transection?"+parameters);
 				$("#image").image("servlet/Transection?"+parameters,function(){
 					$('.loading').remove();
 				});
 			}
 		});
+                
+                
 		
 	</script>
 
