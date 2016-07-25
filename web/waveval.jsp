@@ -40,7 +40,7 @@
 
                     $(document).ready(function () {
                         initialize();
-                        $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"})
+                        $("#id_list_nav > li:nth-child(5)").addClass("active");
                         Init_map();
                         
                     });
@@ -173,7 +173,7 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
+                                                <ul style="color: black;padding-left: 20px">
                                                     <li>This page compares observational data to model predictions.
                                                     </li>
                                                     <li>First, choose a date from the Date list. Dates before the present can be <br>

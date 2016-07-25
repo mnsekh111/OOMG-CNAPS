@@ -24,7 +24,7 @@
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-        <script type="text/javascript" src="./lib/loadImage.js"></script>
+
         <script type="text/javascript" src="./lib/listener.js"></script>
         <script type="text/javascript" src="./lib/showLatLng.js"></script>
         <script type="text/javascript" src="./lib/transect.js"></script>
@@ -101,7 +101,7 @@
 
                     $(document).ready(function () {
                         initialize();
-                        $("#id_list_nav > li:nth-child(4)").css({"background-color": "#041648"})
+                        $("#id_list_nav > li:nth-child(4)").addClass("active");
                     });
 
         </script>
@@ -175,10 +175,10 @@
                                 <tr>
                                     <td>Time</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
-                                            <option value="0.0">0:00</option>
-                                            <option value="0.125">3:00</option>
-                                            <option value="0.25">6:00</option>
-                                            <option value="0.375">9:00</option>
+                                            <option value="0.0">00:00</option>
+                                            <option value="0.125">03:00</option>
+                                            <option value="0.25">06:00</option>
+                                            <option value="0.375">09:00</option>
                                             <option value="0.5">12:00</option>
                                             <option value="0.625">15:00</option>
                                             <option value="0.75">18:00</option>
@@ -201,17 +201,14 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
-                                                    <li>Click on two locations in the ocean within the red box,<br>
-                                                        which will be the beginning and end points of your transect.<br>
+                                                <ul style="color: black; padding-left: 20px">
+                                                    <li>Click on two locations in the ocean within the red box,
+                                                        which will be the beginning and end points of your transect.
                                                         Select the variable, date, and time, then click on "Show Transect"
                                                     </li>
                                                     <li><strong>Variables:</strong> Click on the variable to be shown on the transect.
-                                                        "u" is water movement<br>
-                                                        in the east (positive)-- west (negative) direction. "v" is water movement in the
-                                                        north
-                                                        (positive)<br>
-                                                        -- south (negative) direction.
+                                                        "u" is water movement in the east (positive)-- west (negative) direction. "v" is water movement in the
+                                                        north(positive) south (negative) direction.
                                                     </li>
                                                     <li>Click your browser's refresh button to reset all criteria.
                                                     </li>

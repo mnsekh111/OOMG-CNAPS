@@ -48,7 +48,7 @@
 
                     $(document).ready(function () {
                         initialize();
-                        $("#id_list_nav > li:nth-child(5)").css({"background-color": "#041648"})
+                        $("#id_list_nav > li:nth-child(5)").addClass("active");
 
                         $('#variable_list')
                                 .val('hf')
@@ -298,7 +298,7 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
+                                                <ul style="color: black;padding-left: 20px">
                                                     <li>This page compares observational data to model predictions.<br>
                                                     </li>
                                                     <li>First, choose HF Radar or Tide Gauge from the buttons above the map.
