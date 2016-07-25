@@ -253,11 +253,11 @@
                                         </select></td>
                                 </tr>
                                 <tr>
-                                    <td>Start Date</td>
+                                    <td>Date</td>
                                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker"></td>
                                 </tr>
                                 <tr>
-                                    <td>Dates</td>
+                                    <td>Time</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
                                             <option value="0.0">00:00</option>
                                             <option value="0.125">03:00</option>

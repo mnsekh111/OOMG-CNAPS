@@ -87,7 +87,6 @@
 
                         $("#time_list").change(function () {
                             time = $("#time_list").val();
-                            winOutputHf(this);
                         });
                         $("#variable_list").change(function () {
                             vname = $("#variable_list").val();
@@ -123,7 +122,15 @@
                         $('#buoy_list').change(function (e) {
                             buoy = this.value;
                             //alert("variable list changed " + buoy);
-                            winOutputBuoy(e);
+                        });
+                        
+                        
+                        $('#btn_show_model').on("click",function(){
+                            if(vname === "hf"){
+                                winOutputHf(this);
+                            }else if(vname === "buoy"){
+                                winOutputBuoy(this);
+                            }
                         });
 
                         $("#datepicker2").datepicker({
@@ -134,7 +141,6 @@
                                 var mydate = new Date(dateText);
                                 buoy_date = getYYYYMMYY(mydate);
                                 //alert("Selected data picker2 " + date);
-                                winOutputBuoy(this)
 
                             }
                         }).datepicker("setDate", new Date());
@@ -147,7 +153,6 @@
                                 var mydate = new Date(dateText);
                                 hfdate = getYYYYMMYY(mydate);
                                 //alert("Selected data picker1" + date);
-                                winOutputHf(this);
                             }
                         }).datepicker("setDate", new Date());
 
@@ -212,10 +217,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Variables</td>
+                                    <td>Source</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="variable_list">
-                                            <option value="hf">HF-Radar</option>
-                                            <option value="buoy">Tide Guage</option>
+                                            <option value="hf">HF Radar</option>
+                                            <option value="buoy">Tide Gauge</option>
                                         </select></td>
 
                                 </tr>
@@ -239,49 +244,49 @@
                                 <tr class="buoy">
                                     <td>Buoy Stations</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="buoy_list">
-                                            <option value="8410140">Eastport,ME</option>
-                                            <option value="8413320">Bar Harbor,ME</option>
-                                            <option value="8418150">Portland,ME</option>
-                                            <option value="8443970">Boston,MA</option>
-                                            <option value="8449130">Nantucket Island,MA</option>
-                                            <option value="8447930">Woods Hole,MA</option>
-                                            <option value="8452660">Newport,RI</option>
-                                            <option value="8461490">New London,CT</option>
-                                            <option value="8465705">New Haven,CT</option>
-                                            <option value="8516945">Kings point,NY</option>
-                                            <option value="8510560">Montauk,NY</option>
-                                            <option value="8531680">Sandy Hook,NJ</option>
-                                            <option value="8534720">Atlantic City,NJ</option>
-                                            <option value="8557380">Lewes,DE</option>
-                                            <option value="8570283">Ocean City,MD</option>
-                                            <option value="8632200">Kiptopeke,VA</option>
-                                            <option value="8575512">Annapolis,MD</option>
-                                            <option value="8636580">Windmill Point,VA</option>
-                                            <option value="8651370">Duck,NC</option>
-                                            <option value="8656483">Beaufort,NC</option>
-                                            <option value="8658163">Wrightsville Beach,NC</option>
-                                            <option value="8661070">Springmaid Pier,NC</option>
-                                            <option value="8665530">Charleston,SC</option>
-                                            <option value="8670870">Fort Pulaski,GA</option>
-                                            <option value="8720218">Mayport,FL</option>
-                                            <option value="8721604">Trident Pier,FL</option>
-                                            <option value="8722670">Lake Worth Pier,FL</option>
-                                            <option value="8723214">Virginia Key,FL</option>
-                                            <option value="8724580">Key West,FL</option>
-                                            <option value="8723970">Vaca Key,FL</option>
-                                            <option value="8725110">Naples,FL</option>
-                                            <option value="8726384">Port Manatee,FL</option>
-                                            <option value="8726724">Clearwater Beach,FL</option>
-                                            <option value="8727520">Cedar Key,FL</option>
-                                            <option value="8728690">Apalachicola,FL</option>
-                                            <option value="8729108">Panama City,FL</option>
-                                            <option value="8735180">Dauphin Island,AL</option>
-                                            <option value="8760922">Pilots Station East,LA</option>
-                                            <option value="8764227">Lawma,LA</option>
-                                            <option value="8770570">Sabine Pass,TX</option>
-                                            <option value="8771341">Galveston,TX</option>
-                                            <option value="8772447">Uscg Freeport,TX</option>
-                                            <option value="8775870">Corpus Christi,TX</option>
+                                            <option value="8410140">Eastport, ME</option>
+                                            <option value="8413320">Bar Harbor, ME</option>
+                                            <option value="8418150">Portland, ME</option>
+                                            <option value="8443970">Boston, MA</option>
+                                            <option value="8449130">Nantucket Island, MA</option>
+                                            <option value="8447930">Woods Hole, MA</option>
+                                            <option value="8452660">Newport, RI</option>
+                                            <option value="8461490">New London, CT</option>
+                                            <option value="8465705">New Haven, CT</option>
+                                            <option value="8516945">Kings Point, NY</option>
+                                            <option value="8510560">Montauk, NY</option>
+                                            <option value="8531680">Sandy Hook, NJ</option>
+                                            <option value="8534720">Atlantic City, NJ</option>
+                                            <option value="8557380">Lewes, DE</option>
+                                            <option value="8570283">Ocean City, MD</option>
+                                            <option value="8632200">Kiptopeke, VA</option>
+                                            <option value="8575512">Annapolis, MD</option>
+                                            <option value="8636580">Windmill Point, VA</option>
+                                            <option value="8651370">Duck, NC</option>
+                                            <option value="8656483">Beaufort, NC</option>
+                                            <option value="8658163">Wrightsville Beach, NC</option>
+                                            <option value="8661070">Springmaid Pier, NC</option>
+                                            <option value="8665530">Charleston, SC</option>
+                                            <option value="8670870">Fort Pulaski, GA</option>
+                                            <option value="8720218">Mayport, FL</option>
+                                            <option value="8721604">Trident Pier, FL</option>
+                                            <option value="8722670">Lake Worth Pier, FL</option>
+                                            <option value="8723214">Virginia Key, FL</option>
+                                            <option value="8724580">Key West, FL</option>
+                                            <option value="8723970">Vaca Key, FL</option>
+                                            <option value="8725110">Naples, FL</option>
+                                            <option value="8726384">Port Manatee, FL</option>
+                                            <option value="8726724">Clearwater Beach, FL</option>
+                                            <option value="8727520">Cedar Key, FL</option>
+                                            <option value="8728690">Apalachicola, FL</option>
+                                            <option value="8729108">Panama City, FL</option>
+                                            <option value="8735180">Dauphin Island, AL</option>
+                                            <option value="8760922">Pilots Station East, LA</option>
+                                            <option value="8764227">Lawma, LA</option>
+                                            <option value="8770570">Sabine Pass, TX</option>
+                                            <option value="8771341">Galveston, TX</option>
+                                            <option value="8772447">USCG Freeport, TX</option>
+                                            <option value="8775870">Corpus Christi, TX</option>
                                             <option value="2695540">Bermuda</option>
 
                                         </select></td>
@@ -290,7 +295,11 @@
                                     <td>Buoy Date</td>
                                     <td colspan="2"><input class="form-control" style="width: 100%" type="text" id="datepicker2"></td>
                                 </tr>
-
+                                <tr>
+                                    <td>
+                                        <button id="btn_show_model" class="btn btn-success">Show Validation Plots</button>
+                                    </td>
+                                </tr>
                                 <tr style="height: 40px">
                                 </tr>
                                 <tr>
