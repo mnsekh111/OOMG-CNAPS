@@ -536,6 +536,7 @@ LatLngControl.prototype.draw = function () {
  */
 LatLngControl.prototype.createHtmlNode_ = function () {
     var divNode = document.createElement('div');
+    $(divNode).css({"color":"white", "font-size":"10px"});
     divNode.id = 'latlng-control';
     divNode.index = 100;
     return divNode;
