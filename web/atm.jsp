@@ -32,8 +32,8 @@
             var root = "<%=Global.figures_location%>";
             var variable = "slp";
             var date;
-            var start_date,end_date;
-            var depth="";
+            var start_date, end_date;
+            var depth = "";
             var time;
 
 
@@ -42,45 +42,45 @@
                 $("#id_list_nav > li:nth-child(1)").addClass("active");
                 downloadFigure();
             });
-            
-            function disableUI(){
-                $("#datepicker").prop("disabled",true);
-                $("#btn_start_anim").prop("disabled",true);
-                $("#btn_stop_anim").prop("disabled",false);
-                $("#btn_download").prop("disabled",true);
-                $("#datepicker-anim-end").prop("disabled",true);
-                $("#datepicker-anim-start").prop("disabled",true);
-                $("#datepicker-time").prop("disabled",true);
-                $("#time_list").prop("disabled",true);
-                $("#variable_list").prop("disabled",true);
+
+            function disableUI() {
+                $("#datepicker").prop("disabled", true);
+                $("#btn_start_anim").prop("disabled", true);
+                $("#btn_stop_anim").prop("disabled", false);
+                $("#btn_download").prop("disabled", true);
+                $("#datepicker-anim-end").prop("disabled", true);
+                $("#datepicker-anim-start").prop("disabled", true);
+                $("#datepicker-time").prop("disabled", true);
+                $("#time_list").prop("disabled", true);
+                $("#variable_list").prop("disabled", true);
             }
 
-            
-            function enableUI(){
-                $("#datepicker").prop("disabled",false);
-                $("#btn_start_anim").prop("disabled",false);
-                $("#btn_stop_anim").prop("disabled",true);
-                $("#btn_download").prop("disabled",false);
-                $("#datepicker-anim-end").prop("disabled",false);
-                $("#datepicker-anim-start").prop("disabled",false);
-                $("#datepicker-time").prop("disabled",false);
-                $("#time_list").prop("disabled",false);
-                $("#variable_list").prop("disabled",false);
+
+            function enableUI() {
+                $("#datepicker").prop("disabled", false);
+                $("#btn_start_anim").prop("disabled", false);
+                $("#btn_stop_anim").prop("disabled", true);
+                $("#btn_download").prop("disabled", false);
+                $("#datepicker-anim-end").prop("disabled", false);
+                $("#datepicker-anim-start").prop("disabled", false);
+                $("#datepicker-time").prop("disabled", false);
+                $("#time_list").prop("disabled", false);
+                $("#variable_list").prop("disabled", false);
             }
-            
+
             function initialize() {
 
                 start_date = getYYYYMMYY(new Date);
                 end_date = getYYYYMMYY(new Date);
                 date = getYYYYMMYY(new Date);
                 time = getTimeHHHH(getTime(new Date()));
-                
+
                 $('#btn_start_anim').prop('disabled', false);
                 $('#btn_stop_anim').prop('disabled', true);
                 $('#btn_download').prop('disabled', false);
                 $("#time_list").val(getTime(new Date())).change();
 
-                
+
 
                 $("#datepicker").datepicker({
                     changeMonth: true,
@@ -120,7 +120,7 @@
                                     maxDate: endDate
                                 }
                         );
-                        
+
                         var date = new Date(dateText);
                         start_date = getYYYYMMYY(date);
                         end_date = getYYYYMMYY(endDate);
@@ -138,7 +138,7 @@
                     downloadFigure();
                 });
 
-                
+
 
                 $("#btn_start_anim")
                         .click(function () {
@@ -205,7 +205,7 @@
                         <!--<img id="map_canvas_temp" style="float:left; width:100%;height:600px;"></div> -->
                         <br><br>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <!--Nested rows within a column-->
 
                         <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
@@ -250,7 +250,8 @@
                                 </tr>
                             </tbody>
                         </table>
-
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
                             <thead>
                                 <tr class="sec-header">
@@ -281,36 +282,37 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
 
-                <br><br>
-                <div class="panel panel-primary ">
-                    <div class="sec-header">Instructions</div>
-                    <div class="panel-body">
-                        <ul>
-                            <li><strong>Date and Time:</strong> Click on the date and time from the list to be
-                                shown on the map. Dates
-                                before the present can be selected to populate the Date and Time list.
-                            </li>
-                            <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>
-                            <li><strong>Animation:</strong> Click on "Start animation" to display the 72 hour
-                                forecast from today. Click on
-                                "Stop" to terminate the animation. Please allow the animation to run through
-                                once before it becomes smooth.
-                            </li>
-                            <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
-                                file).
-                            </li>
-                        </ul>
+                    <br><br>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                        <div class="panel panel-primary ">
+                            <div class="sec-header">Instructions</div>
+                            <div class="panel-body">
+                                <ul>
+
+                                    <li><strong>Variables: </strong> Choose a variable to display. Wind and temperature are above the ocean surface. 
+                                    </li>
+                                    <li><strong>Date:</strong> Choose the date for which to show the data. Earliest date available is 27 August 2014.
+                                        Latest date available is the forecast of today 00:00 + 72 hours. </li>
+                                    <li><strong>Time: </strong> Choose a time on the selected date for which to display data. Times are every 3 hours, from the beginning of the day (00:00),
+                                        using UTC time (U.S. Eastern Standard Time +5:00). 
+                                    </li>
+                                    <li><strong>Download: </strong> Choose to download a copy of the displayed data map (as a .KMZ file, which can be viewed using Google Earth).
+                                    </li>
+                                    <li>
+                                        <strong>Animation: </strong>Choose start and end dates. Maximum time interval is 72 hours.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-            <br>
-            <br>
+                <br>
+                <br>
 
-        <jsp:include page="footer.jsp"/>
-    </body>
-</html>
+            <jsp:include page="footer.jsp"/>
+            </body>
+            </html>
 
