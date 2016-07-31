@@ -81,10 +81,12 @@
                 $("#time_list").val(getTime(new Date())).change();
 
 
-
+                var plusthree = new Date(new Date().getTime()+(3*24*60*60*1000));
+                
                 $("#datepicker").datepicker({
                     changeMonth: true,
                     changeYear: true,
+                    maxDate: plusthree,
                     onSelect: function (dateText, inst) {
                         var temp = new Date(dateText);
                         date = getYYYYMMYY(temp);
@@ -200,12 +202,11 @@
         <jsp:include page="header.jsp"></jsp:include>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="margin-bottom: 20px">
                         <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
-                        <!--<img id="map_canvas_temp" style="float:left; width:100%;height:600px;"></div> -->
                         <br><br>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4" >
                         <!--Nested rows within a column-->
 
                         <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
@@ -282,13 +283,11 @@
                             </tbody>
                         </table>
                     </div>
-
-                    <br><br>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-                        <div class="panel panel-primary ">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-primary">
                             <div class="sec-header">Instructions</div>
                             <div class="panel-body">
-                                <ul>
+                                <ul style="color: black;padding-left: 20px">
 
                                     <li><strong>Variables: </strong> Choose a variable to display. Wind and temperature are above the ocean surface. 
                                     </li>
@@ -307,11 +306,7 @@
                         </div>
                     </div>
                 </div>
-
-
                 <br>
-                <br>
-
             <jsp:include page="footer.jsp"/>
             </body>
             </html>

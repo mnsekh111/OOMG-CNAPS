@@ -85,9 +85,11 @@
                 $('#btn_download').prop('disabled', false);
                 $("#time_list").val(getTime(new Date())).change();
 
+                var plusthree = new Date(new Date().getTime() + (3 * 24 * 60 * 60 * 1000));
                 $("#datepicker").datepicker({
                     changeMonth: true,
                     changeYear: true,
+                    maxDate:plusthree,
                     onSelect: function (dateText, inst) {
                         var temp = new Date(dateText);
                         date = getYYYYMMYY(temp);
@@ -203,11 +205,11 @@
         <jsp:include page="header.jsp"></jsp:include>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="margin-bottom: 20px">
                         <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
 
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <!--Nested rows within a column-->
                         <table class="table" style="table-layout: fixed; word-wrap: break-word;color: white">
                             <thead>
@@ -269,7 +271,7 @@
                                             <option value="0.875">21:00</option>
                                         </select></td>
                                 </tr>
-                                
+
                                 <tr>
                                     <td>
                                         <button id="btn_download" class="btn btn-info">Download data</button>
@@ -277,7 +279,8 @@
                                 </tr>
                             </tbody>
                         </table>
-
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                         <table class="table" style="table-layout: fixed; word-wrap: break-word;color:white">
                             <thead>
                                 <tr class="sec-header">
@@ -310,36 +313,35 @@
                     </div>
                     <br>
                     <br>
-                </div>
-                <br>
-                <br>
-                <div class="panel panel-primary">
-                    <div class="sec-header">Instructions</div>
-                    <div class="panel-body">
-                        <ul>
-                            <li><strong>Date and Time:</strong> Click on the date and time from the list to be
-                                shown on the map. Dates before the present can be selected to populate the Date
-                                and Time list.
-                            </li>
 
-                            <li><strong>Depth:</strong> Click on the depth isosurface to display. Current at 0 m
-                                shows currents, wind vectors (magenta arrows), and sea surface height (colors).
-                            </li>
-                            <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>
-                            <li><strong>Animation:</strong> Click on &quot;Start animation&quot; to display the
-                                72 hour forecast from today. Click on &quot;Stop&quot; to terminate the
-                                animation. Please allow the animation to run through once before it becomes
-                                smooth.
-                            </li>
-                            <li><strong>Download:</strong> Click Download to save a copy of the map (as a KMZ
-                                file).
-                            </li>
-                        </ul>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="sec-header">Instructions</div>
+                            <div class="panel-body">
+                                <ul style="color: black;padding-left: 20px">
+                                    <li><strong>Variables: </strong> Choose a variable to display. 
+                                    </li>
+
+                                    <li><strong>Depth: </strong> Choose a depth layer to show. Depth = 0 m is the ocean surface, and other values are meters below the surface.
+                                        Sea surface height difference from the mean is displayed at Depth = 0 m.
+                                    </li>
+                                    <li><strong>Date: </strong>  Choose the date for which to show the data. Earliest date available is 27 August 2014.
+                                        Latest date available is the forecast of today 00:00 + 72 hours. </li>
+                                    <li><strong>Time: </strong> Choose a time on the selected date for which to display data. 
+                                        Times are every 3 hours, from the beginning of the day (00:00), using UTC time (U.S. Eastern Standard Time +5:00). 
+                                    </li>
+                                    <li><strong>Download: </strong> Choose to download a copy of the displayed data map
+                                        (as a .KMZ file, which can be viewed using Google Earth).
+                                    </li>
+                                    <li><strong>Animation: </strong> Choose start and end dates. Maximum time interval is 72 hours.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            <br>
-            <br>
         <jsp:include page="footer.jsp"/>
     </body>
 </html>
