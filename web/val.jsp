@@ -307,20 +307,10 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black;padding-left: 20px">
-                                                    <li>This page compares observational data to model predictions.<br>
-                                                    </li>
-                                                    <li>First, choose HF Radar or Tide Gauge from the buttons above the map.
-                                                    </li>
-                                                    <li>Second, choose a date from the Date list. Dates before the present can be
-                                                        selected to populate <br>
-                                                        the Date list.
-                                                    </li>
-                                                    <li>Third, choose a radar or buoy station from the map or list. A plot of
-                                                        observational data,<br>
-                                                        when available, and model output will appear in a new window.
-                                                    </li>
-                                                </ul>
+                                                <div style="color: black;padding-left: 10px">
+                                                        This page compares circulation observational data to model predictions. 
+                                                        <br><br>Choose a data source, source location, and date, then Show Validation Plots. 
+                                                </div>
                                             </div>
                                         </div>
                                     </td>

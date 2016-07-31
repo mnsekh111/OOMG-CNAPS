@@ -108,7 +108,7 @@
 
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="margin-bottom: 10px">
                         <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
                         <br><br>
                     </div>
@@ -150,21 +150,10 @@
                                     <div class="panel panel-primary ">
                                         <div class="sec-header">Instructions</div>
                                         <div class="panel-body">
-                                            <ul style="color: black; padding-left: 20px">
-                                                <li>Click in the ocean within the red box to "place" passive drifters at one or more
-                                                    locations.
-                                                </li>
-                                                <li>You can also add drifters by entering latitude and longitude in the boxes.
-                                                    Latitude and longitude are displayed when the cursor hovers over the map.
-                                                    <br>(In the model domain, latitude is positive and longitude is negative.)
-                                                </li>
-                                                <li>Click "Show Trajectory" to show the drifters' paths over 72 hours. <br/>Click
-                                                    "Clear" to refresh the map.
-                                                </li>
-                                                <li>Depending on the number of drifters you place, this may take several minutes.
-                                                    Please be patient.
-                                                </li>
-                                            </ul>
+                                            <div style="color: black; padding-left: 10px">
+                                                Choose location(s) in the ocean within the red box to "place" passive drifters at one or more locations. Drifters can also be added by entering latitude and longitude. In the model domain, latitude is positive and longitude is negative. 
+                                                <br><br>Choose "Show Trajectory" to show the drifters' paths over 72 hours. Depending on the number of drifters, this may take several minutes.
+                                            </div>
                                         </div>
                                     </div>
                                 </td>

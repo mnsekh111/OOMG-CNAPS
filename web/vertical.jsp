@@ -176,11 +176,10 @@
                                         <div class="panel panel-primary ">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black;padding-left: 20px">
-                                                    <li >
-                                                        Select one location on the map and the criteria below, click on "Plot"
-                                                    </li>
-                                                </ul>
+                                                <div style="color: black;padding-left: 10px">
+                                                    Choose one location in the ocean within the red box on the map, date, and time, then choose "Plot Profile". 
+                                                    <br><br>The resulting plot shows the temperature and salinity profiles from ocean surface to bottom at the chosen point.
+                                                </div>
                                             </div>
                                         </div>
                                     </td>

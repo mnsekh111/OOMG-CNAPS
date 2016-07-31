@@ -182,15 +182,10 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black;padding-left: 20px">
-                                                    <li>This page compares observational data to model predictions.
-                                                    </li>
-                                                    <li>First, choose a date from the Date list. Dates before the present can be <br>
-                                                        selected to populate the Date list.
-                                                    </li>
-                                                    <li>Then choose a buoy station from the list or the map. A plot of observational <br>
-                                                        data, when available, and model output will appear in a new window.</li>
-                                                </ul>
+                                                <div style="color: black;padding-left: 10px">
+                                                    This page compares wave height observational data to model predictions. 
+                                                    <br><br>Choose a date and variable to be displayed, then Show Validation Plot.
+                                                </div>
                                             </div>
                                         </div>
                                     </td>

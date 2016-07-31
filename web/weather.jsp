@@ -209,12 +209,11 @@
                                         <div class="panel panel-primary ">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black;padding-left: 20px">
-                                                    <li>Click on a buoy station button from the list. A new window will appear. Then
-                                                        select the date from
-                                                        the Date list.
-                                                    </li>
-                                                </ul>
+                                                <div style="color: black;padding-left: 10px">
+                                                    This page compares weather observational data to model predictions. 
+                                                    <br><br>Choose a variable, date, and buoy, then Show Validation Plots. 
+                                                    <br><br>Winds: "u" wind is east (positive) - west (negative) and "v" wind is north (positive)-south (negative).
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
