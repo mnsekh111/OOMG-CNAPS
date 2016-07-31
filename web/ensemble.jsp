@@ -159,14 +159,14 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Model Ensemble</div>
                                             <div class="panel-body">
-                                                <ul style="color: black;padding-left: 20px">
-                                                    <li>Because there are a number of operational ocean models providing predictions of
+                                                <div style="color: black;padding-left: 10px">
+                                                    Because there are a number of operational ocean models providing predictions of
                                                         the marine environment for the northwest Atlantic Ocean, a multi-model ensemble is used routinely to
                                                         generate a representative ocean state estimation and to facilitate inter-model comparison. This Ensemble page shows
                                                         the CNAPS model (top left), the U.S. Navy's HYCOM model, the National Centers for Environmental Prediction (NCEP)'s HYCOM model, and an
                                                         ensemble of the three models.
-                                                    </li>
-                                                </ul>
+                                                    
+                                                </div>
                                             </div>
                                         </div>
                                     </td>
@@ -178,12 +178,9 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black;padding-left: 20px">
-                                                    <li><strong>Date:</strong> Click on the date from the list to be shown on the maps.
-                                                        Dates before the present can be selected to populate the Date list.
-                                                    </li>
-                                                    <li><strong>Variables:</strong> Click on the variable to be shown on the map.</li>
-                                                </ul>
+                                                <div style="color: black;padding-left: 10px">
+                                                    Choose a date and variable to be displayed, then Show Models.
+                                                </div>
                                             </div>
                                         </div>
                                     </td>

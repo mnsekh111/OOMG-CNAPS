@@ -27,7 +27,7 @@
             })
             </script>
     </head>
-    <body style="background-color: #ffffff">
+    <body style="background-color: #3A5ECA;color: white">
 
         <jsp:include page="header.jsp"></jsp:include>
             <div class="container">
