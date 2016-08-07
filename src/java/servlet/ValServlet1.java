@@ -129,7 +129,7 @@ public class ValServlet1 extends HttpServlet {
                 if (file.exists()) {
                     return new String[]{filePath, hfDate, timeStrings[timeIndex]};
                 }
-                Logger.getLogger(ValServlet1.class.getName()).severe(filePath);
+                //Logger.getLogger(ValServlet1.class.getName()).severe(filePath);
                 timeIndex = timeIndex - 1;
                 if (timeIndex < 0) {
                     timeIndex = timeStrings.length - 1;

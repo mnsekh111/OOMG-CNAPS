@@ -2,20 +2,25 @@ var markersArray = [];
 var lonlatArray = [];
 var colorIndex = 0;
 var isProcessing = false;
+var MAX_POINTS = 15;
 
 function addMarker(location) {
-    marker = new google.maps.Marker({
-        position: location,
-        icon: "image/" + colors[colorIndex][0] + ".png",
-        map: map
-    });
-    markersArray.push(marker);
-    lonlatArray.push({
-        location: location,
-        col: colors[colorIndex][1]
-    });
-    colorIndex = (colorIndex + 1) % colors.length;
 
+    if (markersArray.length < MAX_POINTS) {
+        marker = new google.maps.Marker({
+            position: location,
+            icon: "image/" + colors[colorIndex][0] + ".png",
+            map: map
+        });
+        markersArray.push(marker);
+        lonlatArray.push({
+            location: location,
+            col: colors[colorIndex][1]
+        });
+        colorIndex = (colorIndex + 1) % colors.length;
+    }else{
+        alert("Max number of points allowed is " + MAX_POINTS);
+    }
 }
 
 function showTrajectory() {
@@ -48,7 +53,7 @@ function showTrajectory() {
         $(".loading_dialog").html();
         $(".loading_dialog").html("<img class='loading' src='./image/loading.gif'style='float:left'/> " +
                 "<div style='float:left;padding:20px'>   72 hours trajectory prediction <br/> starting from 0:00 " + (d.getMonth() + 1).toString() + "/"
-                + d.getDate().toString() + "/" + (d.getYear() + 1900).toString()+"</div>");
+                + d.getDate().toString() + "/" + (d.getYear() + 1900).toString() + "</div>");
 
         $(".loading_dialog").show();
 

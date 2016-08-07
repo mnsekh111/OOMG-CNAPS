@@ -2,7 +2,6 @@ var image_base_url = "omglnx6.meas.ncsu.edu/sabgom_nfcast";
 var figure_location = "/Plot/Plot_zyao/"
 var circulation_figure_location = "http://omgsrv1.meas.ncsu.edu:8080/Plots/useast/";
 
-
 function mapInit() {
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
