@@ -160,7 +160,7 @@
                                         <div class="sec-header">Instructions</div>
                                         <div class="panel-body">
                                             <div style="color: black; padding-left: 10px">
-                                                Choose location(s) in the ocean within the red box to "place" passive drifters at one or more locations (A maximum of 15 points can be added). Drifters can also be added by entering latitude and longitude. In the model domain, latitude is positive and longitude is negative.
+                                                Choose location(s) in the ocean within the red box to "place" passive drifters at one or more locations. Drifters can also be added by entering latitude and longitude. In the model domain, latitude is positive and longitude is negative. 
                                                 <br><br>Choose "Show Trajectory" to show the drifters' paths over 72 hours. Depending on the number of drifters, this may take several minutes.
                                             </div>
                                         </div>

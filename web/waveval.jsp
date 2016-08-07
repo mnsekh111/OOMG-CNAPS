@@ -48,7 +48,7 @@
             function winOutputWaveEval(e) {
 
                 window_handle = window.open("wavevalimage.jsp?day=" + buoy_date.substring(0, 8) + "&" + "date=" + buoy_date + "&" + "buoy=" + buoy,
-                        "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=670, width=1000');
+                        "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=800');
 
             }
 

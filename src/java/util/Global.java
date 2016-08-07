@@ -5,12 +5,12 @@ public class Global {
 
 
     static public final int MaxTimeout = 120;
-    static public final String figures_location = "/current/coawst_useast/Plot/";
-    static public final String dir = "/home/jbzambon/forecast/roms/useast/autoUSeast/upfunc/";
+    static public final String figures_location = "/home/mns/remote/current/coawst_useast/Plot/";
+    static public final String dir = "/home/mns/remote/home/jbzambon/forecast/roms/useast/autoUSeast/upfunc/";
 
 
-    static public final String val_figures_location = "/current/coawst_useast/Plot/";
-    static public final String circulation_figures_location = "/current/coawst_useast/Plot/";
+    static public final String val_figures_location = "/home/mns/remote/current/coawst_useast/Plot/";
+    static public final String circulation_figures_location = "/home/mns/remote/current/coawst_useast/Plot/";
     static public final String val_dir = "/raid0/xzeng2/operational/";
 
 
@@ -43,7 +43,7 @@ public class Global {
     static public final String output_vertical_type = ".png";
 
 
-    static public final String bash_section = "transect.bash";
+    static public final String bash_section = "transect_debug.bash";
     static public final String input_section_1 = "vname.txt.";
     static public final String input_section_2 = "lon_lat_section.txt.";
     static public final String input_section_3 = "sectiontime.txt.";

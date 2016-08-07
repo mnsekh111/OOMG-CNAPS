@@ -30,7 +30,7 @@
                             "day=" + hfdate.substring(0, 8) +
                             "&hfdate=" + hfdate + "&time=" + time + "&areanum=" + areanum,
                     success: function (data, textStatus, jqXHR) {
-                        $("#hfimage").prop("src", 'data:image/png;base64,' + data);
+                        $("#hfimage").prop("src", 'data:image/jpeg;base64,' + data);
                         //alert(jqXHR.getAllResponseHeaders())
                         if (jqXHR.getResponseHeader("meta-correct") == "false") {
                             var info = jqXHR.getResponseHeader("meta-info");

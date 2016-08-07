@@ -52,7 +52,7 @@
             function winOutputWeather(e) {
 
                 window.open("weathervalimage.jsp?day=" + buoy_date.substring(0, 8) + "&date=" + buoy_date + "&buoy=" + buoy + "&variable=" + variable,
-                        "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=670, width=865');
+                        "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=665');
 
             }
 
