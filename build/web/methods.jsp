@@ -23,11 +23,11 @@
         <script type="text/javascript" src="./lib/global.js"></script>
         <script>
             $(document).ready(function(){
-                $("#id_list_nav > li:nth-child(6)").css({"background-color": "#041648"});
+                $("#id_list_nav > li:nth-child(6)").addClass("active");
             })
             </script>
     </head>
-    <body style="background-color: #ffffff">
+    <body style="background-color: #3A5ECA;color: white">
 
         <jsp:include page="header.jsp"></jsp:include>
             <div class="container">

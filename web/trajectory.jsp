@@ -9,18 +9,16 @@
     <head>
         <title>CNAPS Coupled Northwest Atlantic Prediction System</title>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
-        <script type="text/javascript"
-                src="http://maps.google.com/maps/api/js?sensor=false">
-        </script>
+
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="./mns-css/bootstrap.css">
         <link rel="stylesheet" href="./mns-css/bootstrap-theme.css">
 
+
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbeiqBit7rIdLkW4n1wB7ESlVHAXE0g_Q"
         type="text/javascript"></script>
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -39,38 +37,37 @@
         <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
         <script type="text/javascript">
-                    var map;
-                    var overlaysArray = [];
+            var map;
+            var overlaysArray = [];
 
-                    function initialize() {
-                        mapInit();
-                        InitLatlng(map);
-                        google.maps.event.addListener(map, 'click', function (event) {
-                            if (!limitArea_polygon.containsLatLng(event.latLng)) {
-                                alert("Sorry, this is outside our support domain.");
-                            } else {
-                                addMarker(event.latLng);
-                            }
-                        });
-
-
-                        $("#btn_traj").click(function () {
-                            showTrajectory();
-                        });
-
-                        $("#btn_clear").click(function () {
-                            window.location.href = window.location.href
-                        });
-
-                        $("#btn_drift").click(function () {
-                            addDrifter();
-                        });
+            function initialize() {
+                mapInit();
+                InitLatlng(map);
+                google.maps.event.addListener(map, 'click', function (event) {
+                    if (!limitArea_polygon.containsLatLng(event.latLng)) {
+                        alert("Sorry, this is outside our support domain.");
+                    } else {
+                        addMarker(event.latLng);
                     }
+                });
 
-                    $(document).ready(function () {
-                        initialize();
-                        $("#id_list_nav > li:nth-child(4)").addClass("active");
-                    });
+                $("#btn_traj").click(function () {
+                    showTrajectory();
+                });
+                
+                $("#btn_clear").click(function () {
+                    window.location.href = window.location.href
+                });
+
+                $("#btn_drift").click(function () {
+                    addDrifter();
+                });
+            }
+
+            $(document).ready(function () {
+                initialize();
+                $("#id_list_nav > li:nth-child(4)").addClass("active");
+            });
         </script>
 
         <script type="text/javascript">
@@ -89,7 +86,7 @@
 
         </script>
 
-          <style>
+        <style>
             .main-content {
                 background: #dbdfe5;
             }
@@ -101,6 +98,17 @@
                 font-weight: bold;
                 padding: 2px;
             }
+
+            .loading_dialog{
+                z-index:1;
+                position: absolute;
+                float:left;
+                width: 100%;
+                height:600px;
+                padding:200px;
+                background: whitesmoke;
+                display: none
+            }
         </style>
     </head>
     <body style="background-color:#3A5ECA">
@@ -110,7 +118,8 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="margin-bottom: 10px">
                         <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
-                        <br><br>
+                        <div class="loading_dialog"></div>
+                        <br>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                         <!--Nested rows within a column-->
@@ -162,12 +171,9 @@
                         </table>
                     </div>
                 </div>
-
-                <br><br>
-
+                <br>
+                <br>
             </div>
-
-
         <jsp:include page="footer.jsp"/>
     </body>
 </html>

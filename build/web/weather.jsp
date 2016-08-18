@@ -1,8 +1,8 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
+<%@page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
 <%@page import="method.TimePeriod" %>
 <%@page import="util.TimeFormat" %>
 <%@page import="util.Global" %>
-<%@ page import="java.util.Arrays" %>
+<%@page import="java.util.Arrays" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -34,76 +34,77 @@
 
 
         <script type="text/javascript">
-                    var map;
-                    var overlaysArray = [];
-                    var root = "<%=Global.val_figures_location%>";
-                    var variable = "Pair";
-                    var buoy = "41002";
-                    var buoy_date;
-                    var date;
+            var map;
+            var overlaysArray = [];
+            var root = "<%=Global.val_figures_location%>";
+            var variable = "Pair";
+            var buoy = "41002";
+            var buoy_date;
+            var date;
 
 
-                    $(document).ready(function () {
-                        initialize();
-                        $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"})
-                        Init_map();
-                    });
+            $(document).ready(function () {
+                initialize();
+                $("#id_list_nav > li:nth-child(5)").addClass("active");
+                Init_map();
+            });
 
-                    function winOutputWeather(e) {
+            function winOutputWeather(e) {
 
-                        window.open("weathervalimage.jsp?day=" + buoy_date.substring(0, 8) + "&date=" + buoy_date + "&buoy=" + buoy + "&variable=" + variable,
-                                "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=665');
+                window.open("weathervalimage.jsp?day=" + buoy_date.substring(0, 8) + "&date=" + buoy_date + "&buoy=" + buoy + "&variable=" + variable,
+                        "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=665');
 
+            }
+
+            function initialize() {
+
+                $("#datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    maxDate: new Date(),
+                    onSelect: function (dateText, inst) {
+                        var tmpDate = new Date(dateText);
+                        buoy_date = getYYYYMMYY(tmpDate)
+                        //alert(dateText);
                     }
+                }).datepicker("setDate", new Date());
 
-                    function initialize() {
+                $('#variable_list').change(function (e) {
+                    variable = this.value;
+                });
 
-                        $("#datepicker").datepicker({
-                            changeMonth: true,
-                            changeYear: true,
-                            maxDate: new Date(),
-                            onSelect: function (dateText, inst) {
-                                var tmpDate = new Date(dateText);
-                                buoy_date = getYYYYMMYY(tmpDate)
-                                //alert(dateText);
-                                winOutputWeather(this);
-                            }
-                        }).datepicker("setDate", new Date());
-
-                        $('#variable_list').change(function (e) {
-                            variable = this.value;
-                            winOutputWeather(e);
-                        });
-
-                        $('#buoy_list').change(function (e) {
-                            buoy = this.value;
-                            winOutputWeather(e);
-                        });
+                $('#buoy_list').change(function (e) {
+                    buoy = this.value;
+                });
 
 
-                        $(document).ready(function () {
-                            $('.dropdown-toggle').dropdown();
-                        });
+                $(document).ready(function () {
+                    $('.dropdown-toggle').dropdown();
+                });
 
-                        var date = getYYYYMMYY(new Date());
-                        buoy_date = date;
+                var date = getYYYYMMYY(new Date());
+                buoy_date = date;
 
-                        mapInit();
-                        var _gaq = _gaq || [];
-                        _gaq.push(['_setAccount', 'UA-12288686-5']);
-                        _gaq.push(['_trackPageview']);
+                $('#btn_show_model').on("click", function () {
+                    winOutputWeather(this);
+                });
 
-                        (function () {
-                            var ga = document.createElement('script');
-                            ga.type = 'text/javascript';
-                            ga.async = true;
-                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(ga, s);
-                        })();
+                mapInit();
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-12288686-5']);
+                _gaq.push(['_trackPageview']);
 
-                        Init_slp_map();
-                    }
+                (function () {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+
+                Init_slp_map();
+            }
 
         </script>
 
@@ -161,7 +162,7 @@
                                 <tr>
                                     <td>Variable</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="variable_list">
-                                            <option value="Pair">Sea-level Air Pressure</option>
+                                            <option value="Pair">Sea Level Air Pressure</option>
                                             <option value="Wind">Wind</option>
                                             <option value="Tair">Air Temperature</option>
                                         </select></td>
@@ -172,7 +173,7 @@
                                 </tr>
 
                                 <tr class="buoy">
-                                    <td>Buoy Stations</td>
+                                    <td>Buoy Station</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="buoy_list">
                                             <option value="41002"> Cape Hatteras, NC</option>
                                             <option value="41008"> Savannah, GA</option>
@@ -190,11 +191,16 @@
                                             <option value="42058"> Kingston, Jamaica</option>
                                             <option value="44014"> Virginia Beach, VA</option>
                                             <option value="44025"> Islip, NY</option>
-                                            <option value="44037"> Jordan Basin</option>
+                                            <option value="44037"> Jordan Basin, Gulf of ME</option>
                                             <option value="44056"> Duck, NC</option>
                                             <option value="44065"> New York Harbor, NY</option>
-                                            <option value="99999"> Grand Isle, LA</option>
+                                            <option value="99999"> Offshore Oil Port, LA</option>
                                         </select></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="btn_show_model" class="btn btn-success">Show Validation Plots</button>
+                                    </td>
                                 </tr>
                                 <tr style="height: 40px">
                                 </tr>
@@ -203,12 +209,11 @@
                                         <div class="panel panel-primary ">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
-                                                    <li>Click on a buoy station button from the list. A new window will appear. Then
-                                                        select the date from
-                                                        the Date list.
-                                                    </li>
-                                                </ul>
+                                                <div style="color: black;padding-left: 10px">
+                                                    This page compares weather observational data to model predictions. 
+                                                    <br><br>Choose a variable, date, and buoy, then Show Validation Plots. 
+                                                    <br><br>Winds: "u" wind is east (positive) - west (negative) and "v" wind is north (positive)-south (negative).
+                                                </div>
                                             </div>
                                         </div>
                                     </td>

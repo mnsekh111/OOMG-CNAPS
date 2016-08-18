@@ -32,72 +32,76 @@
 
 
         <script type="text/javascript">
-                    var map;
-                    var overlaysArray = [];
-                    var root = "<%=Global.val_figures_location%>";
-                    var buoy_date;
-                    var buoy;
+            var map;
+            var overlaysArray = [];
+            var root = "<%=Global.val_figures_location%>";
+            var buoy_date;
+            var buoy;
 
-                    $(document).ready(function () {
-                        initialize();
-                        $("#id_list_nav > li:nth-child(1)").css({"background-color": "#041648"})
-                        Init_map();
-                        
-                    });
+            $(document).ready(function () {
+                initialize();
+                $("#id_list_nav > li:nth-child(5)").addClass("active");
+                Init_map();
 
-                    function winOutputWaveEval(e) {
+            });
 
-                        window_handle = window.open("wavevalimage.jsp?day=" + buoy_date.substring(0, 8) + "&" + "date=" + buoy_date + "&" + "buoy=" + buoy,
-                                "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=800');
+            function winOutputWaveEval(e) {
 
+                window_handle = window.open("wavevalimage.jsp?day=" + buoy_date.substring(0, 8) + "&" + "date=" + buoy_date + "&" + "buoy=" + buoy,
+                        "Model Validation", 'top=' + e.screenY + ',left=' + e.screenX + ', height=470, width=800');
+
+            }
+
+            function initialize() {
+
+                buoy = "41002";
+                date = getYYYYMMYY(new Date());
+                buoy_date = date;
+
+                $("#datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    onSelect: function (dateText, inst) {
+                        var date = new Date(dateText);
+                        buoy_date = getYYYYMMYY(date);
+                        if (buoy !== null)
+                        {
+                            //winOutputWaveEval(this);
+                        } else {
+                            alert("Please select a buoy station");
+                        }
                     }
-
-                    function initialize() {
-
-                        buoy = "41002";
-                        date = getYYYYMMYY(new Date());
-                        buoy_date = date;
-
-                        $("#datepicker").datepicker({
-                            changeMonth: true,
-                            changeYear: true,
-                            onSelect: function (dateText, inst) {
-                                var date = new Date(dateText);
-                                buoy_date = getYYYYMMYY(date);
-                                if (buoy !== null)
-                                {
-                                    winOutputWaveEval(this);
-
-                                } else {
-                                    alert("Please select a buoy station");
-                                }
-                            }
-                        }).datepicker("setDate", new Date());
+                }).datepicker("setDate", new Date());
 
 
-                        $('#buoy_list').change(function () {
-                            buoy = this.value;
-                            if (buoy_date != null) {
-                                winOutputWaveEval(this);
-                            }
-                        });
+                $('#buoy_list').change(function () {
+                    buoy = this.value;
+                });
 
-                        mapInit();
-                        var _gaq = _gaq || [];
-                        _gaq.push(['_setAccount', 'UA-12288686-5']);
-                        _gaq.push(['_trackPageview']);
-                        (function () {
-                            var ga = document.createElement('script');
-                            ga.type = 'text/javascript';
-                            ga.async = true;
-                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
-                                    '.google-analytics.com/ga.js';
-                            var s = document.getElementsByTagName('script')[0];
-                            s.parentNode.insertBefore(ga, s);
-                        })();
-                        
-                        Init_wsp_map();
+                $('#btn_show_model').on("click", function () {
+                    if (buoy !== null && buoy_date !== null) {
+                        winOutputWaveEval(this);
+                    }else{
+                        alert("Please select a valid date and buoy station");
                     }
+                });
+
+                mapInit();
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-12288686-5']);
+                _gaq.push(['_trackPageview']);
+                (function () {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                            '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+
+                Init_wsp_map();
+            }
 
         </script>
 
@@ -166,6 +170,11 @@
                                             <option value="99999">Oil Platform, LA</option>
                                         </select></td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <button id="btn_show_model" class="btn btn-success">Show Validation Plots</button>
+                                    </td>
+                                </tr>
 
                                 <tr style="height: 40px"></tr>
                                 <tr>
@@ -173,15 +182,10 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
-                                                    <li>This page compares observational data to model predictions.
-                                                    </li>
-                                                    <li>First, choose a date from the Date list. Dates before the present can be <br>
-                                                        selected to populate the Date list.
-                                                    </li>
-                                                    <li>Then choose a buoy station from the list or the map. A plot of observational <br>
-                                                        data, when available, and model output will appear in a new window.</li>
-                                                </ul>
+                                                <div style="color: black;padding-left: 10px">
+                                                    This page compares wave height observational data to model predictions. 
+                                                    <br><br>Choose a date and variable to be displayed, then Show Validation Plot.
+                                                </div>
                                             </div>
                                         </div>
                                     </td>

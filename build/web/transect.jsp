@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
+<%@page language="java" import="java.util.*" pageEncoding="ISO-8859-1" %>
 <%@page import="method.TimePeriod" %>
 <%@page import="util.TimeFormat" %>
 <%@page import="util.Global" %>
@@ -20,12 +20,11 @@
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbeiqBit7rIdLkW4n1wB7ESlVHAXE0g_Q"
         type="text/javascript"></script>
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-        <script type="text/javascript" src="./lib/loadImage.js"></script>
+
         <script type="text/javascript" src="./lib/listener.js"></script>
         <script type="text/javascript" src="./lib/showLatLng.js"></script>
         <script type="text/javascript" src="./lib/transect.js"></script>
@@ -38,72 +37,72 @@
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 
         <script type="text/javascript">
-                    var map;
-                    var overlaysArray = [];
-                    function initialize() {
-                        mapInit();
+            var map;
+            var overlaysArray = [];
+            function initialize() {
+                mapInit();
 
-                        InitLatlng(map);
+                InitLatlng(map);
 
-                        google.maps.event.addListener(map, 'click', function (event) {
-                            if (limitArea_polygon.containsLatLng(event.latLng)) {
-                                if (transect_array.length < 2) {
-                                    marker = new google.maps.Marker({
-                                        position: event.latLng,
-                                        map: map
-                                    });
-                                    transect_array.push(event.latLng);
-                                }
-                            } else {
-                                alert("Sorry, this is outside our support domain.");
-
-                            }
-                        });
-
-                        $("#time_list").change(function () {
-                            time = $("#time_list").val();
-                            ;
-                            //alert(""+time);
-                        });
-                        $("#variable_list").change(function () {
-                            vname = $("#variable_list").val();
-                            ;
-                            //alert(""+vname);
-                        });
-
-                        $("#btn_show_transect").click(function () {
-                            showTransecton();
-                        });
-
-                        $("#btn_clear").click(function () {
-                            window.location.href = window.location.href
-                        });
-
-
-                        //minDate: '-4D'
-                        $("#datepicker").datepicker({
-                            changeMonth: true,
-                            changeYear: true,
-                            minDate: getTwoMonthWindow(new Date),
-                            maxDate: new Date,
-                            onSelect: function (dateText, inst) {
-                                var mydate = new Date(dateText);
-                                date = getYYYYMMYY(mydate);
-                                //alert("Selected data " + date);
-                            }
-                        }).datepicker("setDate", new Date());
-                        date = getYYYYMMYY(new Date());
-                        time = getTime(new Date());
-
-                        $("#time_list").val(time).change();
-                        //alert($("#time_list").val())
+                google.maps.event.addListener(map, 'click', function (event) {
+                    if (limitArea_polygon.containsLatLng(event.latLng)) {
+                        if (transect_array.length < 2) {
+                            marker = new google.maps.Marker({
+                                position: event.latLng,
+                                map: map
+                            });
+                            transect_array.push(event.latLng);
+                        }
+                    } else {
+                        alert("Sorry, this is outside our support domain.");
 
                     }
+                });
 
-                    $(document).ready(function () {
-                        initialize();
-                        $("#id_list_nav > li:nth-child(4)").css({"background-color": "#041648"})
-                    });
+                $("#time_list").change(function () {
+                    time = $("#time_list").val();
+                    ;
+                    //alert(""+time);
+                });
+                $("#variable_list").change(function () {
+                    vname = $("#variable_list").val();
+                    ;
+                    //alert(""+vname);
+                });
+
+                $("#btn_show_transect").click(function () {
+                    showTransecton();
+                });
+
+                $("#btn_clear").click(function () {
+                    window.location.href = window.location.href
+                });
+
+
+                //minDate: '-4D'
+                $("#datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    minDate: getTwoMonthWindow(new Date),
+                    maxDate: new Date,
+                    onSelect: function (dateText, inst) {
+                        var mydate = new Date(dateText);
+                        date = getYYYYMMYY(mydate);
+                        //alert("Selected data " + date);
+                    }
+                }).datepicker("setDate", new Date());
+                date = getYYYYMMYY(new Date());
+                time = getTime(new Date());
+
+                $("#time_list").val(time).change();
+                //alert($("#time_list").val())
+
+            }
+
+            $(document).ready(function () {
+                initialize();
+                $("#id_list_nav > li:nth-child(4)").addClass("active");
+            });
 
         </script>
 
@@ -137,6 +136,8 @@
                 font-weight: bold;
                 padding: 2px;
             }
+            
+
         </style>
 
 
@@ -145,9 +146,9 @@
         <jsp:include page="header.jsp"></jsp:include>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="margin-bottom: 10px">
                         <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
-                        <br><br>
+                        <br>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                         <!--Nested rows within a column-->
@@ -176,10 +177,10 @@
                                 <tr>
                                     <td>Time</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
-                                            <option value="0.0">0:00</option>
-                                            <option value="0.125">3:00</option>
-                                            <option value="0.25">6:00</option>
-                                            <option value="0.375">9:00</option>
+                                            <option value="0.0">00:00</option>
+                                            <option value="0.125">03:00</option>
+                                            <option value="0.25">06:00</option>
+                                            <option value="0.375">09:00</option>
                                             <option value="0.5">12:00</option>
                                             <option value="0.625">15:00</option>
                                             <option value="0.75">18:00</option>
@@ -202,28 +203,19 @@
                                         <div class="panel panel-primary">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
-                                                    <li>Click on two locations in the ocean within the red box,<br>
-                                                        which will be the beginning and end points of your transect.<br>
-                                                        Select the variable, date, and time, then click on "Show Transect"
-                                                    </li>
-                                                    <li><strong>Variables:</strong> Click on the variable to be shown on the transect.
-                                                        "u" is water movement<br>
-                                                        in the east (positive)-- west (negative) direction. "v" is water movement in the
-                                                        north
-                                                        (positive)<br>
-                                                        -- south (negative) direction.
-                                                    </li>
-                                                    <li>Click your browser's refresh button to reset all criteria.
-                                                    </li>
-                                                </ul>
+                                                <div style="color: black; padding-left: 10px">
+                                                    Choose two locations in the ocean within the red box on the map, which will be the beginning and end points of your transect. 
+                                                    The first point will be the left side of the resulting plot and the second point will be the right side.
+                                                    Select the variable, date, and time, then choose "Show Transect". <br><br>
+                                                    <strong>Variables: </strong>Choose a variable to display on the transect. "u" is water movement across the transect line in the east (positive)
+                                                    - west (negative) direction. "v" is water movement across the transect in the north (positive) - south (negative) direction. 
+                                                </div>>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
-
 
                     </div>
                 </div>
@@ -233,9 +225,3 @@
         <jsp:include page="footer.jsp"/>
     </body>
 </html>
-
-
-
-
-
-

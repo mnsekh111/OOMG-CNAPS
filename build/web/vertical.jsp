@@ -36,60 +36,60 @@
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 
         <script type="text/javascript">
-                    var map;
-                    var overlays;
-                    var date;
-                    var time = 0.0;
-                    function initialize() {
-                        mapInit();
-                        InitLatlng(map);
-                        google.maps.event.addListener(map, 'click', function (event) {
-                            if (limitArea_polygon.containsLatLng(event.latLng)) {
-                                if (overlays == null) {
-                                    marker = new google.maps.Marker({
-                                        position: event.latLng,
-                                        map: map
-                                    });
-                                    overlays = event.latLng;
-                                } else {
-                                    alert("overlay is not null")
-                                }
-                            } else {
-                                alert("Sorry, this is outside our support domain.");
-                            }
-                        });
-
-                        $("#datepicker").datepicker({
-                            changeMonth: true,
-                            changeYear: true,
-                            minDate: getTwoMonthWindow(new Date),
-                            maxDate: new Date,
-                            onSelect: function (dateText, inst) {
-                                var mydate = new Date(dateText);
-                                date = getYYYYMMYY(mydate);
-                                //alert("Selected data " + date);
-                            }
-                        }).datepicker("setDate", new Date());
-
-                        $('#time_list').change(function () {
-                            time = this.value;
-                            //alert("time list changed " + this.value);
-                        });
-
-                        $("#btn_plot").click(function () {
-                            showVertical();
-                        });
-
-                        $("#btn_clear").click(function () {
-                            window.location.href = window.location.href
-                        });
-
-                        date = getYYYYMMYY(new Date());
-                        time = getTime(new Date());
-                        
-                        $("#time_list").val(time).change();
-                        $("#id_list_nav > li:nth-child(4)").css({"background-color": "#041648"})
+            var map;
+            var overlays;
+            var date;
+            var time = 0.0;
+            function initialize() {
+                mapInit();
+                InitLatlng(map);
+                google.maps.event.addListener(map, 'click', function (event) {
+                    if (limitArea_polygon.containsLatLng(event.latLng)) {
+                        if (overlays == null) {
+                            marker = new google.maps.Marker({
+                                position: event.latLng,
+                                map: map
+                            });
+                            overlays = event.latLng;
+                        } else {
+                            alert("overlay is not null")
+                        }
+                    } else {
+                        alert("Sorry, this is outside our support domain.");
                     }
+                });
+
+                $("#datepicker").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    minDate: getTwoMonthWindow(new Date),
+                    maxDate: new Date,
+                    onSelect: function (dateText, inst) {
+                        var mydate = new Date(dateText);
+                        date = getYYYYMMYY(mydate);
+                        //alert("Selected data " + date);
+                    }
+                }).datepicker("setDate", new Date());
+
+                $('#time_list').change(function () {
+                    time = this.value;
+                    //alert("time list changed " + this.value);
+                });
+
+                $("#btn_plot").click(function () {
+                    showVertical();
+                });
+
+                $("#btn_clear").click(function () {
+                    window.location.href = window.location.href
+                });
+
+                date = getYYYYMMYY(new Date());
+                time = getTime(new Date());
+
+                $("#time_list").val(time).change();
+                $("#id_list_nav > li:nth-child(4)").addClass("active");
+            }
         </script>
 
         <script type="text/javascript">
@@ -149,10 +149,10 @@
                                 <tr>
                                     <td class="sec-header">Time</td>
                                     <td colspan="2"><select class="form-control" style="width: 100%" id="time_list">
-                                            <option value="0.0">0:00</option>
-                                            <option value="0.125">3:00</option>
-                                            <option value="0.25">6:00</option>
-                                            <option value="0.375">9:00</option>
+                                            <option value="0.0">00:00</option>
+                                            <option value="0.125">03:00</option>
+                                            <option value="0.25">06:00</option>
+                                            <option value="0.375">09:00</option>
                                             <option value="0.5">12:00</option>
                                             <option value="0.625">15:00</option>
                                             <option value="0.75">18:00</option>
@@ -164,7 +164,7 @@
 
                                 <tr>
                                     <td>
-                                        <button id="btn_plot" class="btn btn-success">Plot</button>
+                                        <button id="btn_plot" class="btn btn-success">Plot Profile</button>
                                     </td>
                                     <td>
                                         <button id="btn_clear"  class="btn btn-danger">Clear</button>
@@ -176,11 +176,10 @@
                                         <div class="panel panel-primary ">
                                             <div class="sec-header">Instructions</div>
                                             <div class="panel-body">
-                                                <ul style="color: black">
-                                                    <li>
-                                                        Select one location on the map and the criteria below, click on "Plot"
-                                                    </li>
-                                                </ul>
+                                                <div style="color: black;padding-left: 10px">
+                                                    Choose one location in the ocean within the red box on the map, date, and time, then choose "Plot Profile". 
+                                                    <br><br>The resulting plot shows the temperature and salinity profiles from ocean surface to bottom at the chosen point.
+                                                </div>
                                             </div>
                                         </div>
                                     </td>

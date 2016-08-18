@@ -181,7 +181,6 @@
 
         </script>
 
-
         <style>
             .main-content {
                 background: #dbdfe5;

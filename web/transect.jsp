@@ -136,6 +136,8 @@
                 font-weight: bold;
                 padding: 2px;
             }
+            
+
         </style>
 
 
@@ -146,7 +148,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8" style="margin-bottom: 10px">
                         <div class="main-content" id="map_canvas" style="float:left; width:100%;height:600px;"></div>
-                        <br><br>
+                        <br>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                         <!--Nested rows within a column-->

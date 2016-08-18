@@ -15,11 +15,10 @@ function addMarker(location) {
         col: colors[colorIndex][1]
     });
     colorIndex = (colorIndex + 1) % colors.length;
-    //plotDrifter(location);
+
 }
 
 function showTrajectory() {
-
     if (!isProcessing) {
         isProcessing = true;
         if (lonlatArray.length == 0) {
@@ -38,39 +37,39 @@ function showTrajectory() {
                 function (data)
                 {
                     console.log("From the servlet" + data);
-                   isProcessing = false;
+                    isProcessing = false;
                     plotDrifter(data);
                 }
         );
 
-        /*	$('#map_canvas').after(
-         "<img class=\"loading\" src=\"./image/loading.gif\" /> "
-         );*/
 
         var d = new Date();
-        var $dialog = $([
-            "<div id='loading' class='alert alert-info' >",
-             "<img class=\"loading\" src=\"./image/loading.gif\" /> "+
-            "   72 hours trajectory prediction <br/> starting from 0:00"+ (d.getMonth() + 1).toString() + "/"
-               + d.getDate().toString() + "/" + (d.getYear() + 1900).toString(),
-            "</div>"
-        ].join("\n"));
-        
-        $('#map_canvas').after(dialogbox);
+
+        $(".loading_dialog").html();
+        $(".loading_dialog").html("<img class='loading' src='./image/loading.gif'style='float:left'/> " +
+                "<div style='float:left;padding:20px'>   72 hours trajectory prediction <br/> starting from 0:00 " + (d.getMonth() + 1).toString() + "/"
+                + d.getDate().toString() + "/" + (d.getYear() + 1900).toString()+"</div>");
+
+        $(".loading_dialog").show();
 
         //Solve the compatibility issue of IE 7.0
         if ($.browser.version != "7.0")
             $('#map_canvas').fadeTo('slow', 0.8);
 
-    }else{
+    } else {
         alert("The app is processing the previous request. Please wait");
-    }
+        $('.loading_dialog').fadeOut("slow", function () {
 
+        });
+        isProcessing = false;
+    }
 }
 
 function plotDrifter(data) {
 
-    $('#loading').remove();
+    $('.loading_dialog').fadeOut("slow", function () {
+
+    });
 
     if ($.browser.version != "7.0")
         $('#map_canvas').fadeTo('slow', 1);
@@ -92,7 +91,6 @@ function plotDrifter(data) {
         poly.setMap(map);
 
         var path = poly.getPath();
-
 
         var lonlats = locations[i].split(";");
         for (j = 0; j < lonlats.length - 1; j++)
@@ -117,3 +115,4 @@ function addDrifter() {
         $('#txt_lat').val("");
     }
 }
+

@@ -21,7 +21,8 @@ function getTwoMonthWindow(date) {
 }
 
 function getTime(date) {
-    var hrs = date.getHours();
+    
+    var hrs = date.getUTCHours();
     if (hrs < 3)
         return "0.0";
     else if (hrs < 6)
